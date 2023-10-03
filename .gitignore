@@ -1,3 +1,6 @@
+obj/
+bin/
+debug/
 .python-version
 .DS_Store
 venv/

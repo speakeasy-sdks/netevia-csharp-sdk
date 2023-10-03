@@ -1,20 +1,17 @@
 <!-- Start SDK Example Usage -->
 
 
-```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+```csharp
+using Speakeasybar;
+using Speakeasybar.Models.Shared;
 
-s = speakeasybar.Speakeasybar(
-    security=shared.Security(
-        api_key="",
-    ),
-)
+var sdk = new SpeakeasybarSDK();
 
+var res = await sdk.Api.BatchAsync(new GrpPIN() {
+    Ksn = "FFFF6543210000A00029",
+    PinBlock = "F652B46D04B5D191",
+});
 
-res = s.drinks.list_drinks(drink_type=shared.DrinkType.WINE)
-
-if res.drinks is not None:
-    # handle response
+// handle response
 ```
 <!-- End SDK Example Usage -->
