@@ -1,9 +1,9 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 8db86c8597b22945c2b3f77241037075
-  docVersion: 1.0.0
-  speakeasyVersion: 1.78.8
-  generationVersion: 2.96.6
+  docChecksum: dcb421cd059d94db6c3dbec2d92af9fc
+  docVersion: 0.1.0
+  speakeasyVersion: 1.93.2
+  generationVersion: 2.144.7
 generation:
   comments:
     disableComments: false
@@ -14,6 +14,11 @@ generation:
   tagNamespacingDisabled: false
   telemetryEnabled: false
 features:
+  csharp:
+    core: 2.89.1
+    globalServerURLs: 2.82.0
+    groups: 2.81.2
+    nameOverrides: 2.81.1
   python:
     core: 2.85.3
     errors: 2.81.3
@@ -23,6 +28,12 @@ features:
     globalServerURLs: 2.82.0
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
+csharp:
+  version: 0.1.0
+  author: Speakeasy
+  dotnetVersion: net5.0
+  maxMethodParams: 0
+  packageName: openapi
 python:
   version: 1.26.0
   author: Speakeasy

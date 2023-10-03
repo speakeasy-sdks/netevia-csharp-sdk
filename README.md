@@ -35,28 +35,27 @@ Once you're finished iterating and happy with the output push only the latest ve
 <!-- Start SDK Installation -->
 ## SDK Installation
 
+### Nuget
+
 ```bash
-pip install git+https://github.com/speakeasy-sdks/template-sdk.git
+dotnet add package openapi
 ```
 <!-- End SDK Installation -->
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+```csharp
+using Speakeasybar;
+using Speakeasybar.Models.Shared;
 
-```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+var sdk = new SpeakeasybarSDK();
 
-s = speakeasybar.Speakeasybar(
-    security=shared.Security(
-        api_key="",
-    ),
-)
+var res = await sdk.Api.BatchAsync(new GrpPIN() {
+    Ksn = "FFFF6543210000A00029",
+    PinBlock = "F652B46D04B5D191",
+});
 
-res = s.drinks.list_drinks(drink_type=shared.DrinkType.WINE)
-
-if res.drinks is not None:
-    # handle response
+// handle response
 ```
 <!-- End SDK Example Usage -->
 
@@ -64,27 +63,164 @@ if res.drinks is not None:
 ## Available Resources and Operations
 
 
-### [authentication](docs/sdks/authentication/README.md)
+### [Api](docs/sdks/api/README.md)
 
-* [authenticate](docs/sdks/authentication/README.md#authenticate) - Authenticate with the API by providing a username and password.
+* [Batch](docs/sdks/api/README.md#batch) - Generic batch query API.
+* [Rest](docs/sdks/api/README.md#rest) - Generic API.
 
-### [config](docs/sdks/config/README.md)
+### [APIACHCredit](docs/sdks/apiachcredit/README.md)
 
-* [subscribe_to_webhooks](docs/sdks/config/README.md#subscribe_to_webhooks) - Subscribe to webhooks.
+* [Rest](docs/sdks/apiachcredit/README.md#rest) - ACH Credit transactions.
 
-### [drinks](docs/sdks/drinks/README.md)
+### [APIACHDebit](docs/sdks/apiachdebit/README.md)
 
-* [get_drink](docs/sdks/drinks/README.md#get_drink) - Get a drink.
-* [list_drinks](docs/sdks/drinks/README.md#list_drinks) - Get a list of drinks.
+* [Rest](docs/sdks/apiachdebit/README.md#rest) - ACH Debit transactions.
 
-### [ingredients](docs/sdks/ingredients/README.md)
+### [APIAuth](docs/sdks/apiauth/README.md)
 
-* [list_ingredients](docs/sdks/ingredients/README.md#list_ingredients) - Get a list of ingredients.
+* [Rest](docs/sdks/apiauth/README.md#rest) - How to initiate different Auth/Finalize transaction requests.
 
-### [orders](docs/sdks/orders/README.md)
+### [APIBatch](docs/sdks/apibatch/README.md)
 
-* [create_order](docs/sdks/orders/README.md#create_order) - Create an order.
+* [Rest](docs/sdks/apibatch/README.md#rest) - Request batch closing.
+
+### [APIGetTransInfo](docs/sdks/apigettransinfo/README.md)
+
+* [Rest](docs/sdks/apigettransinfo/README.md#rest) - How to initiate GetTransInfo transaction requests.
+
+### [APIGift](docs/sdks/apigift/README.md)
+
+* [Rest](docs/sdks/apigift/README.md#rest) - Gitf transactions.
+
+### [APIModify](docs/sdks/apimodify/README.md)
+
+* [Rest](docs/sdks/apimodify/README.md#rest) - How to initiate Modify/Adjust/AddTip transaction requests.
+
+### [APIRefund](docs/sdks/apirefund/README.md)
+
+* [Rest](docs/sdks/apirefund/README.md#rest) - How to initiate Refund transaction requests.
+
+### [APISale](docs/sdks/apisale/README.md)
+
+* [Rest](docs/sdks/apisale/README.md#rest) - How to initiate different Sale transaction requests.
+
+### [APIToken](docs/sdks/apitoken/README.md)
+
+* [Rest](docs/sdks/apitoken/README.md#rest) - How to initiate Token based transaction requests.
+
+### [APIVerify](docs/sdks/apiverify/README.md)
+
+* [Rest](docs/sdks/apiverify/README.md#rest) - How to initiate Verify/Inquiry transaction requests.
+
+### [APIVoid](docs/sdks/apivoid/README.md)
+
+* [Rest](docs/sdks/apivoid/README.md#rest) - How to initiate Void/Reverse/Cancel transaction requests.
+
+### [APIv2](docs/sdks/apiv2/README.md)
+
+* [Batch](docs/sdks/apiv2/README.md#batch) - Generic batch query API.
+* [Rest](docs/sdks/apiv2/README.md#rest) - Generic API.
+
+### [APIv2ACHCredit](docs/sdks/apiv2achcredit/README.md)
+
+* [Rest](docs/sdks/apiv2achcredit/README.md#rest) - ACH Credit transactions.
+
+### [APIv2ACHDebit](docs/sdks/apiv2achdebit/README.md)
+
+* [Rest](docs/sdks/apiv2achdebit/README.md#rest) - ACH Debit transactions.
+
+### [APIv2Auth](docs/sdks/apiv2auth/README.md)
+
+* [Rest](docs/sdks/apiv2auth/README.md#rest) - How to initiate different Auth/Finalize transaction requests.
+
+### [APIv2Batch](docs/sdks/apiv2batch/README.md)
+
+* [Rest](docs/sdks/apiv2batch/README.md#rest) - Request batch closing.
+
+### [APIv2GetTransInfo](docs/sdks/apiv2gettransinfo/README.md)
+
+* [Rest](docs/sdks/apiv2gettransinfo/README.md#rest) - How to initiate GetTransInfo transaction requests.
+
+### [APIv2Gift](docs/sdks/apiv2gift/README.md)
+
+* [Rest](docs/sdks/apiv2gift/README.md#rest) - Gitf transactions.
+
+### [APIv2Modify](docs/sdks/apiv2modify/README.md)
+
+* [Rest](docs/sdks/apiv2modify/README.md#rest) - How to initiate Modify/Adjust/AddTip transaction requests.
+
+### [APIv2Refund](docs/sdks/apiv2refund/README.md)
+
+* [Rest](docs/sdks/apiv2refund/README.md#rest) - How to initiate Refund transaction requests.
+
+### [APIv2Sale](docs/sdks/apiv2sale/README.md)
+
+* [Rest](docs/sdks/apiv2sale/README.md#rest) - How to initiate different Sale transaction requests.
+
+### [APIv2Token](docs/sdks/apiv2token/README.md)
+
+* [Rest](docs/sdks/apiv2token/README.md#rest) - How to initiate Token based transaction requests.
+
+### [APIv2Verify](docs/sdks/apiv2verify/README.md)
+
+* [Rest](docs/sdks/apiv2verify/README.md#rest) - How to initiate Verify/Inquiry transaction requests.
+
+### [APIv2Void](docs/sdks/apiv2void/README.md)
+
+* [Rest](docs/sdks/apiv2void/README.md#rest) - How to initiate Void/Reverse/Cancel transaction requests.
+
+### [CloudPDC](docs/sdks/cloudpdc/README.md)
+
+* [Control](docs/sdks/cloudpdc/README.md#control) - Payment Device Controller - card reader device management API.
+
+### [CloudPDCRefund](docs/sdks/cloudpdcrefund/README.md)
+
+* [Initiate](docs/sdks/cloudpdcrefund/README.md#initiate) - Initiate a Refund request.
+
+### [CloudPDCSale](docs/sdks/cloudpdcsale/README.md)
+
+* [Initiate](docs/sdks/cloudpdcsale/README.md#initiate) - Initiate a transaction request.
+
+### [CloudPDCv2Ingenico](docs/sdks/cloudpdcv2ingenico/README.md)
+
+* [Control](docs/sdks/cloudpdcv2ingenico/README.md#control) - Cloud Payment Device Controller - card reader device management API.
+
+### [CloudPDCv2Refund](docs/sdks/cloudpdcv2refund/README.md)
+
+* [Initiate](docs/sdks/cloudpdcv2refund/README.md#initiate) - Initiate a Refund request.
+
+### [CloudPDCv2Sale](docs/sdks/cloudpdcv2sale/README.md)
+
+* [Initiate](docs/sdks/cloudpdcv2sale/README.md#initiate) - Initiate a transaction request.
+
+### [DesktopPDC](docs/sdks/desktoppdc/README.md)
+
+* [Control](docs/sdks/desktoppdc/README.md#control) - Control desktop PDC through Netevia Server to complete the transaction.
+
+### [DesktopPDCv2](docs/sdks/desktoppdcv2/README.md)
+
+* [Control](docs/sdks/desktoppdcv2/README.md#control) - Control desktop PDC through Netevia Server to complete the transaction.
+
+### [GPay](docs/sdks/gpay/README.md)
+
+* [Rest](docs/sdks/gpay/README.md#rest) - Google Pay ™.
+
+### [QRPay](docs/sdks/qrpay/README.md)
+
+* [IntegrateQRPay](docs/sdks/qrpay/README.md#integrateqrpay) - Integrated QRPay API interface
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 
