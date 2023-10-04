@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Initiate](#initiate) - Initiate a Refund request.
+* [InitiateCloudPDCRefund](#initiatecloudpdcrefund) - Initiate a Refund request.
 
-## Initiate
+## InitiateCloudPDCRefund
 
 Initiate a Refund request to Netevia Payment Device Controller.   
 <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
@@ -19,10 +19,12 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.CloudPDCRefund.InitiateAsync(new GrpCardDataEncryption() {
-    EncrptBlock = "Towels Bacon stealthily",
-    EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
-    KeyID = "66257982464",
+var res = await sdk.CloudPDCRefund.InitiateCloudPDCRefundAsync(new GrpAmount() {
+    IncCashBackAmt = 10000,
+    IncTaxAmt = 10000,
+    MainAmt = 10000,
+    TaxIndicator = Gateway.Models.Shared.GrpAmountTaxIndicator.Ntprvd,
+    TipAmt = 10000,
 });
 
 // handle response

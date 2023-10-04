@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - How to initiate different Auth/Finalize transaction requests.
+* [RestAPIv2Auth](#restapiv2auth) - How to initiate different Auth/Finalize transaction requests.
 
-## Rest
+## RestAPIv2Auth
 
 Initiate an <b>Auth/Finalize</b> transaction request to Netevia Gateway.<sup>1</sup><br>
 An <b>Auth</b> transaction places a temporary hold on the customer’s account. Approvals on authorizations are used later to transfer funds by Finalize or AddTip.<br>
@@ -24,16 +24,18 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIv2Auth.RestAsync(new RestAPIv2AuthRequest() {
-    Gmid = "so Fantastic online",
+var res = await sdk.APIv2Auth.RestAPIv2AuthAsync(new RestAPIv2AuthRequest() {
+    Gmid = "Gloves explicabo Mobility",
     NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
-    RequestBody = new GrpCardDataEncryption() {
-        EncrptBlock = "Coupe mobile Chrysler",
-        EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
-        KeyID = "66257982464",
+    RequestBody = new GrpAmount() {
+        IncCashBackAmt = 10000,
+        IncTaxAmt = 10000,
+        MainAmt = 10000,
+        TaxIndicator = Gateway.Models.Shared.GrpAmountTaxIndicator.Ntprvd,
+        TipAmt = 10000,
     },
-    TerminalType = Gateway.Models.Shared.TerminalType.M6Plus,
-    TransType = Gateway.Models.Shared.TransType.Refund,
+    TerminalType = Gateway.Models.Shared.TerminalType.None,
+    TransType = Gateway.Models.Shared.TransType.UpdateCardTokenInfo,
 });
 
 // handle response

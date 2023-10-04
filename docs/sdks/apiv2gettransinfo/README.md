@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - How to initiate GetTransInfo transaction requests.
+* [RestAPIv2GetTransInfo](#restapiv2gettransinfo) - How to initiate GetTransInfo transaction requests.
 
-## Rest
+## RestAPIv2GetTransInfo
 
 Initiate a <b>GetTransInfo</b> transaction request to Netevia Gateway.<sup>1</sup><br>
 A <b>GetTransInfo</b> transaction is used to query the transaction status by GTRC which was returned for the original transaction or by the Invoice Number used in the original request. 
@@ -23,16 +23,19 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIv2GetTransInfo.RestAsync(new RestAPIv2GetTransInfoRequest() {
-    Gmid = "so Fantastic online",
-    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
-    RequestBody = new GrpCardDataEncryption() {
-        EncrptBlock = "Coupe mobile Chrysler",
-        EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
-        KeyID = "66257982464",
+var res = await sdk.APIv2GetTransInfo.RestAPIv2GetTransInfoAsync(new RestAPIv2GetTransInfoRequest() {
+    Gmid = "Wagon blockchains",
+    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.Y,
+    RequestBody = new GrpACH() {
+        AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
+        EleCheckAccountNumber = "125401754499",
+        EleCheckRoutingNumber = "102000021",
+        EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
+        EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
+        TotalCreditAmt = "25000",
     },
-    TerminalType = Gateway.Models.Shared.TerminalType.M6Plus,
-    TransType = Gateway.Models.Shared.TransType.Refund,
+    TerminalType = Gateway.Models.Shared.TerminalType.Pax,
+    TransType = Gateway.Models.Shared.TransType.Unregister,
 });
 
 // handle response

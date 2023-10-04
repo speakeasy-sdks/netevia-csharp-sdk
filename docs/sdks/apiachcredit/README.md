@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - ACH Credit transactions.
+* [RestAPIACHCredit](#restapiachcredit) - ACH Credit transactions.
 
-## Rest
+## RestAPIACHCredit
 
 Initiate an <b>ACH</b> credit transaction request to Netevia Gateway.<sup>1</sup><br>
 An <b>ACH</b> credit transaction is used to allow merchants to pay using ACH and transfer money to other bank accounts.<br>
@@ -24,13 +24,10 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIACHCredit.RestAsync(new GrpACH() {
-    AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
-    EleCheckAccountNumber = "125401754499",
-    EleCheckRoutingNumber = "102000021",
-    EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
-    EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
-    TotalCreditAmt = "25000",
+var res = await sdk.APIACHCredit.RestAPIACHCreditAsync(new GrpTrace() {
+    Gtrc = "e134bff9203f44e8974a11b2aef7665d",
+    NewGTRC = "fe31047eca6b47f2a07ead29be5a7672",
+    SourceTraceNum = "123456",
 });
 
 // handle response

@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - How to initiate Modify/Adjust/AddTip transaction requests.
+* [RestAPIModify](#restapimodify) - How to initiate Modify/Adjust/AddTip transaction requests.
 
-## Rest
+## RestAPIModify
 
 Initiate a <b>Modify/Adjust/AddTip</b> transaction request to Netevia Gateway.<sup>1</sup><br>
 <b>Modify</b> transaction is used to alter the transaction amount of an original transaction, Auth or Sale.<br>
@@ -24,13 +24,12 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIModify.RestAsync(new GrpACH() {
-    AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
-    EleCheckAccountNumber = "125401754499",
-    EleCheckRoutingNumber = "102000021",
-    EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
-    EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
-    TotalCreditAmt = "25000",
+var res = await sdk.APIModify.RestAPIModifyAsync(new GrpExtendInfo() {
+    AdditionalInfo = "Key1=Val10x1CKey2=Val2...",
+    AuthCode = "OK1234",
+    InvoiceNum = "Inv123456",
+    OrderNum = "Ord12345",
+    VoucherNum = "Voucher12345",
 });
 
 // handle response

@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - How to initiate GetTransInfo transaction requests.
+* [RestAPIGetTransInfo](#restapigettransinfo) - How to initiate GetTransInfo transaction requests.
 
-## Rest
+## RestAPIGetTransInfo
 
 Initiate a <b>GetTransInfo</b> transaction request to Netevia Gateway.<sup>1</sup><br>
 A <b>GetTransInfo</b> transaction is used to query the transaction status by GTRC which was returned for the original transaction or by the Invoice Number used in the original request. 
@@ -22,13 +22,12 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIGetTransInfo.RestAsync(new GrpACH() {
-    AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
-    EleCheckAccountNumber = "125401754499",
-    EleCheckRoutingNumber = "102000021",
-    EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
-    EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
-    TotalCreditAmt = "25000",
+var res = await sdk.APIGetTransInfo.RestAPIGetTransInfoAsync(new GrpAmount() {
+    IncCashBackAmt = 10000,
+    IncTaxAmt = 10000,
+    MainAmt = 10000,
+    TaxIndicator = Gateway.Models.Shared.GrpAmountTaxIndicator.Ntprvd,
+    TipAmt = 10000,
 });
 
 // handle response

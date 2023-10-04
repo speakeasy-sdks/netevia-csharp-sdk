@@ -49,17 +49,17 @@ namespace Gateway
         /// 
         /// </remarks>
         /// </summary>
-        Task<ControlCloudPDCv2IngenicoResponse> ControlAsync(ControlCloudPDCv2IngenicoRequest request);
+        Task<ControlCloudPDCv2IngenicoResponse> ControlCloudPDCv2IngenicoAsync(ControlCloudPDCv2IngenicoRequest request);
     }
 
     public class CloudPDCv2IngenicoSDK: ICloudPDCv2IngenicoSDK
     {
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.3.0";
+        private const string _sdkVersion = "0.4.0";
         private const string _sdkGenVersion = "2.146.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.3.0 2.146.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.4.0 2.146.1 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -73,7 +73,7 @@ namespace Gateway
         }
         
 
-        public async Task<ControlCloudPDCv2IngenicoResponse> ControlAsync(ControlCloudPDCv2IngenicoRequest request)
+        public async Task<ControlCloudPDCv2IngenicoResponse> ControlCloudPDCv2IngenicoAsync(ControlCloudPDCv2IngenicoRequest request)
         {
             string baseUrl = _serverUrl;
             if (baseUrl.EndsWith("/"))

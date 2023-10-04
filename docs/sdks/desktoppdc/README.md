@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Control](#control) - Control desktop PDC through Netevia Server to complete the transaction.
+* [ControlDesktopPDC](#controldesktoppdc) - Control desktop PDC through Netevia Server to complete the transaction.
 
-## Control
+## ControlDesktopPDC
 
 All transaction type are support. use this way you can control desktop PDC to read card data.
 Desktop PDC version need above 2.2.7. and you need add the websocket clinet configuration.
@@ -19,8 +19,8 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.DesktopPDC.ControlAsync(new GrpCardDataEncryption() {
-    EncrptBlock = "yellow",
+var res = await sdk.DesktopPDC.ControlDesktopPDCAsync(new GrpCardDataEncryption() {
+    EncrptBlock = "Response Borders",
     EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
     KeyID = "66257982464",
 });

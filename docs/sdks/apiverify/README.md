@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - How to initiate Verify/Inquiry transaction requests.
+* [RestAPIVerifyInquiry](#restapiverifyinquiry) - How to initiate Verify/Inquiry transaction requests.
 
-## Rest
+## RestAPIVerifyInquiry
 
 Initiate a <b>Verify/Inquiry</b> transaction request to Netevia Gateway.<sup>1</sup><br>
 A <b>Inquiry</b> transaction is used to query the balance amount of a card.<br>
@@ -23,13 +23,12 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIVerify.RestAsync(new GrpACH() {
-    AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
-    EleCheckAccountNumber = "125401754499",
-    EleCheckRoutingNumber = "102000021",
-    EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
-    EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
-    TotalCreditAmt = "25000",
+var res = await sdk.APIVerify.RestAPIVerifyInquiryAsync(new GrpAmount() {
+    IncCashBackAmt = 10000,
+    IncTaxAmt = 10000,
+    MainAmt = 10000,
+    TaxIndicator = Gateway.Models.Shared.GrpAmountTaxIndicator.Ntprvd,
+    TipAmt = 10000,
 });
 
 // handle response

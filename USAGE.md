@@ -7,9 +7,12 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.Api.BatchAsync(new GrpPIN() {
-    Ksn = "FFFF6543210000A00029",
-    PinBlock = "F652B46D04B5D191",
+var res = await sdk.Api.BatchAPIAsync(new GrpAmount() {
+    IncCashBackAmt = 10000,
+    IncTaxAmt = 10000,
+    MainAmt = 10000,
+    TaxIndicator = Gateway.Models.Shared.GrpAmountTaxIndicator.Ntprvd,
+    TipAmt = 10000,
 });
 
 // handle response

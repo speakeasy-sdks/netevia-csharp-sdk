@@ -3,10 +3,10 @@
 
 ### Available Operations
 
-* [Batch](#batch) - Generic batch query API.
-* [Rest](#rest) - Generic API.
+* [BatchAPI](#batchapi) - Generic batch query API.
+* [RestAPI](#restapi) - Generic API.
 
-## Batch
+## BatchAPI
 
 Initiate a batch query request to Netevia Gateway.<br>
 This is the full set of parameters that can be used. All the data is sent in the body of the request.<br>
@@ -28,9 +28,12 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.Api.BatchAsync(new GrpPIN() {
-    Ksn = "FFFF6543210000A00029",
-    PinBlock = "F652B46D04B5D191",
+var res = await sdk.Api.BatchAPIAsync(new GrpAmount() {
+    IncCashBackAmt = 10000,
+    IncTaxAmt = 10000,
+    MainAmt = 10000,
+    TaxIndicator = Gateway.Models.Shared.GrpAmountTaxIndicator.Ntprvd,
+    TipAmt = 10000,
 });
 
 // handle response
@@ -48,7 +51,7 @@ var res = await sdk.Api.BatchAsync(new GrpPIN() {
 **[BatchAPIResponse](../../models/operations/BatchAPIResponse.md)**
 
 
-## Rest
+## RestAPI
 
 Initiate a transaction request to Netevia Gateway.<br>
 This is the full set of parameters that can be used. All the data is sent in the body of the request.<br>
@@ -65,9 +68,12 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.Api.RestAsync(new GrpPIN() {
-    Ksn = "FFFF6543210000A00029",
-    PinBlock = "F652B46D04B5D191",
+var res = await sdk.Api.RestAPIAsync(new GrpExtendInfo() {
+    AdditionalInfo = "Key1=Val10x1CKey2=Val2...",
+    AuthCode = "OK1234",
+    InvoiceNum = "Inv123456",
+    OrderNum = "Ord12345",
+    VoucherNum = "Voucher12345",
 });
 
 // handle response

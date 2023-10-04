@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - Request batch closing.
+* [RestAPIv2Batch](#restapiv2batch) - Request batch closing.
 
-## Rest
+## RestAPIv2Batch
 
 Initiate a batch close request to Netevia Gateway
 
@@ -25,16 +25,18 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIv2Batch.RestAsync(new RestAPIv2BatchRequest() {
-    Gmid = "so Fantastic online",
+var res = await sdk.APIv2Batch.RestAPIv2BatchAsync(new RestAPIv2BatchRequest() {
+    Gmid = "Kids quantify",
     NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
-    RequestBody = new GrpCardDataEncryption() {
-        EncrptBlock = "Coupe mobile Chrysler",
-        EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
-        KeyID = "66257982464",
+    RequestBody = new GrpExtendInfo() {
+        AdditionalInfo = "Key1=Val10x1CKey2=Val2...",
+        AuthCode = "OK1234",
+        InvoiceNum = "Inv123456",
+        OrderNum = "Ord12345",
+        VoucherNum = "Voucher12345",
     },
-    TerminalType = Gateway.Models.Shared.TerminalType.M6Plus,
-    TransType = Gateway.Models.Shared.TransType.Refund,
+    TerminalType = Gateway.Models.Shared.TerminalType.Dejavoo,
+    TransType = Gateway.Models.Shared.TransType.Register,
 });
 
 // handle response

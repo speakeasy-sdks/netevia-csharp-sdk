@@ -38,7 +38,7 @@ namespace Gateway
         /// 
         /// </remarks>
         /// </summary>
-        Task<BatchAPIv2Response> BatchAsync(BatchAPIv2Request request);
+        Task<BatchAPIv2Response> BatchAPIv2Async(BatchAPIv2Request request);
 
         /// <summary>
         /// Generic API.
@@ -52,17 +52,17 @@ namespace Gateway
         /// 
         /// </remarks>
         /// </summary>
-        Task<RestAPIv2Response> RestAsync(RestAPIv2Request request);
+        Task<RestAPIv2Response> RestAPIv2Async(RestAPIv2Request request);
     }
 
     public class APIv2SDK: IAPIv2SDK
     {
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.3.0";
+        private const string _sdkVersion = "0.4.0";
         private const string _sdkGenVersion = "2.146.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.3.0 2.146.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.4.0 2.146.1 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -76,7 +76,7 @@ namespace Gateway
         }
         
 
-        public async Task<BatchAPIv2Response> BatchAsync(BatchAPIv2Request request)
+        public async Task<BatchAPIv2Response> BatchAPIv2Async(BatchAPIv2Request request)
         {
             string baseUrl = _serverUrl;
             if (baseUrl.EndsWith("/"))
@@ -125,7 +125,7 @@ namespace Gateway
         }
         
 
-        public async Task<RestAPIv2Response> RestAsync(RestAPIv2Request request)
+        public async Task<RestAPIv2Response> RestAPIv2Async(RestAPIv2Request request)
         {
             string baseUrl = _serverUrl;
             if (baseUrl.EndsWith("/"))

@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - How to initiate Refund transaction requests.
+* [RestAPIv2Refund](#restapiv2refund) - How to initiate Refund transaction requests.
 
-## Rest
+## RestAPIv2Refund
 
 Initiate a <b>Refund</b> transaction request to Netevia Gateway.<sup>1</sup><br>
 A <b>Refund</b> transaction is used to authorize a refund to a customer's credit card account.
@@ -23,16 +23,18 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIv2Refund.RestAsync(new RestAPIv2RefundRequest() {
-    Gmid = "so Fantastic online",
-    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
-    RequestBody = new GrpCardDataEncryption() {
-        EncrptBlock = "Coupe mobile Chrysler",
-        EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
-        KeyID = "66257982464",
+var res = await sdk.APIv2Refund.RestAPIv2RefundAsync(new RestAPIv2RefundRequest() {
+    Gmid = "second henry",
+    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.Y,
+    RequestBody = new GrpExtendInfo() {
+        AdditionalInfo = "Key1=Val10x1CKey2=Val2...",
+        AuthCode = "OK1234",
+        InvoiceNum = "Inv123456",
+        OrderNum = "Ord12345",
+        VoucherNum = "Voucher12345",
     },
-    TerminalType = Gateway.Models.Shared.TerminalType.M6Plus,
-    TransType = Gateway.Models.Shared.TransType.Refund,
+    TerminalType = Gateway.Models.Shared.TerminalType.Dejavoo,
+    TransType = Gateway.Models.Shared.TransType.AddTip,
 });
 
 // handle response

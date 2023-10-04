@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - How to initiate Refund transaction requests.
+* [RestAPIRefund](#restapirefund) - How to initiate Refund transaction requests.
 
-## Rest
+## RestAPIRefund
 
 Initiate a <b>Refund</b> transaction request to Netevia Gateway.<sup>1</sup><br>
 A <b>Refund</b> transaction is used to authorize a refund to a customer's credit card account.
@@ -22,7 +22,7 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIRefund.RestAsync(new GrpACH() {
+var res = await sdk.APIRefund.RestAPIRefundAsync(new GrpACH() {
     AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
     EleCheckAccountNumber = "125401754499",
     EleCheckRoutingNumber = "102000021",

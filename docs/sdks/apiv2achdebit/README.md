@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - ACH Debit transactions.
+* [RestAPIv2ACHDebit](#restapiv2achdebit) - ACH Debit transactions.
 
-## Rest
+## RestAPIv2ACHDebit
 
 Initiate an <b>ACH</b> debit transaction request to Netevia Gateway.<sup>1</sup><br>
 An <b>ACH</b> debit transaction is used to allow customers to pay using checks. The data from the check is digitaly converted and the transaction is posted to the customer bank account.
@@ -23,16 +23,19 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIv2ACHDebit.RestAsync(new RestAPIv2ACHDebitRequest() {
-    Gmid = "so Fantastic online",
-    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
-    RequestBody = new GrpCardDataEncryption() {
-        EncrptBlock = "Coupe mobile Chrysler",
-        EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
-        KeyID = "66257982464",
+var res = await sdk.APIv2ACHDebit.RestAPIv2ACHDebitAsync(new RestAPIv2ACHDebitRequest() {
+    Gmid = "Recycled Borders",
+    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.Y,
+    RequestBody = new GrpACH() {
+        AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
+        EleCheckAccountNumber = "125401754499",
+        EleCheckRoutingNumber = "102000021",
+        EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
+        EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
+        TotalCreditAmt = "25000",
     },
-    TerminalType = Gateway.Models.Shared.TerminalType.M6Plus,
-    TransType = Gateway.Models.Shared.TransType.Refund,
+    TerminalType = Gateway.Models.Shared.TerminalType.None,
+    TransType = Gateway.Models.Shared.TransType.Sale,
 });
 
 // handle response

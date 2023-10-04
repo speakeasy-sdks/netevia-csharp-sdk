@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - How to initiate different Sale transaction requests.
+* [RestAPISale](#restapisale) - How to initiate different Sale transaction requests.
 
-## Rest
+## RestAPISale
 
 Initiate a <b>Sale</b> transaction request to Netevia Gateway.<sup>1</sup><br>
 A <b>Sale</b> transaction authorizes a sale purchased. This action decreases the cardholder's limit to buy. It authorizes a transfer of funds from the cardholder's account to merchant's account.
@@ -22,13 +22,10 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APISale.RestAsync(new GrpACH() {
-    AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
-    EleCheckAccountNumber = "125401754499",
-    EleCheckRoutingNumber = "102000021",
-    EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
-    EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
-    TotalCreditAmt = "25000",
+var res = await sdk.APISale.RestAPISaleAsync(new GrpCardDataEncryption() {
+    EncrptBlock = "Pleasant communities",
+    EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
+    KeyID = "66257982464",
 });
 
 // handle response

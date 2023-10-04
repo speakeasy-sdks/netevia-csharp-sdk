@@ -1,6 +1,6 @@
 configVersion: 1.0.0
 management:
-  docChecksum: dcb421cd059d94db6c3dbec2d92af9fc
+  docChecksum: 6b865d60fab6dd6b7ae835d3ef03c8ed
   docVersion: 0.1.0
   speakeasyVersion: 1.93.3
   generationVersion: 2.146.1
@@ -18,7 +18,6 @@ features:
     core: 2.89.1
     globalServerURLs: 2.82.0
     groups: 2.81.2
-    nameOverrides: 2.81.1
   python:
     core: 2.85.3
     errors: 2.81.3
@@ -29,7 +28,7 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
 csharp:
-  version: 0.3.0
+  version: 0.4.0
   author: Speakeasy
   dotnetVersion: net5.0
   maxMethodParams: 0

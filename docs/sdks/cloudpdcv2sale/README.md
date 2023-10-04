@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Initiate](#initiate) - Initiate a transaction request.
+* [InitiateCloudPDCv2Sale](#initiatecloudpdcv2sale) - Initiate a transaction request.
 
-## Initiate
+## InitiateCloudPDCv2Sale
 
 Initiate a transaction request to Netevia Payment Device Controller. For more samples please review the /restApi endpoint as all transaction types can be used also on this endpoint(without card data). 
 <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
@@ -20,18 +20,18 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.CloudPDCv2Sale.InitiateAsync(new InitiateCloudPDCv2SaleRequest() {
-    Gmid = "Chevrolet neque Hybrid",
-    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
-    RequestBody = new GrpAmount() {
-        IncCashBackAmt = 10000,
-        IncTaxAmt = 10000,
-        MainAmt = 10000,
-        TaxIndicator = Gateway.Models.Shared.GrpAmountTaxIndicator.Ntprvd,
-        TipAmt = 10000,
+var res = await sdk.CloudPDCv2Sale.InitiateCloudPDCv2SaleAsync(new InitiateCloudPDCv2SaleRequest() {
+    Gmid = "oof maroon",
+    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.Y,
+    RequestBody = new GrpExtendInfo() {
+        AdditionalInfo = "Key1=Val10x1CKey2=Val2...",
+        AuthCode = "OK1234",
+        InvoiceNum = "Inv123456",
+        OrderNum = "Ord12345",
+        VoucherNum = "Voucher12345",
     },
-    TerminalType = Gateway.Models.Shared.TerminalType.Dejavoo,
-    TransType = Gateway.Models.Shared.TransType.Ping,
+    TerminalType = Gateway.Models.Shared.TerminalType.Ingenico,
+    TransType = Gateway.Models.Shared.TransType.GetCardToken,
 });
 
 // handle response

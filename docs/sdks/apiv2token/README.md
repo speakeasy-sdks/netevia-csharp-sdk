@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - How to initiate Token based transaction requests.
+* [RestAPIv2Token](#restapiv2token) - How to initiate Token based transaction requests.
 
-## Rest
+## RestAPIv2Token
 
 Initiate <b>Token</b> based transaction requests to Netevia Gateway.<sup>1</sup><br>
 
@@ -31,16 +31,15 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIv2Token.RestAsync(new RestAPIv2TokenRequest() {
-    Gmid = "so Fantastic online",
-    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
-    RequestBody = new GrpCardDataEncryption() {
-        EncrptBlock = "Coupe mobile Chrysler",
-        EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
-        KeyID = "66257982464",
+var res = await sdk.APIv2Token.RestAPIv2TokenAsync(new RestAPIv2TokenRequest() {
+    Gmid = "unhand Specialist Suriname",
+    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.Y,
+    RequestBody = new GrpPIN() {
+        Ksn = "FFFF6543210000A00029",
+        PinBlock = "F652B46D04B5D191",
     },
     TerminalType = Gateway.Models.Shared.TerminalType.M6Plus,
-    TransType = Gateway.Models.Shared.TransType.Refund,
+    TransType = Gateway.Models.Shared.TransType.GetSessionKey,
 });
 
 // handle response
