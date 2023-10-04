@@ -1,13 +1,16 @@
-# CloudPDCRefundSDK
-(*CloudPDCRefund*)
+# SaleTransactionSDK
+(*SaleTransaction*)
 
 ### Available Operations
 
-* [Create](#create) - Initiate a Refund request.
+* [Create](#create) - How to initiate different Sale transaction requests.
 
 ## Create
 
-Initiate a Refund request to Netevia Payment Device Controller.   
+Initiate a <b>Sale</b> transaction request to Netevia Gateway.<sup>1</sup><br>
+A <b>Sale</b> transaction authorizes a sale purchased. This action decreases the cardholder's limit to buy. It authorizes a transfer of funds from the cardholder's account to merchant's account.
+<hr>
+<sup>1</sup>Use the examples for different 'Sale' flavours
 <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
 
 
@@ -19,7 +22,7 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
+var res = await sdk.SaleTransaction.CreateAsync(new GrpCardInfo() {
     AccountNum = "5415244444444444",
     CVVNum = "123",
     CardPresent = Gateway.Models.Shared.GrpCardInfoCardPresent.Y,
@@ -53,5 +56,5 @@ var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
 
 ### Response
 
-**[InitiateCloudPDCRefundResponse](../../models/operations/InitiateCloudPDCRefundResponse.md)**
+**[RestAPISaleResponse](../../models/operations/RestAPISaleResponse.md)**
 

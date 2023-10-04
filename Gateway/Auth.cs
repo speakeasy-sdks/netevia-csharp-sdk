@@ -18,22 +18,26 @@ namespace Gateway
     using System.Threading.Tasks;
     using System;
 
-    public interface ICloudPDCRefundSDK
+    public interface IAuthSDK
     {
 
         /// <summary>
-        /// Initiate a Refund request.
+        /// How to initiate different Auth/Finalize transaction requests.
         /// 
         /// <remarks>
-        /// Initiate a Refund request to Netevia Payment Device Controller.   <br/>
+        /// Initiate an &lt;b&gt;Auth/Finalize&lt;/b&gt; transaction request to Netevia Gateway.&lt;sup&gt;1&lt;/sup&gt;&lt;br&gt;<br/>
+        /// An &lt;b&gt;Auth&lt;/b&gt; transaction places a temporary hold on the customer’s account. Approvals on authorizations are used later to transfer funds by Finalize or AddTip.&lt;br&gt;<br/>
+        /// A &lt;b&gt;Finalize&lt;/b&gt; transaction is used to change an &lt;b&gt;Auth&lt;/b&gt; transaction to a &lt;b&gt;Sale&lt;/b&gt; transaction.<br/>
+        /// &lt;hr&gt;<br/>
+        /// &lt;sup&gt;1&lt;/sup&gt;Use the examples for different &apos;Auth/Finalize&apos; flavours <br/>
         /// &lt;br&gt;&lt;br&gt;&lt;span style=&quot;color:red&quot;&gt;*NOTE: If you don&apos;t see Request Schema, you are in &quot;Try it out&quot; mode and you need to press &quot;Cancel&quot;!&lt;/span&gt;<br/>
         /// 
         /// </remarks>
         /// </summary>
-        Task<InitiateCloudPDCRefundResponse> CreateAsync(object request);
+        Task<RestAPIAuthResponse> FinalizeAsync(object request);
     }
 
-    public class CloudPDCRefundSDK: ICloudPDCRefundSDK
+    public class AuthSDK: IAuthSDK
     {
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
@@ -45,7 +49,7 @@ namespace Gateway
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
 
-        public CloudPDCRefundSDK(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
+        public AuthSDK(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
             _securityClient = securityClient;
@@ -54,14 +58,14 @@ namespace Gateway
         }
         
 
-        public async Task<InitiateCloudPDCRefundResponse> CreateAsync(object request)
+        public async Task<RestAPIAuthResponse> FinalizeAsync(object request)
         {
             string baseUrl = _serverUrl;
             if (baseUrl.EndsWith("/"))
             {
                 baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
             }
-            var urlString = baseUrl + "/QuickChip#Refund";
+            var urlString = baseUrl + "/restApi#Auth_Finalize";
             
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -83,21 +87,12 @@ namespace Gateway
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new InitiateCloudPDCRefundResponse
+            var response = new RestAPIAuthResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.ResponseGenericPDC = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-                
-                return response;
-            }
             response.ResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
             return response;
         }

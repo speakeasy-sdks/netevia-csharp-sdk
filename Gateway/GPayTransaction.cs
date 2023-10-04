@@ -18,22 +18,27 @@ namespace Gateway
     using System.Threading.Tasks;
     using System;
 
-    public interface ICloudPDCRefundSDK
+    public interface IGPayTransactionSDK
     {
 
         /// <summary>
-        /// Initiate a Refund request.
+        /// Google Pay ™.
         /// 
         /// <remarks>
-        /// Initiate a Refund request to Netevia Payment Device Controller.   <br/>
+        /// It support GPay, the transasction type same with restApi, but the request must container Payload and PayAPI item.&lt;br&gt;<br/>
+        /// This is the full set of parameters that can be used. All the data is sent in the body of the request.&lt;br&gt;<br/>
+        /// Depending on the transaction type only a subset of these fields are mandatory!&lt;sup&gt;1&lt;/sup&gt;&lt;br&gt;<br/>
+        /// ***&lt;span style=&quot;color:green&quot;&gt;Valid actions:&lt;/span&gt;***  <br/>
+        /// &lt;hr&gt;<br/>
+        /// &lt;sup&gt;1&lt;/sup&gt;please refer to &apos;samples&apos; section for sample subsets <br/>
         /// &lt;br&gt;&lt;br&gt;&lt;span style=&quot;color:red&quot;&gt;*NOTE: If you don&apos;t see Request Schema, you are in &quot;Try it out&quot; mode and you need to press &quot;Cancel&quot;!&lt;/span&gt;<br/>
         /// 
         /// </remarks>
         /// </summary>
-        Task<InitiateCloudPDCRefundResponse> CreateAsync(object request);
+        Task<RestGPayResponse> CreateAsync(object request);
     }
 
-    public class CloudPDCRefundSDK: ICloudPDCRefundSDK
+    public class GPayTransactionSDK: IGPayTransactionSDK
     {
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
@@ -45,7 +50,7 @@ namespace Gateway
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
 
-        public CloudPDCRefundSDK(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
+        public GPayTransactionSDK(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
             _securityClient = securityClient;
@@ -54,14 +59,14 @@ namespace Gateway
         }
         
 
-        public async Task<InitiateCloudPDCRefundResponse> CreateAsync(object request)
+        public async Task<RestGPayResponse> CreateAsync(object request)
         {
             string baseUrl = _serverUrl;
             if (baseUrl.EndsWith("/"))
             {
                 baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
             }
-            var urlString = baseUrl + "/QuickChip#Refund";
+            var urlString = baseUrl + "/restGPay";
             
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -83,7 +88,7 @@ namespace Gateway
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new InitiateCloudPDCRefundResponse
+            var response = new RestGPayResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -93,12 +98,12 @@ namespace Gateway
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.ResponseGenericPDC = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.ResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
             }
-            response.ResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            throw new NotImplementedException();
             return response;
         }
         

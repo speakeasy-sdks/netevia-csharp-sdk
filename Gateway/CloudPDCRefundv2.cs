@@ -18,7 +18,7 @@ namespace Gateway
     using System.Threading.Tasks;
     using System;
 
-    public interface ICloudPDCRefundSDK
+    public interface ICloudPDCRefundv2SDK
     {
 
         /// <summary>
@@ -30,10 +30,10 @@ namespace Gateway
         /// 
         /// </remarks>
         /// </summary>
-        Task<InitiateCloudPDCRefundResponse> CreateAsync(object request);
+        Task<InitiateCloudPDCv2RefundResponse> CreateAsync(InitiateCloudPDCv2RefundRequest request);
     }
 
-    public class CloudPDCRefundSDK: ICloudPDCRefundSDK
+    public class CloudPDCRefundv2SDK: ICloudPDCRefundv2SDK
     {
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
@@ -45,7 +45,7 @@ namespace Gateway
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
 
-        public CloudPDCRefundSDK(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
+        public CloudPDCRefundv2SDK(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
             _securityClient = securityClient;
@@ -54,20 +54,20 @@ namespace Gateway
         }
         
 
-        public async Task<InitiateCloudPDCRefundResponse> CreateAsync(object request)
+        public async Task<InitiateCloudPDCv2RefundResponse> CreateAsync(InitiateCloudPDCv2RefundRequest request)
         {
             string baseUrl = _serverUrl;
             if (baseUrl.EndsWith("/"))
             {
                 baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
             }
-            var urlString = baseUrl + "/QuickChip#Refund";
+            var urlString = URLBuilder.Build(baseUrl, "/Payment/{TransType}#Ingenico_Refund", request);
             
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "Request", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "json");
             if (serializedBody == null) 
             {
                 throw new ArgumentNullException("request body is required");
@@ -83,7 +83,7 @@ namespace Gateway
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new InitiateCloudPDCRefundResponse
+            var response = new InitiateCloudPDCv2RefundResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,

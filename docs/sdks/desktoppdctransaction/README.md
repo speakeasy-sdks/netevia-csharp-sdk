@@ -1,14 +1,14 @@
-# CloudPDCRefundSDK
-(*CloudPDCRefund*)
+# DesktopPDCTransactionSDK
+(*DesktopPDCTransaction*)
 
 ### Available Operations
 
-* [Create](#create) - Initiate a Refund request.
+* [Create](#create) - Control desktop PDC through Netevia Server to complete the transaction.
 
 ## Create
 
-Initiate a Refund request to Netevia Payment Device Controller.   
-<br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
+All transaction type are support. use this way you can control desktop PDC to read card data.
+Desktop PDC version need above 2.2.7. and you need add the websocket clinet configuration.
 
 
 ### Example Usage
@@ -19,7 +19,7 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
+var res = await sdk.DesktopPDCTransaction.CreateAsync(new GrpCardInfo() {
     AccountNum = "5415244444444444",
     CVVNum = "123",
     CardPresent = Gateway.Models.Shared.GrpCardInfoCardPresent.Y,
@@ -53,5 +53,5 @@ var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
 
 ### Response
 
-**[InitiateCloudPDCRefundResponse](../../models/operations/InitiateCloudPDCRefundResponse.md)**
+**[ControlDesktopPDCResponse](../../models/operations/ControlDesktopPDCResponse.md)**
 

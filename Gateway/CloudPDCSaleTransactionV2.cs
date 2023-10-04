@@ -18,22 +18,22 @@ namespace Gateway
     using System.Threading.Tasks;
     using System;
 
-    public interface ICloudPDCRefundSDK
+    public interface ICloudPDCSaleTransactionV2SDK
     {
 
         /// <summary>
-        /// Initiate a Refund request.
+        /// Initiate a transaction request.
         /// 
         /// <remarks>
-        /// Initiate a Refund request to Netevia Payment Device Controller.   <br/>
+        /// Initiate a transaction request to Netevia Payment Device Controller. For more samples please review the /restApi endpoint as all transaction types can be used also on this endpoint(without card data). <br/>
         /// &lt;br&gt;&lt;br&gt;&lt;span style=&quot;color:red&quot;&gt;*NOTE: If you don&apos;t see Request Schema, you are in &quot;Try it out&quot; mode and you need to press &quot;Cancel&quot;!&lt;/span&gt;<br/>
         /// 
         /// </remarks>
         /// </summary>
-        Task<InitiateCloudPDCRefundResponse> CreateAsync(object request);
+        Task<InitiateCloudPDCv2SaleResponse> CreateAsync(InitiateCloudPDCv2SaleRequest request);
     }
 
-    public class CloudPDCRefundSDK: ICloudPDCRefundSDK
+    public class CloudPDCSaleTransactionV2SDK: ICloudPDCSaleTransactionV2SDK
     {
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
@@ -45,7 +45,7 @@ namespace Gateway
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
 
-        public CloudPDCRefundSDK(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
+        public CloudPDCSaleTransactionV2SDK(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
             _securityClient = securityClient;
@@ -54,20 +54,20 @@ namespace Gateway
         }
         
 
-        public async Task<InitiateCloudPDCRefundResponse> CreateAsync(object request)
+        public async Task<InitiateCloudPDCv2SaleResponse> CreateAsync(InitiateCloudPDCv2SaleRequest request)
         {
             string baseUrl = _serverUrl;
             if (baseUrl.EndsWith("/"))
             {
                 baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
             }
-            var urlString = baseUrl + "/QuickChip#Refund";
+            var urlString = URLBuilder.Build(baseUrl, "/Payment/{TransType}#Ingenico_Sale", request);
             
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "Request", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "json");
             if (serializedBody == null) 
             {
                 throw new ArgumentNullException("request body is required");
@@ -83,7 +83,7 @@ namespace Gateway
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new InitiateCloudPDCRefundResponse
+            var response = new InitiateCloudPDCv2SaleResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,

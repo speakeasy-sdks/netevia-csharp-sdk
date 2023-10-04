@@ -12,28 +12,27 @@ namespace Gateway
 {
     using Gateway.Models.Operations;
     using Gateway.Utils;
-    using Newtonsoft.Json;
     using System.Net.Http.Headers;
     using System.Net.Http;
     using System.Threading.Tasks;
     using System;
 
-    public interface ICloudPDCRefundSDK
+    public interface IDesktopPDCTransactionV2SDK
     {
 
         /// <summary>
-        /// Initiate a Refund request.
+        /// Control desktop PDC through Netevia Server to complete the transaction.
         /// 
         /// <remarks>
-        /// Initiate a Refund request to Netevia Payment Device Controller.   <br/>
-        /// &lt;br&gt;&lt;br&gt;&lt;span style=&quot;color:red&quot;&gt;*NOTE: If you don&apos;t see Request Schema, you are in &quot;Try it out&quot; mode and you need to press &quot;Cancel&quot;!&lt;/span&gt;<br/>
+        /// All transaction type are support. use this way you can control desktop PDC to read card data.<br/>
+        /// Desktop PDC version need above 2.2.7. and you need add the websocket clinet configuration.<br/>
         /// 
         /// </remarks>
         /// </summary>
-        Task<InitiateCloudPDCRefundResponse> CreateAsync(object request);
+        Task<ControlDesktopPDCv2Response> CreateAsync(ControlDesktopPDCv2Request request);
     }
 
-    public class CloudPDCRefundSDK: ICloudPDCRefundSDK
+    public class DesktopPDCTransactionV2SDK: IDesktopPDCTransactionV2SDK
     {
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
@@ -45,7 +44,7 @@ namespace Gateway
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
 
-        public CloudPDCRefundSDK(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
+        public DesktopPDCTransactionV2SDK(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
             _securityClient = securityClient;
@@ -54,20 +53,20 @@ namespace Gateway
         }
         
 
-        public async Task<InitiateCloudPDCRefundResponse> CreateAsync(object request)
+        public async Task<ControlDesktopPDCv2Response> CreateAsync(ControlDesktopPDCv2Request request)
         {
             string baseUrl = _serverUrl;
             if (baseUrl.EndsWith("/"))
             {
                 baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
             }
-            var urlString = baseUrl + "/QuickChip#Refund";
+            var urlString = URLBuilder.Build(baseUrl, "/Payment/{TransType}#WinPDC_PAX", request);
             
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "Request", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "json");
             if (serializedBody == null) 
             {
                 throw new ArgumentNullException("request body is required");
@@ -83,22 +82,13 @@ namespace Gateway
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new InitiateCloudPDCRefundResponse
+            var response = new ControlDesktopPDCv2Response
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.ResponseGenericPDC = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-                
-                return response;
-            }
-            response.ResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            throw new NotImplementedException();
             return response;
         }
         

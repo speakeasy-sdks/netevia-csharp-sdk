@@ -1,13 +1,24 @@
-# CloudPDCRefundSDK
-(*CloudPDCRefund*)
+# TokenTransactionSDK
+(*TokenTransaction*)
 
 ### Available Operations
 
-* [Create](#create) - Initiate a Refund request.
+* [Create](#create) - How to initiate Token based transaction requests.
 
 ## Create
 
-Initiate a Refund request to Netevia Payment Device Controller.   
+Initiate <b>Token</b> based transaction requests to Netevia Gateway.<sup>1</sup><br>
+
+*<span style="color:green">Valid actions:</span>*
+---
+___
+- <span style="color:red">CreateCardToken</span>: is used to create card token.
+- <span style="color:red">DeleteCardToken<sup>2</sup></span>: is used to delete exist card token.
+- <span style="color:red">GetCardTokenInfo</span>: is used to retrieve card data(masked) linked to a token.
+- <span style="color:red">UpdateCardTokenInfo</span>: is used to update card token information. It supports update ExpDate, CustomerAddress, CustomerZipCode.
+<hr>
+<sup>1</sup>Use the examples for different 'Token' flavours<br>
+<sup>2</sup>Pay attention that calling this API will delete the provided 'CardToken'
 <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
 
 
@@ -19,7 +30,7 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
+var res = await sdk.TokenTransaction.CreateAsync(new GrpCardInfo() {
     AccountNum = "5415244444444444",
     CVVNum = "123",
     CardPresent = Gateway.Models.Shared.GrpCardInfoCardPresent.Y,
@@ -53,5 +64,5 @@ var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
 
 ### Response
 
-**[InitiateCloudPDCRefundResponse](../../models/operations/InitiateCloudPDCRefundResponse.md)**
+**[CardTokenResponse](../../models/operations/CardTokenResponse.md)**
 
