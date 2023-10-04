@@ -155,8 +155,8 @@ paths:
         <hr>
         <sup>1</sup>please refer to 'Examples' section for sample subsets  
       operationId: restAPI
-      x-speakeasy-name-override: transaction
-      x-speakeasy-group: Gateway
+      x-speakeasy-name-override: create
+      x-speakeasy-group: Transaction
       requestBody:
         $ref: '#/components/requestBodies/genericRequest'
       responses:
@@ -184,8 +184,8 @@ paths:
         <sup>1</sup>Use the examples for different 'Sale' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPISale
-      x-speakeasy-name-override: transaction
-      x-speakeasy-group: Sale
+      x-speakeasy-name-override: create
+      x-speakeasy-group: SaleTransaction
       requestBody:
         content:
           application/json:
