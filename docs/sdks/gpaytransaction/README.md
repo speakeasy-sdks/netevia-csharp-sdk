@@ -1,13 +1,18 @@
-# CloudPDCRefundSDK
-(*CloudPDCRefund*)
+# GPayTransactionSDK
+(*GPayTransaction*)
 
 ### Available Operations
 
-* [Create](#create) - Initiate a Refund request.
+* [Create](#create) - Google Pay ™.
 
 ## Create
 
-Initiate a Refund request to Netevia Payment Device Controller.   
+It support GPay, the transasction type same with restApi, but the request must container Payload and PayAPI item.<br>
+This is the full set of parameters that can be used. All the data is sent in the body of the request.<br>
+Depending on the transaction type only a subset of these fields are mandatory!<sup>1</sup><br>
+***<span style="color:green">Valid actions:</span>***  
+<hr>
+<sup>1</sup>please refer to 'samples' section for sample subsets 
 <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
 
 
@@ -19,7 +24,7 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
+var res = await sdk.GPayTransaction.CreateAsync(new GrpCardInfo() {
     AccountNum = "5415244444444444",
     CVVNum = "123",
     CardPresent = Gateway.Models.Shared.GrpCardInfoCardPresent.Y,
@@ -53,5 +58,5 @@ var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
 
 ### Response
 
-**[InitiateCloudPDCRefundResponse](../../models/operations/InitiateCloudPDCRefundResponse.md)**
+**[RestGPayResponse](../../models/operations/RestGPayResponse.md)**
 

@@ -1,13 +1,16 @@
-# CloudPDCRefundSDK
-(*CloudPDCRefund*)
+# RefundSDK
+(*Refund*)
 
 ### Available Operations
 
-* [Create](#create) - Initiate a Refund request.
+* [Create](#create) - How to initiate Refund transaction requests.
 
 ## Create
 
-Initiate a Refund request to Netevia Payment Device Controller.   
+Initiate a <b>Refund</b> transaction request to Netevia Gateway.<sup>1</sup><br>
+A <b>Refund</b> transaction is used to authorize a refund to a customer's credit card account.
+<hr>
+<sup>1</sup>Use the examples for different 'Refund' flavours
 <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
 
 
@@ -19,7 +22,7 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
+var res = await sdk.Refund.CreateAsync(new GrpCardInfo() {
     AccountNum = "5415244444444444",
     CVVNum = "123",
     CardPresent = Gateway.Models.Shared.GrpCardInfoCardPresent.Y,
@@ -53,5 +56,5 @@ var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
 
 ### Response
 
-**[InitiateCloudPDCRefundResponse](../../models/operations/InitiateCloudPDCRefundResponse.md)**
+**[RestAPIRefundResponse](../../models/operations/RestAPIRefundResponse.md)**
 

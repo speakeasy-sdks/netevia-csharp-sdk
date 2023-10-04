@@ -1,13 +1,18 @@
-# CloudPDCRefundSDK
-(*CloudPDCRefund*)
+# ACHCreditTransactionSDK
+(*ACHCreditTransaction*)
 
 ### Available Operations
 
-* [Create](#create) - Initiate a Refund request.
+* [Create](#create) - ACH Credit transactions.
 
 ## Create
 
-Initiate a Refund request to Netevia Payment Device Controller.   
+Initiate an <b>ACH</b> credit transaction request to Netevia Gateway.<sup>1</sup><br>
+An <b>ACH</b> credit transaction is used to allow merchants to pay using ACH and transfer money to other bank accounts.<br>
+To be more generic and have a similar approach as for Debit ACH, we can also simulate the single PayOut call for a batch of payments with multiple individual credit transactions calls that will be approved offline by us and when batching happens we can generate the PayOut request to GMS as a single API call(batch file upload) as they require. Now GMS processor support.
+<hr>
+<sup>1</sup>Use the examples for different 'ACH Credit' request flavours.
+<div>
 <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
 
 
@@ -19,7 +24,7 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
+var res = await sdk.ACHCreditTransaction.CreateAsync(new GrpCardInfo() {
     AccountNum = "5415244444444444",
     CVVNum = "123",
     CardPresent = Gateway.Models.Shared.GrpCardInfoCardPresent.Y,
@@ -53,5 +58,5 @@ var res = await sdk.CloudPDCRefund.CreateAsync(new GrpCardInfo() {
 
 ### Response
 
-**[InitiateCloudPDCRefundResponse](../../models/operations/InitiateCloudPDCRefundResponse.md)**
+**[RestAPIACHCreditResponse](../../models/operations/RestAPIACHCreditResponse.md)**
 
