@@ -155,7 +155,8 @@ paths:
         <hr>
         <sup>1</sup>please refer to 'Examples' section for sample subsets  
       operationId: restAPI
-      x-speakeasy-group: API
+      x-speakeasy-name-override: transaction
+      x-speakeasy-group: Gateway
       requestBody:
         $ref: '#/components/requestBodies/genericRequest'
       responses:
@@ -183,7 +184,8 @@ paths:
         <sup>1</sup>Use the examples for different 'Sale' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPISale
-      x-speakeasy-group: APISale
+      x-speakeasy-name-override: transaction
+      x-speakeasy-group: Sale
       requestBody:
         content:
           application/json:
@@ -252,7 +254,8 @@ paths:
         <sup>1</sup>Use the examples for different 'Auth/Finalize' flavours 
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIAuth
-      x-speakeasy-group: APIAuth
+      x-speakeasy-group: Auth
+      x-speakeasy-name-override: finalize
       requestBody:
         content:
           application/json:
@@ -297,7 +300,8 @@ paths:
         <sup>1</sup>Use the examples for different request samples.
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIVerifyInquiry
-      x-speakeasy-group: APIVerify
+      x-speakeasy-group: Verify
+      x-speakeasy-name-oeverride: inquiry
       requestBody:
         content:
           application/json:
@@ -341,7 +345,8 @@ paths:
         <sup>1</sup>Use the examples for different 'GetTransInfo' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIGetTransInfo
-      x-speakeasy-group: APIGetTransInfo
+      x-speakeasy-group: TransInfo
+      x-speakeasy-name-override: create
       requestBody:
         content:
           application/json:
@@ -397,7 +402,8 @@ paths:
         <sup>1</sup>Use the examples for different 'Refund' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIRefund
-      x-speakeasy-group: APIRefund
+      x-speakeasy-group: Refund
+      x-speakeasy-name-override: create
       requestBody:
         content:
           application/json:
@@ -443,7 +449,8 @@ paths:
         <sup>1</sup>Use the examples for different 'Void/Reverse/Cancel' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIVoid
-      x-speakeasy-group: APIVoid
+      x-speakeasy-group: Transaction
+      x-speakeasy-name-override: void
       requestBody:
         content:
           application/json:
@@ -493,7 +500,8 @@ paths:
         <sup>1</sup>Use the examples for different 'Modify' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIModify
-      x-speakeasy-group: APIModify
+      x-speakeasy-group: Transaction
+      x-speakeasy-name-override: modify
       requestBody:
         content:
           application/json:
@@ -540,8 +548,9 @@ paths:
         <sup>1</sup>Use the examples for different 'Token' flavours<br>
         <sup>2</sup>Pay attention that calling this API will delete the provided 'CardToken'
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
-      operationId: restAPIToken
-      x-speakeasy-group: APIToken
+      operationId: cardToken
+      x-speakeasy-group: TokenTransaction
+      x-speakeasy-name-override: create
       requestBody:
         content:
           application/json:
@@ -607,7 +616,8 @@ paths:
         - <span style="color:red">Batch</span> : is used to close the current open batch and settle it. It is supported by terminal capture only .For host capture, merchant don’t need submit batch request. For GMS ACH Credit batch, please check the examples from ACHCredit section.
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIBatch
-      x-speakeasy-group: APIBatch
+      x-speakeasy-group: Transaction
+      x-speakeasy-name-override: BatchClose
       requestBody:
         content:
           application/json:
@@ -647,7 +657,8 @@ paths:
         <sup>1</sup>Use the examples for different 'ACH Debit' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIACHDebit
-      x-speakeasy-group: APIACHDebit
+      x-speakeasy-group: ACHDebitTransaction
+      x-speakeasy-name-override: create
       requestBody:
         content:
           application/json:
@@ -689,7 +700,8 @@ paths:
         <div>
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIACHCredit
-      x-speakeasy-group: APIACHCredit
+      x-speakeasy-group: ACHCreditTransaction
+      x-speakeasy-name-override: create
       requestBody:
         content:
           application/json:
@@ -764,7 +776,8 @@ paths:
         <div>
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIGift
-      x-speakeasy-group: APIGift
+      x-speakeasy-group: GiftTransaction
+      x-speakeasy-name-override: create
       requestBody:
         content:
           application/json:
@@ -861,7 +874,8 @@ paths:
         <hr>
         <sup>1</sup>please refer to 'samples' section for sample subsets 
       operationId: batchAPI
-      x-speakeasy-group: API
+      x-speakeasy-group: Transaction
+      x-speakeasy-name-override: batchQuery
       requestBody:
         content:
           application/json:
@@ -903,7 +917,8 @@ paths:
         - GooglePay API
       summary: Google Pay ™.
       operationId: restGPay
-      x-speakeasy-group: GPay
+      x-speakeasy-group: GPayTransaction
+      x-speakeasy-name-override: create
       description: |
         It support GPay, the transasction type same with restApi, but the request must container Payload and PayAPI item.<br>
         This is the full set of parameters that can be used. All the data is sent in the body of the request.<br>
@@ -945,7 +960,8 @@ paths:
         - QRPay API
       summary: Integrated QRPay API interface
       operationId: integrateQRPay
-      x-speakeasy-group: QRPay
+      x-speakeasy-group: QRPayTransaction
+      x-speakeasy-name-override: create
       description: |
         QRPay flow char <br>
         <img src="https://testlink.c9pg.com/images/QRPayImages/Image_QRPay.png"> 
@@ -1034,7 +1050,8 @@ paths:
         - PDC / Desktop PDC
       summary: Control desktop PDC through Netevia Server to complete the transaction.
       operationId: controlDesktopPDC
-      x-speakeasy-group: DesktopPDC
+      x-speakeasy-group: DesktopPDCTransaction
+      x-speakeasy-name-override: create
       description: |
         All transaction type are support. use this way you can control desktop PDC to read card data.
         Desktop PDC version need above 2.2.7. and you need add the websocket clinet configuration.
@@ -1059,7 +1076,8 @@ paths:
         - PDC / CloudPDC
       summary: Payment Device Controller - card reader device management API.
       operationId: controlCloudPDC
-      x-speakeasy-group: CloudPDC
+      x-speakeasy-group: PaymentDeviceController
+      x-speakeasy-name-override: create
       description: |
         Payment Device Controller API, dedicated
         *<span style="color:green">Valid actions:</span>*
@@ -1185,7 +1203,8 @@ paths:
         - PDC / CloudPDC
       summary: Initiate a transaction request.
       operationId: initiateCloudPDCSale
-      x-speakeasy-group: CloudPDCSale
+      x-speakeasy-group: CloudPDCSaleTransaction
+      x-speakeasy-name-override: create
       description: |
         Initiate a transaction request to Netevia Payment Device Controller. For more samples please review the /restApi endpoint as all transaction types can be used also on this endpoint(without card data). 
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
@@ -1243,6 +1262,7 @@ paths:
       summary: Initiate a Refund request.
       operationId: initiateCloudPDCRefund
       x-speakeasy-group: CloudPDCRefund
+      x-speakeasy-name-override: create
       description: |
         Initiate a Refund request to Netevia Payment Device Controller.   
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
@@ -1285,7 +1305,8 @@ paths:
         <hr>
         <sup>1</sup>please refer to 'Examples' section for sample subsets  
       operationId: restAPIv2
-      x-speakeasy-group: APIv2
+      x-speakeasy-group: TransactionV2
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -1318,7 +1339,8 @@ paths:
         <sup>1</sup>Use the examples for different 'Sale' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIv2Sale
-      x-speakeasy-group: APIv2Sale
+      x-speakeasy-group: SaleTransactionV2
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -1392,7 +1414,8 @@ paths:
         <sup>1</sup>Use the examples for different 'Auth/Finalize' flavours 
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIv2Auth
-      x-speakeasy-group: APIv2Auth
+      x-speakeasy-group: TransactionAuthV2
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -1442,7 +1465,8 @@ paths:
         <sup>1</sup>Use the examples for different request samples.
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIv2VerifyInquiry
-      x-speakeasy-group: APIv2Verify
+      x-speakeasy-group: VerifyTransactionV2
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -1491,7 +1515,8 @@ paths:
         <sup>1</sup>Use the examples for different 'GetTransInfo' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIv2GetTransInfo
-      x-speakeasy-group: APIv2GetTransInfo
+      x-speakeasy-group: TransactionInfoV2
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -1552,7 +1577,8 @@ paths:
         <sup>1</sup>Use the examples for different 'Refund' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIv2Refund
-      x-speakeasy-group: APIv2Refund
+      x-speakeasy-group: RefundTransctionV2
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -1603,7 +1629,8 @@ paths:
         <sup>1</sup>Use the examples for different 'Void/Reverse/Cancel' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIv2Void
-      x-speakeasy-group: APIv2Void
+      x-speakeasy-group: VoidTransactionV2
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -1658,7 +1685,8 @@ paths:
         <sup>1</sup>Use the examples for different 'Modify' flavours
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIv2Modify
-      x-speakeasy-group: APIv2Modify
+      x-speakeasy-group: ModifyTransactionV2
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -1711,7 +1739,8 @@ paths:
         <sup>2</sup>Pay attention that calling this API will delete the provided 'CardToken'
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIv2Token
-      x-speakeasy-group: APIv2Token
+      x-speakeasy-group: TokenTransactionV2
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -1782,7 +1811,8 @@ paths:
         - <span style="color:red">Batch</span> : is used to close the current open batch and settle it. It is supported by terminal capture only .For host capture, merchant don’t need submit batch request. For GMS ACH Credit batch, please check the examples from ACHCredit section.
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIv2Batch
-      x-speakeasy-group: APIv2Batch
+      x-speakeasy-group: BatchTransaction
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -1832,7 +1862,8 @@ paths:
         - $ref: '#/components/parameters/NeedSwipeCard'
         - $ref: '#/components/parameters/GMID'
       operationId: restAPIv2ACHDebit
-      x-speakeasy-group: APIv2ACHDebit
+      x-speakeasy-group: ACHDebitTransaction
+      x-speakeasy-name-override: create
       requestBody:
         content:
           application/json:
@@ -1879,7 +1910,8 @@ paths:
         - $ref: '#/components/parameters/NeedSwipeCard'
         - $ref: '#/components/parameters/GMID'
       operationId: restAPIv2ACHCredit
-      x-speakeasy-group: APIv2ACHCredit
+      x-speakeasy-group: ACHCreditTransaction
+      x-speakeasy-name-override: create
       requestBody:
         content:
           application/json:
@@ -1954,7 +1986,8 @@ paths:
         <div>
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIv2Gift
-      x-speakeasy-group: APIv2Gift
+      x-speakeasy-group: GiftTransaction
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -2056,7 +2089,8 @@ paths:
         <hr>
         <sup>1</sup>please refer to 'samples' section for sample subsets 
       operationId: batchAPIv2
-      x-speakeasy-group: APIv2
+      x-speakeasy-group: BatchQueryV2
+      x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
         - $ref: '#/components/parameters/TerminalType'
@@ -2103,7 +2137,8 @@ paths:
         - PDC / Desktop PDC v2
       summary: Control desktop PDC through Netevia Server to complete the transaction.
       operationId: controlDesktopPDCv2
-      x-speakeasy-group: DesktopPDCv2
+      x-speakeasy-group: DesktopPDCTransactionV2
+      x-speakeasy-name-override: create
       description: |
         All transaction type are support. use this way you can control desktop PDC to read card data.
         Desktop PDC version need above 2.2.7. and you need add the websocket clinet configuration.
@@ -2133,7 +2168,8 @@ paths:
         - PDC / CloudPDC v2
       summary: Cloud Payment Device Controller - card reader device management API.
       operationId: controlCloudPDCv2Ingenico
-      x-speakeasy-group: CloudPDCv2Ingenico
+      x-speakeasy-group: CloudPDCIngenicoTransactionV2
+      x-speakeasy-name-override: create
       description: |
         Payment Device Controller API, dedicated
         *<span style="color:green">Valid actions:</span>*
@@ -2264,7 +2300,8 @@ paths:
         - PDC / CloudPDC v2
       summary: Initiate a transaction request.
       operationId: initiateCloudPDCv2Sale
-      x-speakeasy-group: CloudPDCv2Sale
+      x-speakeasy-group: CloudPDCSaleTransactionV2
+      x-speakeasy-name-override: create
       description: |
         Initiate a transaction request to Netevia Payment Device Controller. For more samples please review the /restApi endpoint as all transaction types can be used also on this endpoint(without card data). 
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
@@ -2326,7 +2363,8 @@ paths:
         - PDC / CloudPDC v2
       summary: Initiate a Refund request.
       operationId: initiateCloudPDCv2Refund
-      x-speakeasy-group: CloudPDCv2Refund
+      x-speakeasy-group: CloudPDCRefundv2
+      x-speakeasy-name-override: create
       description: |
         Initiate a Refund request to Netevia Payment Device Controller.   
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
