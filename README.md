@@ -1,37 +1,3 @@
-#  SDK
-
-<div align="left">
-    <a href="https://speakeasyapi.dev/"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>   
-</div>
-
-### Local development
-
-Once you have the SDK setup you may want to iterate on the SDK. Speakeasy supports OpenAPI vendor extensions that can be added to your spec to customize the SDK ergonomics (method names, namespacing resources etc.) and functionality (adding retries, pagination, multiple server support etc)
-
-To get started install the Speakeasy CLI.
-
-In your terminal, run:
-
-```bash
-brew install speakeasy-api/homebrew-tap/speakeasy
-```
-Once you annonate your spec with an extension you will want to run `speakeasy validate` to check the spec for correctness and `speakeasy generate` to recreate the SDK locally. More documentation on OpenAPI extensions [here](https://speakeasyapi.dev/docs/customize-sdks/namespaces/). Here's an example of adding a multiple server support to the spec so that your SDK supports production and sandbox versions of your API. 
-
-```yaml
-info:
-  title: Example
-  version: 0.0.1
-servers:
-  - url: https://prod.example.com # Used as the default URL by the SDK
-    description: Our production environment
-    x-speakeasy-server-id: prod
-  - url: https://sandbox.example.com
-    description: Our sandbox environment
-    x-speakeasy-server-id: sandbox
-```
-
-Once you're finished iterating and happy with the output push only the latest version of spec into the repo and regenerate the SDK using step 6 above.
-
 <!-- Start SDK Installation -->
 ## SDK Installation
 
