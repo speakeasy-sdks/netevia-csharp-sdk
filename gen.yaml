@@ -29,7 +29,7 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
 csharp:
-  version: 0.1.0
+  version: 0.2.0
   author: Speakeasy
   dotnetVersion: net5.0
   maxMethodParams: 0
