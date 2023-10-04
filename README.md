@@ -9,6 +9,8 @@
 <!-- Start SDK Installation -->
 ## SDK Installation
 
+:warning: This is an example SDK. It is not yet published to the package manager. Please download locally to test out. 
+
 ### Nuget
 
 ```bash
