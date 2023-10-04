@@ -14,14 +14,14 @@ Desktop PDC version need above 2.2.7. and you need add the websocket clinet conf
 ### Example Usage
 
 ```csharp
-using Speakeasybar;
-using Speakeasybar.Models.Shared;
+using Gateway;
+using Gateway.Models.Shared;
 
-var sdk = new SpeakeasybarSDK();
+var sdk = new GatewaySDK();
 
 var res = await sdk.DesktopPDC.ControlAsync(new GrpCardDataEncryption() {
     EncrptBlock = "yellow",
-    EncrptTrgt = Speakeasybar.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
+    EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
     KeyID = "66257982464",
 });
 

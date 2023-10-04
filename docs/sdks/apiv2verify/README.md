@@ -18,22 +18,22 @@ A <b>Verify</b> transaction is used to check if the card is valid.
 ### Example Usage
 
 ```csharp
-using Speakeasybar;
-using Speakeasybar.Models.Operations;
-using Speakeasybar.Models.Shared;
+using Gateway;
+using Gateway.Models.Operations;
+using Gateway.Models.Shared;
 
-var sdk = new SpeakeasybarSDK();
+var sdk = new GatewaySDK();
 
 var res = await sdk.APIv2Verify.RestAsync(new RestAPIv2VerifyInquiryRequest() {
     Gmid = "so Fantastic online",
-    NeedSwipeCard = Speakeasybar.Models.Shared.NeedSwipeCard.N,
+    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
     RequestBody = new GrpCardDataEncryption() {
         EncrptBlock = "Coupe mobile Chrysler",
-        EncrptTrgt = Speakeasybar.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
+        EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
         KeyID = "66257982464",
     },
-    TerminalType = Speakeasybar.Models.Shared.TerminalType.M6Plus,
-    TransType = Speakeasybar.Models.Shared.TransType.Refund,
+    TerminalType = Gateway.Models.Shared.TerminalType.M6Plus,
+    TransType = Gateway.Models.Shared.TransType.Refund,
 });
 
 // handle response

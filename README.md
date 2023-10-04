@@ -4,17 +4,17 @@
 ### Nuget
 
 ```bash
-dotnet add package openapi
+dotnet add package netevia
 ```
 <!-- End SDK Installation -->
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```csharp
-using Speakeasybar;
-using Speakeasybar.Models.Shared;
+using Gateway;
+using Gateway.Models.Shared;
 
-var sdk = new SpeakeasybarSDK();
+var sdk = new GatewaySDK();
 
 var res = await sdk.Api.BatchAsync(new GrpPIN() {
     Ksn = "FFFF6543210000A00029",
@@ -179,8 +179,6 @@ var res = await sdk.Api.BatchAsync(new GrpPIN() {
 
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
