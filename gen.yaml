@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: dcb421cd059d94db6c3dbec2d92af9fc
   docVersion: 0.1.0
-  speakeasyVersion: 1.93.2
-  generationVersion: 2.144.7
+  speakeasyVersion: 1.93.3
+  generationVersion: 2.146.1
 generation:
   comments:
     disableComments: false
@@ -29,7 +29,7 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
 csharp:
-  version: 0.2.0
+  version: 0.3.0
   author: Speakeasy
   dotnetVersion: net5.0
   maxMethodParams: 0
