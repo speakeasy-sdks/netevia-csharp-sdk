@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - ACH Debit transactions.
+* [RestAPIACHDebit](#restapiachdebit) - ACH Debit transactions.
 
-## Rest
+## RestAPIACHDebit
 
 Initiate an <b>ACH</b> debit transaction request to Netevia Gateway.<sup>1</sup><br>
 An <b>ACH</b> debit transaction is used to allow customers to pay using checks. The data from the check is digitaly converted and the transaction is posted to the customer bank account.
@@ -22,13 +22,12 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIACHDebit.RestAsync(new GrpACH() {
-    AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
-    EleCheckAccountNumber = "125401754499",
-    EleCheckRoutingNumber = "102000021",
-    EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
-    EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
-    TotalCreditAmt = "25000",
+var res = await sdk.APIACHDebit.RestAPIACHDebitAsync(new GrpExtendInfo() {
+    AdditionalInfo = "Key1=Val10x1CKey2=Val2...",
+    AuthCode = "OK1234",
+    InvoiceNum = "Inv123456",
+    OrderNum = "Ord12345",
+    VoucherNum = "Voucher12345",
 });
 
 // handle response

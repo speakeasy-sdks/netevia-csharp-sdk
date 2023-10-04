@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - Google Pay ™.
+* [RestGPay](#restgpay) - Google Pay ™.
 
-## Rest
+## RestGPay
 
 It support GPay, the transasction type same with restApi, but the request must container Payload and PayAPI item.<br>
 This is the full set of parameters that can be used. All the data is sent in the body of the request.<br>
@@ -24,13 +24,12 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.GPay.RestAsync(new GrpACH() {
-    AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
-    EleCheckAccountNumber = "125401754499",
-    EleCheckRoutingNumber = "102000021",
-    EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
-    EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
-    TotalCreditAmt = "25000",
+var res = await sdk.GPay.RestGPayAsync(new GrpAmount() {
+    IncCashBackAmt = 10000,
+    IncTaxAmt = 10000,
+    MainAmt = 10000,
+    TaxIndicator = Gateway.Models.Shared.GrpAmountTaxIndicator.Ntprvd,
+    TipAmt = 10000,
 });
 
 // handle response

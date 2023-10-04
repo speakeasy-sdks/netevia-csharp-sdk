@@ -30,17 +30,17 @@ namespace Gateway
         /// 
         /// </remarks>
         /// </summary>
-        Task<InitiateCloudPDCv2RefundResponse> InitiateAsync(InitiateCloudPDCv2RefundRequest request);
+        Task<InitiateCloudPDCv2RefundResponse> InitiateCloudPDCv2RefundAsync(InitiateCloudPDCv2RefundRequest request);
     }
 
     public class CloudPDCv2RefundSDK: ICloudPDCv2RefundSDK
     {
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.3.0";
+        private const string _sdkVersion = "0.4.0";
         private const string _sdkGenVersion = "2.146.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.3.0 2.146.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.4.0 2.146.1 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -54,7 +54,7 @@ namespace Gateway
         }
         
 
-        public async Task<InitiateCloudPDCv2RefundResponse> InitiateAsync(InitiateCloudPDCv2RefundRequest request)
+        public async Task<InitiateCloudPDCv2RefundResponse> InitiateCloudPDCv2RefundAsync(InitiateCloudPDCv2RefundRequest request)
         {
             string baseUrl = _serverUrl;
             if (baseUrl.EndsWith("/"))

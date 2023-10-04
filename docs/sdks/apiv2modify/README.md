@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - How to initiate Modify/Adjust/AddTip transaction requests.
+* [RestAPIv2Modify](#restapiv2modify) - How to initiate Modify/Adjust/AddTip transaction requests.
 
-## Rest
+## RestAPIv2Modify
 
 Initiate a <b>Modify/Adjust/AddTip</b> transaction request to Netevia Gateway.<sup>1</sup><br>
 <b>Modify</b> transaction is used to alter the transaction amount of an original transaction, Auth or Sale.<br>
@@ -25,16 +25,16 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIv2Modify.RestAsync(new RestAPIv2ModifyRequest() {
-    Gmid = "so Fantastic online",
+var res = await sdk.APIv2Modify.RestAPIv2ModifyAsync(new RestAPIv2ModifyRequest() {
+    Gmid = "synergies Marketing Cedi",
     NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
-    RequestBody = new GrpCardDataEncryption() {
-        EncrptBlock = "Coupe mobile Chrysler",
-        EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
-        KeyID = "66257982464",
+    RequestBody = new GrpTrace() {
+        Gtrc = "e134bff9203f44e8974a11b2aef7665d",
+        NewGTRC = "fe31047eca6b47f2a07ead29be5a7672",
+        SourceTraceNum = "123456",
     },
-    TerminalType = Gateway.Models.Shared.TerminalType.M6Plus,
-    TransType = Gateway.Models.Shared.TransType.Refund,
+    TerminalType = Gateway.Models.Shared.TerminalType.Dejavoo,
+    TransType = Gateway.Models.Shared.TransType.Modify,
 });
 
 // handle response

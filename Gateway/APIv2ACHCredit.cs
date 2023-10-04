@@ -35,17 +35,17 @@ namespace Gateway
         /// 
         /// </remarks>
         /// </summary>
-        Task<RestAPIv2ACHCreditResponse> RestAsync(RestAPIv2ACHCreditRequest request);
+        Task<RestAPIv2ACHCreditResponse> RestAPIv2ACHCreditAsync(RestAPIv2ACHCreditRequest request);
     }
 
     public class APIv2ACHCreditSDK: IAPIv2ACHCreditSDK
     {
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.3.0";
+        private const string _sdkVersion = "0.4.0";
         private const string _sdkGenVersion = "2.146.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.3.0 2.146.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.4.0 2.146.1 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -59,7 +59,7 @@ namespace Gateway
         }
         
 
-        public async Task<RestAPIv2ACHCreditResponse> RestAsync(RestAPIv2ACHCreditRequest request)
+        public async Task<RestAPIv2ACHCreditResponse> RestAPIv2ACHCreditAsync(RestAPIv2ACHCreditRequest request)
         {
             string baseUrl = _serverUrl;
             if (baseUrl.EndsWith("/"))

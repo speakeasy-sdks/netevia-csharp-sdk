@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - Request batch closing.
+* [RestAPIBatch](#restapibatch) - Request batch closing.
 
-## Rest
+## RestAPIBatch
 
 Initiate a batch close request to Netevia Gateway
 
@@ -24,13 +24,10 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIBatch.RestAsync(new GrpACH() {
-    AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
-    EleCheckAccountNumber = "125401754499",
-    EleCheckRoutingNumber = "102000021",
-    EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
-    EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
-    TotalCreditAmt = "25000",
+var res = await sdk.APIBatch.RestAPIBatchAsync(new GrpTrace() {
+    Gtrc = "e134bff9203f44e8974a11b2aef7665d",
+    NewGTRC = "fe31047eca6b47f2a07ead29be5a7672",
+    SourceTraceNum = "123456",
 });
 
 // handle response

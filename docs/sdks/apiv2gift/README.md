@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - Gitf transactions.
+* [RestAPIv2Gift](#restapiv2gift) - Gitf transactions.
 
-## Rest
+## RestAPIv2Gift
 
 Initiate a <b>Gift</b> credit transaction request to Netevia Gateway.<sup>1</sup><br>
 A <b>Gift</b> transaction is used to allow Account to pay using Gift and transfer money or points to merchnat.<br>
@@ -50,16 +50,16 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIv2Gift.RestAsync(new RestAPIv2GiftRequest() {
-    Gmid = "so Fantastic online",
+var res = await sdk.APIv2Gift.RestAPIv2GiftAsync(new RestAPIv2GiftRequest() {
+    Gmid = "transition Ariary Gorgeous",
     NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
     RequestBody = new GrpCardDataEncryption() {
-        EncrptBlock = "Coupe mobile Chrysler",
+        EncrptBlock = "Bronze overriding",
         EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
         KeyID = "66257982464",
     },
     TerminalType = Gateway.Models.Shared.TerminalType.M6Plus,
-    TransType = Gateway.Models.Shared.TransType.Refund,
+    TransType = Gateway.Models.Shared.TransType.Batch,
 });
 
 // handle response

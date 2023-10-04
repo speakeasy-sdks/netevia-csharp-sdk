@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Rest](#rest) - How to initiate Void/Reverse/Cancel transaction requests.
+* [RestAPIv2Void](#restapiv2void) - How to initiate Void/Reverse/Cancel transaction requests.
 
-## Rest
+## RestAPIv2Void
 
 Initiate a <b>Void/Reverse/Cancel</b> transaction request to Netevia Gateway.<sup>1</sup><br>
 <b>Void</b> transaction is used to cancel an authorized transaction before it has been settled.<br>
@@ -25,16 +25,19 @@ using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.APIv2Void.RestAsync(new RestAPIv2VoidRequest() {
-    Gmid = "so Fantastic online",
+var res = await sdk.APIv2Void.RestAPIv2VoidAsync(new RestAPIv2VoidRequest() {
+    Gmid = "Market Northwest Northeast",
     NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
-    RequestBody = new GrpCardDataEncryption() {
-        EncrptBlock = "Coupe mobile Chrysler",
-        EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
-        KeyID = "66257982464",
+    RequestBody = new GrpACH() {
+        AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
+        EleCheckAccountNumber = "125401754499",
+        EleCheckRoutingNumber = "102000021",
+        EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
+        EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
+        TotalCreditAmt = "25000",
     },
-    TerminalType = Gateway.Models.Shared.TerminalType.M6Plus,
-    TransType = Gateway.Models.Shared.TransType.Refund,
+    TerminalType = Gateway.Models.Shared.TerminalType.Dejavoo,
+    TransType = Gateway.Models.Shared.TransType.Unregister,
 });
 
 // handle response
