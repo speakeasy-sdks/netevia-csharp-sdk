@@ -1862,7 +1862,7 @@ paths:
         - $ref: '#/components/parameters/NeedSwipeCard'
         - $ref: '#/components/parameters/GMID'
       operationId: restAPIv2ACHDebit
-      x-speakeasy-group: ACHDebitTransaction
+      x-speakeasy-group: ACHDebitTransactionV2
       x-speakeasy-name-override: create
       requestBody:
         content:
@@ -1910,7 +1910,7 @@ paths:
         - $ref: '#/components/parameters/NeedSwipeCard'
         - $ref: '#/components/parameters/GMID'
       operationId: restAPIv2ACHCredit
-      x-speakeasy-group: ACHCreditTransaction
+      x-speakeasy-group: ACHCreditTransactionV2
       x-speakeasy-name-override: create
       requestBody:
         content:
@@ -1986,7 +1986,7 @@ paths:
         <div>
         <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
       operationId: restAPIv2Gift
-      x-speakeasy-group: GiftTransaction
+      x-speakeasy-group: GiftTransactionV2
       x-speakeasy-name-override: create
       parameters:
         - $ref: '#/components/parameters/TransType'
