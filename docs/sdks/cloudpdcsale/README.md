@@ -14,14 +14,14 @@ Initiate a transaction request to Netevia Payment Device Controller. For more sa
 ### Example Usage
 
 ```csharp
-using Speakeasybar;
-using Speakeasybar.Models.Shared;
+using Gateway;
+using Gateway.Models.Shared;
 
-var sdk = new SpeakeasybarSDK();
+var sdk = new GatewaySDK();
 
 var res = await sdk.CloudPDCSale.InitiateAsync(new GrpCardDataEncryption() {
     EncrptBlock = "Towels Bacon stealthily",
-    EncrptTrgt = Speakeasybar.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
+    EncrptTrgt = Gateway.Models.Shared.GrpCardDataEncryptionEncrptTrgt.Pan,
     KeyID = "66257982464",
 });
 

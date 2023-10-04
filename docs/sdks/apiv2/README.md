@@ -23,15 +23,15 @@ ___
 ### Example Usage
 
 ```csharp
-using Speakeasybar;
-using Speakeasybar.Models.Operations;
-using Speakeasybar.Models.Shared;
+using Gateway;
+using Gateway.Models.Operations;
+using Gateway.Models.Shared;
 
-var sdk = new SpeakeasybarSDK();
+var sdk = new GatewaySDK();
 
 var res = await sdk.APIv2.BatchAsync(new BatchAPIv2Request() {
     Gmid = "Customer lumen liquor",
-    NeedSwipeCard = Speakeasybar.Models.Shared.NeedSwipeCard.Y,
+    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.Y,
     RequestBody = new GrpExtendInfo() {
         AdditionalInfo = "Key1=Val10x1CKey2=Val2...",
         AuthCode = "OK1234",
@@ -39,8 +39,8 @@ var res = await sdk.APIv2.BatchAsync(new BatchAPIv2Request() {
         OrderNum = "Ord12345",
         VoucherNum = "Voucher12345",
     },
-    TerminalType = Speakeasybar.Models.Shared.TerminalType.Dejavoo,
-    TransType = Speakeasybar.Models.Shared.TransType.Register,
+    TerminalType = Gateway.Models.Shared.TerminalType.Dejavoo,
+    TransType = Gateway.Models.Shared.TransType.Register,
 });
 
 // handle response
@@ -70,15 +70,15 @@ Depending on the transaction type only a subset of these fields are mandatory!<s
 ### Example Usage
 
 ```csharp
-using Speakeasybar;
-using Speakeasybar.Models.Operations;
-using Speakeasybar.Models.Shared;
+using Gateway;
+using Gateway.Models.Operations;
+using Gateway.Models.Shared;
 
-var sdk = new SpeakeasybarSDK();
+var sdk = new GatewaySDK();
 
 var res = await sdk.APIv2.RestAsync(new RestAPIv2Request() {
     Gmid = "so Fantastic online",
-    NeedSwipeCard = Speakeasybar.Models.Shared.NeedSwipeCard.N,
+    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
     RequestBody = new GrpEMV() {
         Emv42 = "Coupe mobile Chrysler",
         Emv4F = "Steel Hybrid lavender",
@@ -155,8 +155,8 @@ var res = await sdk.APIv2.RestAsync(new RestAPIv2Request() {
         Emvdf05 = "PNG",
         Emvdf11 = "um North vertical",
     },
-    TerminalType = Speakeasybar.Models.Shared.TerminalType.None,
-    TransType = Speakeasybar.Models.Shared.TransType.Register,
+    TerminalType = Gateway.Models.Shared.TerminalType.None,
+    TransType = Gateway.Models.Shared.TransType.Register,
 });
 
 // handle response

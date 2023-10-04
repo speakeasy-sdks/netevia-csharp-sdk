@@ -14,24 +14,24 @@ Initiate a Refund request to Netevia Payment Device Controller.
 ### Example Usage
 
 ```csharp
-using Speakeasybar;
-using Speakeasybar.Models.Operations;
-using Speakeasybar.Models.Shared;
+using Gateway;
+using Gateway.Models.Operations;
+using Gateway.Models.Shared;
 
-var sdk = new SpeakeasybarSDK();
+var sdk = new GatewaySDK();
 
 var res = await sdk.CloudPDCv2Refund.InitiateAsync(new InitiateCloudPDCv2RefundRequest() {
     Gmid = "Chevrolet neque Hybrid",
-    NeedSwipeCard = Speakeasybar.Models.Shared.NeedSwipeCard.N,
+    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
     RequestBody = new GrpAmount() {
         IncCashBackAmt = 10000,
         IncTaxAmt = 10000,
         MainAmt = 10000,
-        TaxIndicator = Speakeasybar.Models.Shared.GrpAmountTaxIndicator.Ntprvd,
+        TaxIndicator = Gateway.Models.Shared.GrpAmountTaxIndicator.Ntprvd,
         TipAmt = 10000,
     },
-    TerminalType = Speakeasybar.Models.Shared.TerminalType.Dejavoo,
-    TransType = Speakeasybar.Models.Shared.TransType.Ping,
+    TerminalType = Gateway.Models.Shared.TerminalType.Dejavoo,
+    TransType = Gateway.Models.Shared.TransType.Ping,
 });
 
 // handle response

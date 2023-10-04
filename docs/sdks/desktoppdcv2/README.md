@@ -14,15 +14,15 @@ Desktop PDC version need above 2.2.7. and you need add the websocket clinet conf
 ### Example Usage
 
 ```csharp
-using Speakeasybar;
-using Speakeasybar.Models.Operations;
-using Speakeasybar.Models.Shared;
+using Gateway;
+using Gateway.Models.Operations;
+using Gateway.Models.Shared;
 
-var sdk = new SpeakeasybarSDK();
+var sdk = new GatewaySDK();
 
 var res = await sdk.DesktopPDCv2.ControlAsync(new ControlDesktopPDCv2Request() {
     Gmid = "North Southwest Cotton",
-    NeedSwipeCard = Speakeasybar.Models.Shared.NeedSwipeCard.N,
+    NeedSwipeCard = Gateway.Models.Shared.NeedSwipeCard.N,
     RequestBody = new GrpEMV() {
         Emv42 = "Reggae Hybrid",
         Emv4F = "program",
@@ -99,8 +99,8 @@ var res = await sdk.DesktopPDCv2.ControlAsync(new ControlDesktopPDCv2Request() {
         Emvdf05 = "Nuevo Country",
         Emvdf11 = "transmit Montenegro Gasoline",
     },
-    TerminalType = Speakeasybar.Models.Shared.TerminalType.Dejavoo,
-    TransType = Speakeasybar.Models.Shared.TransType.GetStatus,
+    TerminalType = Gateway.Models.Shared.TerminalType.Dejavoo,
+    TransType = Gateway.Models.Shared.TransType.GetStatus,
 });
 
 // handle response

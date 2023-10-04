@@ -33,10 +33,10 @@ ___
 ### Example Usage
 
 ```csharp
-using Speakeasybar;
-using Speakeasybar.Models.Shared;
+using Gateway;
+using Gateway.Models.Shared;
 
-var sdk = new SpeakeasybarSDK();
+var sdk = new GatewaySDK();
 
 var res = await sdk.CloudPDC.ControlAsync(new GrpPIN() {
     Ksn = "FFFF6543210000A00029",

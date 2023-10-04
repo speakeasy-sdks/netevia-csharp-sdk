@@ -44,17 +44,17 @@ New fields
 ### Example Usage
 
 ```csharp
-using Speakeasybar;
-using Speakeasybar.Models.Shared;
+using Gateway;
+using Gateway.Models.Shared;
 
-var sdk = new SpeakeasybarSDK();
+var sdk = new GatewaySDK();
 
 var res = await sdk.APIGift.RestAsync(new GrpACH() {
-    AccountType = Speakeasybar.Models.Shared.GrpACHAccountType.Savings,
+    AccountType = Gateway.Models.Shared.GrpACHAccountType.Savings,
     EleCheckAccountNumber = "125401754499",
     EleCheckRoutingNumber = "102000021",
-    EleCheckServiceProvider = Speakeasybar.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
-    EleCheckTransactionType = Speakeasybar.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
+    EleCheckServiceProvider = Gateway.Models.Shared.GrpACHEleCheckServiceProvider.ElecCheckWEB,
+    EleCheckTransactionType = Gateway.Models.Shared.GrpACHEleCheckTransactionType.EleCheckConversion,
     TotalCreditAmt = "25000",
 });
 
