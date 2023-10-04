@@ -29,42 +29,41 @@ namespace Gateway
     /// </summary>
     public interface IGatewaySDK
     {
-        public IApiSDK Api { get; }
-        public IAPIACHCreditSDK APIACHCredit { get; }
-        public IAPIACHDebitSDK APIACHDebit { get; }
-        public IAPIAuthSDK APIAuth { get; }
-        public IAPIBatchSDK APIBatch { get; }
-        public IAPIGetTransInfoSDK APIGetTransInfo { get; }
-        public IAPIGiftSDK APIGift { get; }
-        public IAPIModifySDK APIModify { get; }
-        public IAPIRefundSDK APIRefund { get; }
-        public IAPISaleSDK APISale { get; }
-        public IAPITokenSDK APIToken { get; }
-        public IAPIVerifySDK APIVerify { get; }
-        public IAPIVoidSDK APIVoid { get; }
-        public IAPIv2SDK APIv2 { get; }
-        public IAPIv2ACHCreditSDK APIv2ACHCredit { get; }
-        public IAPIv2ACHDebitSDK APIv2ACHDebit { get; }
-        public IAPIv2AuthSDK APIv2Auth { get; }
-        public IAPIv2BatchSDK APIv2Batch { get; }
-        public IAPIv2GetTransInfoSDK APIv2GetTransInfo { get; }
-        public IAPIv2GiftSDK APIv2Gift { get; }
-        public IAPIv2ModifySDK APIv2Modify { get; }
-        public IAPIv2RefundSDK APIv2Refund { get; }
-        public IAPIv2SaleSDK APIv2Sale { get; }
-        public IAPIv2TokenSDK APIv2Token { get; }
-        public IAPIv2VerifySDK APIv2Verify { get; }
-        public IAPIv2VoidSDK APIv2Void { get; }
-        public ICloudPDCSDK CloudPDC { get; }
+        public IACHCreditTransactionSDK ACHCreditTransaction { get; }
+        public IACHCreditTransactionV2SDK ACHCreditTransactionV2 { get; }
+        public IACHDebitTransactionSDK ACHDebitTransaction { get; }
+        public IACHDebitTransactionV2SDK ACHDebitTransactionV2 { get; }
+        public IAuthSDK Auth { get; }
+        public IBatchQueryV2SDK BatchQueryV2 { get; }
+        public IBatchTransactionSDK BatchTransaction { get; }
+        public ICloudPDCIngenicoTransactionV2SDK CloudPDCIngenicoTransactionV2 { get; }
         public ICloudPDCRefundSDK CloudPDCRefund { get; }
-        public ICloudPDCSaleSDK CloudPDCSale { get; }
-        public ICloudPDCv2IngenicoSDK CloudPDCv2Ingenico { get; }
-        public ICloudPDCv2RefundSDK CloudPDCv2Refund { get; }
-        public ICloudPDCv2SaleSDK CloudPDCv2Sale { get; }
-        public IDesktopPDCSDK DesktopPDC { get; }
-        public IDesktopPDCv2SDK DesktopPDCv2 { get; }
-        public IGPaySDK GPay { get; }
-        public IQRPaySDK QRPay { get; }
+        public ICloudPDCRefundv2SDK CloudPDCRefundv2 { get; }
+        public ICloudPDCSaleTransactionSDK CloudPDCSaleTransaction { get; }
+        public ICloudPDCSaleTransactionV2SDK CloudPDCSaleTransactionV2 { get; }
+        public IDesktopPDCTransactionSDK DesktopPDCTransaction { get; }
+        public IDesktopPDCTransactionV2SDK DesktopPDCTransactionV2 { get; }
+        public IGPayTransactionSDK GPayTransaction { get; }
+        public IGatewaySDK Gateway { get; }
+        public IGiftTransactionSDK GiftTransaction { get; }
+        public IGiftTransactionV2SDK GiftTransactionV2 { get; }
+        public IModifyTransactionV2SDK ModifyTransactionV2 { get; }
+        public IPaymentDeviceControllerSDK PaymentDeviceController { get; }
+        public IQRPayTransactionSDK QRPayTransaction { get; }
+        public IRefundSDK Refund { get; }
+        public IRefundTransctionV2SDK RefundTransctionV2 { get; }
+        public ISaleSDK Sale { get; }
+        public ISaleTransactionV2SDK SaleTransactionV2 { get; }
+        public ITokenTransactionSDK TokenTransaction { get; }
+        public ITokenTransactionV2SDK TokenTransactionV2 { get; }
+        public ITransInfoSDK TransInfo { get; }
+        public ITransactionSDK Transaction { get; }
+        public ITransactionAuthV2SDK TransactionAuthV2 { get; }
+        public ITransactionInfoV2SDK TransactionInfoV2 { get; }
+        public ITransactionV2SDK TransactionV2 { get; }
+        public IVerifySDK Verify { get; }
+        public IVerifyTransactionV2SDK VerifyTransactionV2 { get; }
+        public IVoidTransactionV2SDK VoidTransactionV2 { get; }
     }
     
     public class SDKConfig
@@ -93,49 +92,48 @@ namespace Gateway
         };
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.4.0";
+        private const string _sdkVersion = "0.5.0";
         private const string _sdkGenVersion = "2.146.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.4.0 2.146.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.5.0 2.146.1 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
-        public IApiSDK Api { get; private set; }
-        public IAPIACHCreditSDK APIACHCredit { get; private set; }
-        public IAPIACHDebitSDK APIACHDebit { get; private set; }
-        public IAPIAuthSDK APIAuth { get; private set; }
-        public IAPIBatchSDK APIBatch { get; private set; }
-        public IAPIGetTransInfoSDK APIGetTransInfo { get; private set; }
-        public IAPIGiftSDK APIGift { get; private set; }
-        public IAPIModifySDK APIModify { get; private set; }
-        public IAPIRefundSDK APIRefund { get; private set; }
-        public IAPISaleSDK APISale { get; private set; }
-        public IAPITokenSDK APIToken { get; private set; }
-        public IAPIVerifySDK APIVerify { get; private set; }
-        public IAPIVoidSDK APIVoid { get; private set; }
-        public IAPIv2SDK APIv2 { get; private set; }
-        public IAPIv2ACHCreditSDK APIv2ACHCredit { get; private set; }
-        public IAPIv2ACHDebitSDK APIv2ACHDebit { get; private set; }
-        public IAPIv2AuthSDK APIv2Auth { get; private set; }
-        public IAPIv2BatchSDK APIv2Batch { get; private set; }
-        public IAPIv2GetTransInfoSDK APIv2GetTransInfo { get; private set; }
-        public IAPIv2GiftSDK APIv2Gift { get; private set; }
-        public IAPIv2ModifySDK APIv2Modify { get; private set; }
-        public IAPIv2RefundSDK APIv2Refund { get; private set; }
-        public IAPIv2SaleSDK APIv2Sale { get; private set; }
-        public IAPIv2TokenSDK APIv2Token { get; private set; }
-        public IAPIv2VerifySDK APIv2Verify { get; private set; }
-        public IAPIv2VoidSDK APIv2Void { get; private set; }
-        public ICloudPDCSDK CloudPDC { get; private set; }
+        public IACHCreditTransactionSDK ACHCreditTransaction { get; private set; }
+        public IACHCreditTransactionV2SDK ACHCreditTransactionV2 { get; private set; }
+        public IACHDebitTransactionSDK ACHDebitTransaction { get; private set; }
+        public IACHDebitTransactionV2SDK ACHDebitTransactionV2 { get; private set; }
+        public IAuthSDK Auth { get; private set; }
+        public IBatchQueryV2SDK BatchQueryV2 { get; private set; }
+        public IBatchTransactionSDK BatchTransaction { get; private set; }
+        public ICloudPDCIngenicoTransactionV2SDK CloudPDCIngenicoTransactionV2 { get; private set; }
         public ICloudPDCRefundSDK CloudPDCRefund { get; private set; }
-        public ICloudPDCSaleSDK CloudPDCSale { get; private set; }
-        public ICloudPDCv2IngenicoSDK CloudPDCv2Ingenico { get; private set; }
-        public ICloudPDCv2RefundSDK CloudPDCv2Refund { get; private set; }
-        public ICloudPDCv2SaleSDK CloudPDCv2Sale { get; private set; }
-        public IDesktopPDCSDK DesktopPDC { get; private set; }
-        public IDesktopPDCv2SDK DesktopPDCv2 { get; private set; }
-        public IGPaySDK GPay { get; private set; }
-        public IQRPaySDK QRPay { get; private set; }
+        public ICloudPDCRefundv2SDK CloudPDCRefundv2 { get; private set; }
+        public ICloudPDCSaleTransactionSDK CloudPDCSaleTransaction { get; private set; }
+        public ICloudPDCSaleTransactionV2SDK CloudPDCSaleTransactionV2 { get; private set; }
+        public IDesktopPDCTransactionSDK DesktopPDCTransaction { get; private set; }
+        public IDesktopPDCTransactionV2SDK DesktopPDCTransactionV2 { get; private set; }
+        public IGPayTransactionSDK GPayTransaction { get; private set; }
+        public IGatewaySDK Gateway { get; private set; }
+        public IGiftTransactionSDK GiftTransaction { get; private set; }
+        public IGiftTransactionV2SDK GiftTransactionV2 { get; private set; }
+        public IModifyTransactionV2SDK ModifyTransactionV2 { get; private set; }
+        public IPaymentDeviceControllerSDK PaymentDeviceController { get; private set; }
+        public IQRPayTransactionSDK QRPayTransaction { get; private set; }
+        public IRefundSDK Refund { get; private set; }
+        public IRefundTransctionV2SDK RefundTransctionV2 { get; private set; }
+        public ISaleSDK Sale { get; private set; }
+        public ISaleTransactionV2SDK SaleTransactionV2 { get; private set; }
+        public ITokenTransactionSDK TokenTransaction { get; private set; }
+        public ITokenTransactionV2SDK TokenTransactionV2 { get; private set; }
+        public ITransInfoSDK TransInfo { get; private set; }
+        public ITransactionSDK Transaction { get; private set; }
+        public ITransactionAuthV2SDK TransactionAuthV2 { get; private set; }
+        public ITransactionInfoV2SDK TransactionInfoV2 { get; private set; }
+        public ITransactionV2SDK TransactionV2 { get; private set; }
+        public IVerifySDK Verify { get; private set; }
+        public IVerifyTransactionV2SDK VerifyTransactionV2 { get; private set; }
+        public IVoidTransactionV2SDK VoidTransactionV2 { get; private set; }
 
         public GatewaySDK(string? serverUrl = null, ISpeakeasyHttpClient? client = null)
         {
@@ -148,42 +146,41 @@ namespace Gateway
             {
             };
 
-            Api = new ApiSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIACHCredit = new APIACHCreditSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIACHDebit = new APIACHDebitSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIAuth = new APIAuthSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIBatch = new APIBatchSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIGetTransInfo = new APIGetTransInfoSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIGift = new APIGiftSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIModify = new APIModifySDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIRefund = new APIRefundSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APISale = new APISaleSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIToken = new APITokenSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIVerify = new APIVerifySDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIVoid = new APIVoidSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2 = new APIv2SDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2ACHCredit = new APIv2ACHCreditSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2ACHDebit = new APIv2ACHDebitSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2Auth = new APIv2AuthSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2Batch = new APIv2BatchSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2GetTransInfo = new APIv2GetTransInfoSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2Gift = new APIv2GiftSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2Modify = new APIv2ModifySDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2Refund = new APIv2RefundSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2Sale = new APIv2SaleSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2Token = new APIv2TokenSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2Verify = new APIv2VerifySDK(_defaultClient, _securityClient, _serverUrl, Config);
-            APIv2Void = new APIv2VoidSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            CloudPDC = new CloudPDCSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            ACHCreditTransaction = new ACHCreditTransactionSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            ACHCreditTransactionV2 = new ACHCreditTransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            ACHDebitTransaction = new ACHDebitTransactionSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            ACHDebitTransactionV2 = new ACHDebitTransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            Auth = new AuthSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            BatchQueryV2 = new BatchQueryV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            BatchTransaction = new BatchTransactionSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            CloudPDCIngenicoTransactionV2 = new CloudPDCIngenicoTransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
             CloudPDCRefund = new CloudPDCRefundSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            CloudPDCSale = new CloudPDCSaleSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            CloudPDCv2Ingenico = new CloudPDCv2IngenicoSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            CloudPDCv2Refund = new CloudPDCv2RefundSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            CloudPDCv2Sale = new CloudPDCv2SaleSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            DesktopPDC = new DesktopPDCSDK(_defaultClient, _securityClient, _serverUrl, Config);
-            DesktopPDCv2 = new DesktopPDCv2SDK(_defaultClient, _securityClient, _serverUrl, Config);
-            GPay = new GPaySDK(_defaultClient, _securityClient, _serverUrl, Config);
-            QRPay = new QRPaySDK(_defaultClient, _securityClient, _serverUrl, Config);
+            CloudPDCRefundv2 = new CloudPDCRefundv2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            CloudPDCSaleTransaction = new CloudPDCSaleTransactionSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            CloudPDCSaleTransactionV2 = new CloudPDCSaleTransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            DesktopPDCTransaction = new DesktopPDCTransactionSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            DesktopPDCTransactionV2 = new DesktopPDCTransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            GPayTransaction = new GPayTransactionSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            Gateway = new GatewaySDK(_defaultClient, _securityClient, _serverUrl, Config);
+            GiftTransaction = new GiftTransactionSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            GiftTransactionV2 = new GiftTransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            ModifyTransactionV2 = new ModifyTransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            PaymentDeviceController = new PaymentDeviceControllerSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            QRPayTransaction = new QRPayTransactionSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            Refund = new RefundSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            RefundTransctionV2 = new RefundTransctionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            Sale = new SaleSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            SaleTransactionV2 = new SaleTransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            TokenTransaction = new TokenTransactionSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            TokenTransactionV2 = new TokenTransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            TransInfo = new TransInfoSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            Transaction = new TransactionSDK(_defaultClient, _securityClient, _serverUrl, Config);
+            TransactionAuthV2 = new TransactionAuthV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            TransactionInfoV2 = new TransactionInfoV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            TransactionV2 = new TransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            Verify = new VerifySDK(_defaultClient, _securityClient, _serverUrl, Config);
+            VerifyTransactionV2 = new VerifyTransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
+            VoidTransactionV2 = new VoidTransactionV2SDK(_defaultClient, _securityClient, _serverUrl, Config);
         }
     }
 }

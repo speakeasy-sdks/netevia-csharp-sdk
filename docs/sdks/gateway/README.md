@@ -1,14 +1,46 @@
-# Gateway SDK
-
-
-## Overview
-
-Netevia API: # Netevia Gateway API for Transaction Processing<br>
-Netevia Payment Gateway provides a simple method of processing payment transactions for merchants who want to integrate payment processing with their existing applications. The Netevia Payment Gateway processes credit card, debit card and Electronic Benefits Transfer (EBT) transactions. Transactions are accepted from various industries including: retail, restaurant, mail order/telephone order, lodging, and E-comm.<br>
-This document describes how to write your own application for processing payment transactions or integrate payment processing capabilities into an existing application.<br><br>
-  Copyright 2023 by Netevia, INC DBA Netevia Payment Services. Licensed under the Apache License, Version 2.0 (the License). You may not use this file except in compliance with the License. You may obtain a copy of the License at [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html). Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.<br><br>
-[Netevia Payment Gateway Web Site](https://netevia.com/).<br>
-
+# GatewaySDK
+(*Gateway*)
 
 ### Available Operations
+
+* [Transaction](#transaction) - Generic API.
+
+## Transaction
+
+Initiate a transaction request to Netevia Gateway.<br>
+This is the full set of parameters that can be used. All the data is sent in the body of the request.<br>
+Depending on the transaction type only a subset of these fields are mandatory!<sup>1</sup><br>
+<hr>
+<sup>1</sup>please refer to 'Examples' section for sample subsets  
+
+
+### Example Usage
+
+```csharp
+using Gateway;
+using Gateway.Models.Shared;
+
+var sdk = new GatewaySDK();
+
+var res = await sdk.Gateway.TransactionAsync(new GrpAmount() {
+    IncCashBackAmt = 10000,
+    IncTaxAmt = 10000,
+    MainAmt = 10000,
+    TaxIndicator = Gateway.Models.Shared.GrpAmountTaxIndicator.Ntprvd,
+    TipAmt = 10000,
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                  | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `request`                                  | *object*                                   | :heavy_check_mark:                         | The request object to use for the request. |
+
+
+### Response
+
+**[RestAPIResponse](../../models/operations/RestAPIResponse.md)**
 
