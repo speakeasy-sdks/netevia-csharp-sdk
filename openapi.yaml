@@ -142,15 +142,6 @@ tags:
   - name: PayOuts
     description: |
       <img src="https://gatewayapidocs.netevia.com/images/Payout_1.0.png">  
-x-speakeasy-name-override:
-  - operationId: ^rest.*
-    methodNameOverride: rest
-  - operationId: ^initiate.*
-    methodNameOverride: initiate
-  - operationId: ^batch.*
-    methodNameOverride: batch
-  - operationId: ^control.*
-    methodNameOverride: control
 paths:
   /restApi:
     post:
