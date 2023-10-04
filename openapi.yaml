@@ -4210,8 +4210,8 @@ components:
     requestGeneric:
       type: object
       allOf:
-        # - $ref: '#/components/schemas/grp_configure'
-        # - $ref: '#/components/schemas/grp_action'
+        - $ref: '#/components/schemas/grp_configure'
+        - $ref: '#/components/schemas/grp_action'
         - anyOf:
             - $ref: '#/components/schemas/grp_amount'
             - $ref: '#/components/schemas/grp_extendInfo'
@@ -4225,9 +4225,9 @@ components:
     requestGenericPDC:
       type: object
       allOf:
-        # - $ref: '#/components/schemas/grp_configure'
-        # - $ref: '#/components/schemas/grp_action'
-        # - $ref: '#/components/schemas/grp_action_extra_PDC'
+        - $ref: '#/components/schemas/grp_configure'
+        - $ref: '#/components/schemas/grp_action'
+        - $ref: '#/components/schemas/grp_action_extra_PDC'
         - anyOf:
             - $ref: '#/components/schemas/grp_amount'
             - $ref: '#/components/schemas/grp_amount_extra_PDC'
@@ -4243,8 +4243,8 @@ components:
     responseGeneric:
       type: object
       allOf:
-        # - $ref: '#/components/schemas/grp_configure'
-        # - $ref: '#/components/schemas/grp_result'
+        - $ref: '#/components/schemas/grp_configure'
+        - $ref: '#/components/schemas/grp_result'
         - anyOf:
             - $ref: '#/components/schemas/grp_trace'
             - $ref: '#/components/schemas/grp_responseAmount'
@@ -4255,8 +4255,8 @@ components:
     responseGenericPDC:
       type: object
       allOf:
-        # - $ref: '#/components/schemas/grp_configure'
-        # - $ref: '#/components/schemas/grp_result'
+        - $ref: '#/components/schemas/grp_configure'
+        - $ref: '#/components/schemas/grp_result'
         - anyOf:
             - $ref: '#/components/schemas/grp_trace'
             - $ref: '#/components/schemas/grp_responseAmount'
