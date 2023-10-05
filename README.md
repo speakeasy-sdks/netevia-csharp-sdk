@@ -9,12 +9,10 @@
 <!-- Start SDK Installation -->
 ## SDK Installation
 
-:warning: This is an example SDK. It is not yet published to the package manager. Please download locally to test out. 
-
 ### Nuget
 
 ```bash
-dotnet add package netevia
+dotnet add reference path/to/Gateway.csproj
 ```
 <!-- End SDK Installation -->
 
@@ -22,31 +20,10 @@ dotnet add package netevia
 <!-- Start SDK Example Usage -->
 ```csharp
 using Gateway;
-using Gateway.Models.Shared;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.ACHCreditTransaction.CreateAsync(new GrpCardInfo() {
-    AccountNum = "5415244444444444",
-    CVVNum = "123",
-    CardPresent = Gateway.Models.Shared.GrpCardInfoCardPresent.Y,
-    CardToken = "18c9c75f28a04538939112fb109702fb",
-    CommercialCard = Gateway.Models.Shared.GrpCardInfoCommercialCard.N,
-    CustomerAddress = "Test Street 4",
-    CustomerCity = "Miami",
-    CustomerName = "John Doe",
-    CustomerNum = "C91101",
-    CustomerState = "Florida",
-    CustomerZipCode = "12345",
-    EntryMode = Gateway.Models.Shared.GrpCardInfoEntryMode.EMVFallback2Swip,
-    ExpDate = "1225",
-    Medium = Gateway.Models.Shared.GrpCardInfoMedium.Credit,
-    PayAPI = Gateway.Models.Shared.GrpCardInfoPayAPI.GooglePay,
-    Payload = "{\"signature\":\"MEMCIBD7zOfOintAG/gjg6XenH+x8uM//2b3L/i+GKlhOMtxAh89lRkECojoDHc/Ohis4hvivc2EtCNf/k69MWMCemBN\",\"intermediateSigningKey\":{\"signedKey\":\"{\\"keyValue\\":\\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEq1r61W296dtgCNIJYS9KTl5bp8lMPjz7SDEjE5Zk27iiuane/oEZbOQYlF8YurHvitrLyFN9ROU8p+9Rts7feg\\u003d\\u003d\\",\\"keyExpiration\\":\\"1603261713365\\"}\",\"signatures\":[\"MEUCIQDnvLuziBPYWDmMuUR493lDMYoZYccEPi7sCYHC+EILkgIgacX5hiHoxxD7HRfm9xG9lYNHAoV5i2OaFpggArB0uwQ\u003d\"]},\"protocolVersion\":\"ECv2\",\"signedMessage\":\"{\\"encryptedMessage\\":\\"+Oc0tH5ZWHTyrUlxBOimgM1zyIeOEKJAf300KNBlTUUUU1RzswJMhXa6Ehc9haOTnfYdqcQRx+1f7ztnqbHujPfITzRCjTA8DPMHfYe/Z/MhPPZr9MIHubFjizenRU/tBjm6f/WuAjMj+CoDxDUwR7cD+ZMwAvYzyY5A3hBG/iJrJfqvYcF2g9GNZFwYI4MsgrYh8SM4tViEVr//B4AxSGNiCp8Utgyy7qilRWcViEzl/t2cqXxK9p4lG7xkN+nC4qOcNTwtQASmX3WqUA2nt3yb7J9t84iAKYIFvWxdiHLonxs89bfanpgLW9ZG4Dt2YycGZo3+wVbCFDzQ8MlzM+ibTXifaTYyWWIEEZFrm3nkVQxsu337VGUdtA60uM8GxawG7zARWeoE+6wC+E2G6kUyXYybm5IBDXQMYWprjhWLyAB1D+bjXzldcG8rUvbk2zHzzg4BEf36kzHwqmCWiuxKKtzGTZce5XQqF1Jd8p9c/Gc\\u003d\\",\\"ephemeralPublicKey\\":\\"BGJ+y+S+rQ+6IywwstXdh2nzHwP3LKcvI58XAN3LW3PoSNlWuNluRJ6cJ3dn7XP6dl+m2y8SuzXFxelPspg8moY\\u003d\\",\\"tag\\":\\"v8r09doA5qKuA8SeLuQVgKCsJxdorUgoj/Rmh0/5MLk\\u003d\\"}\"}",
-    RequestCardToken = Gateway.Models.Shared.GrpCardInfoRequestCardToken.Y,
-    Track1 = "B5413330089020029^MTIP02^2512629807900000000000000000",
-    Track2 = "5413330000000000=2512101123456789",
-});
+var res = await sdk.Api.BatchAsync("Van");
 
 // handle response
 ```
@@ -56,145 +33,151 @@ var res = await sdk.ACHCreditTransaction.CreateAsync(new GrpCardInfo() {
 ## Available Resources and Operations
 
 
-### [ACHCreditTransaction](docs/sdks/achcredittransaction/README.md)
+### [Api](docs/sdks/api/README.md)
 
-* [Create](docs/sdks/achcredittransaction/README.md#create) - ACH Credit transactions.
+* [Batch](docs/sdks/api/README.md#batch) - Generic batch query API.
+* [Rest](docs/sdks/api/README.md#rest) - Generic API.
 
-### [ACHCreditTransactionV2](docs/sdks/achcredittransactionv2/README.md)
+### [APIACHCredit](docs/sdks/apiachcredit/README.md)
 
-* [Create](docs/sdks/achcredittransactionv2/README.md#create) - ACH Credit transactions.
+* [Rest](docs/sdks/apiachcredit/README.md#rest) - ACH Credit transactions.
 
-### [ACHDebitTransaction](docs/sdks/achdebittransaction/README.md)
+### [APIACHDebit](docs/sdks/apiachdebit/README.md)
 
-* [Create](docs/sdks/achdebittransaction/README.md#create) - ACH Debit transactions.
+* [Rest](docs/sdks/apiachdebit/README.md#rest) - ACH Debit transactions.
 
-### [ACHDebitTransactionV2](docs/sdks/achdebittransactionv2/README.md)
+### [APIAuth](docs/sdks/apiauth/README.md)
 
-* [Create](docs/sdks/achdebittransactionv2/README.md#create) - ACH Debit transactions.
+* [Rest](docs/sdks/apiauth/README.md#rest) - How to initiate different Auth/Finalize transaction requests.
 
-### [Auth](docs/sdks/auth/README.md)
+### [APIBatch](docs/sdks/apibatch/README.md)
 
-* [Finalize](docs/sdks/auth/README.md#finalize) - How to initiate different Auth/Finalize transaction requests.
+* [Rest](docs/sdks/apibatch/README.md#rest) - Request batch closing.
 
-### [BatchQueryV2](docs/sdks/batchqueryv2/README.md)
+### [APIGetTransInfo](docs/sdks/apigettransinfo/README.md)
 
-* [Create](docs/sdks/batchqueryv2/README.md#create) - Generic batch query API.
+* [Rest](docs/sdks/apigettransinfo/README.md#rest) - How to initiate GetTransInfo transaction requests.
 
-### [BatchTransaction](docs/sdks/batchtransaction/README.md)
+### [APIGift](docs/sdks/apigift/README.md)
 
-* [Create](docs/sdks/batchtransaction/README.md#create) - Request batch closing.
+* [Rest](docs/sdks/apigift/README.md#rest) - Gitf transactions.
 
-### [CloudPDCIngenicoTransactionV2](docs/sdks/cloudpdcingenicotransactionv2/README.md)
+### [APIModify](docs/sdks/apimodify/README.md)
 
-* [Create](docs/sdks/cloudpdcingenicotransactionv2/README.md#create) - Cloud Payment Device Controller - card reader device management API.
+* [Rest](docs/sdks/apimodify/README.md#rest) - How to initiate Modify/Adjust/AddTip transaction requests.
+
+### [APIRefund](docs/sdks/apirefund/README.md)
+
+* [Rest](docs/sdks/apirefund/README.md#rest) - How to initiate Refund transaction requests.
+
+### [APISale](docs/sdks/apisale/README.md)
+
+* [Rest](docs/sdks/apisale/README.md#rest) - How to initiate different Sale transaction requests.
+
+### [APIToken](docs/sdks/apitoken/README.md)
+
+* [Rest](docs/sdks/apitoken/README.md#rest) - How to initiate Token based transaction requests.
+
+### [APIVerify](docs/sdks/apiverify/README.md)
+
+* [Rest](docs/sdks/apiverify/README.md#rest) - How to initiate Verify/Inquiry transaction requests.
+
+### [APIVoid](docs/sdks/apivoid/README.md)
+
+* [Rest](docs/sdks/apivoid/README.md#rest) - How to initiate Void/Reverse/Cancel transaction requests.
+
+### [APIv2](docs/sdks/apiv2/README.md)
+
+* [Batch](docs/sdks/apiv2/README.md#batch) - Generic batch query API.
+* [Rest](docs/sdks/apiv2/README.md#rest) - Generic API.
+
+### [APIv2ACHCredit](docs/sdks/apiv2achcredit/README.md)
+
+* [Rest](docs/sdks/apiv2achcredit/README.md#rest) - ACH Credit transactions.
+
+### [APIv2ACHDebit](docs/sdks/apiv2achdebit/README.md)
+
+* [Rest](docs/sdks/apiv2achdebit/README.md#rest) - ACH Debit transactions.
+
+### [APIv2Auth](docs/sdks/apiv2auth/README.md)
+
+* [Rest](docs/sdks/apiv2auth/README.md#rest) - How to initiate different Auth/Finalize transaction requests.
+
+### [APIv2Batch](docs/sdks/apiv2batch/README.md)
+
+* [Rest](docs/sdks/apiv2batch/README.md#rest) - Request batch closing.
+
+### [APIv2GetTransInfo](docs/sdks/apiv2gettransinfo/README.md)
+
+* [Rest](docs/sdks/apiv2gettransinfo/README.md#rest) - How to initiate GetTransInfo transaction requests.
+
+### [APIv2Gift](docs/sdks/apiv2gift/README.md)
+
+* [Rest](docs/sdks/apiv2gift/README.md#rest) - Gitf transactions.
+
+### [APIv2Modify](docs/sdks/apiv2modify/README.md)
+
+* [Rest](docs/sdks/apiv2modify/README.md#rest) - How to initiate Modify/Adjust/AddTip transaction requests.
+
+### [APIv2Refund](docs/sdks/apiv2refund/README.md)
+
+* [Rest](docs/sdks/apiv2refund/README.md#rest) - How to initiate Refund transaction requests.
+
+### [APIv2Sale](docs/sdks/apiv2sale/README.md)
+
+* [Rest](docs/sdks/apiv2sale/README.md#rest) - How to initiate different Sale transaction requests.
+
+### [APIv2Token](docs/sdks/apiv2token/README.md)
+
+* [Rest](docs/sdks/apiv2token/README.md#rest) - How to initiate Token based transaction requests.
+
+### [APIv2Verify](docs/sdks/apiv2verify/README.md)
+
+* [Rest](docs/sdks/apiv2verify/README.md#rest) - How to initiate Verify/Inquiry transaction requests.
+
+### [APIv2Void](docs/sdks/apiv2void/README.md)
+
+* [Rest](docs/sdks/apiv2void/README.md#rest) - How to initiate Void/Reverse/Cancel transaction requests.
+
+### [CloudPDC](docs/sdks/cloudpdc/README.md)
+
+* [Control](docs/sdks/cloudpdc/README.md#control) - Payment Device Controller - card reader device management API.
 
 ### [CloudPDCRefund](docs/sdks/cloudpdcrefund/README.md)
 
-* [Create](docs/sdks/cloudpdcrefund/README.md#create) - Initiate a Refund request.
+* [Initiate](docs/sdks/cloudpdcrefund/README.md#initiate) - Initiate a Refund request.
 
-### [CloudPDCRefundv2](docs/sdks/cloudpdcrefundv2/README.md)
+### [CloudPDCSale](docs/sdks/cloudpdcsale/README.md)
 
-* [Create](docs/sdks/cloudpdcrefundv2/README.md#create) - Initiate a Refund request.
+* [Initiate](docs/sdks/cloudpdcsale/README.md#initiate) - Initiate a transaction request.
 
-### [CloudPDCSaleTransaction](docs/sdks/cloudpdcsaletransaction/README.md)
+### [CloudPDCv2Ingenico](docs/sdks/cloudpdcv2ingenico/README.md)
 
-* [Create](docs/sdks/cloudpdcsaletransaction/README.md#create) - Initiate a transaction request.
+* [Control](docs/sdks/cloudpdcv2ingenico/README.md#control) - Cloud Payment Device Controller - card reader device management API.
 
-### [CloudPDCSaleTransactionV2](docs/sdks/cloudpdcsaletransactionv2/README.md)
+### [CloudPDCv2Refund](docs/sdks/cloudpdcv2refund/README.md)
 
-* [Create](docs/sdks/cloudpdcsaletransactionv2/README.md#create) - Initiate a transaction request.
+* [Initiate](docs/sdks/cloudpdcv2refund/README.md#initiate) - Initiate a Refund request.
 
-### [DesktopPDCTransaction](docs/sdks/desktoppdctransaction/README.md)
+### [CloudPDCv2Sale](docs/sdks/cloudpdcv2sale/README.md)
 
-* [Create](docs/sdks/desktoppdctransaction/README.md#create) - Control desktop PDC through Netevia Server to complete the transaction.
+* [Initiate](docs/sdks/cloudpdcv2sale/README.md#initiate) - Initiate a transaction request.
 
-### [DesktopPDCTransactionV2](docs/sdks/desktoppdctransactionv2/README.md)
+### [DesktopPDC](docs/sdks/desktoppdc/README.md)
 
-* [Create](docs/sdks/desktoppdctransactionv2/README.md#create) - Control desktop PDC through Netevia Server to complete the transaction.
+* [Control](docs/sdks/desktoppdc/README.md#control) - Control desktop PDC through Netevia Server to complete the transaction.
 
-### [GPayTransaction](docs/sdks/gpaytransaction/README.md)
+### [DesktopPDCv2](docs/sdks/desktoppdcv2/README.md)
 
-* [Create](docs/sdks/gpaytransaction/README.md#create) - Google Pay ™.
+* [Control](docs/sdks/desktoppdcv2/README.md#control) - Control desktop PDC through Netevia Server to complete the transaction.
 
-### [GiftTransaction](docs/sdks/gifttransaction/README.md)
+### [GPay](docs/sdks/gpay/README.md)
 
-* [Create](docs/sdks/gifttransaction/README.md#create) - Gitf transactions.
+* [Rest](docs/sdks/gpay/README.md#rest) - Google Pay ™.
 
-### [GiftTransactionV2](docs/sdks/gifttransactionv2/README.md)
+### [QRPay](docs/sdks/qrpay/README.md)
 
-* [Create](docs/sdks/gifttransactionv2/README.md#create) - Gitf transactions.
-
-### [ModifyTransactionV2](docs/sdks/modifytransactionv2/README.md)
-
-* [Create](docs/sdks/modifytransactionv2/README.md#create) - How to initiate Modify/Adjust/AddTip transaction requests.
-
-### [PaymentDeviceController](docs/sdks/paymentdevicecontroller/README.md)
-
-* [Create](docs/sdks/paymentdevicecontroller/README.md#create) - Payment Device Controller - card reader device management API.
-
-### [QRPayTransaction](docs/sdks/qrpaytransaction/README.md)
-
-* [Create](docs/sdks/qrpaytransaction/README.md#create) - Integrated QRPay API interface
-
-### [Refund](docs/sdks/refund/README.md)
-
-* [Create](docs/sdks/refund/README.md#create) - How to initiate Refund transaction requests.
-
-### [RefundTransctionV2](docs/sdks/refundtransctionv2/README.md)
-
-* [Create](docs/sdks/refundtransctionv2/README.md#create) - How to initiate Refund transaction requests.
-
-### [SaleTransaction](docs/sdks/saletransaction/README.md)
-
-* [Create](docs/sdks/saletransaction/README.md#create) - How to initiate different Sale transaction requests.
-
-### [SaleTransactionV2](docs/sdks/saletransactionv2/README.md)
-
-* [Create](docs/sdks/saletransactionv2/README.md#create) - How to initiate different Sale transaction requests.
-
-### [TokenTransaction](docs/sdks/tokentransaction/README.md)
-
-* [Create](docs/sdks/tokentransaction/README.md#create) - How to initiate Token based transaction requests.
-
-### [TokenTransactionV2](docs/sdks/tokentransactionv2/README.md)
-
-* [Create](docs/sdks/tokentransactionv2/README.md#create) - How to initiate Token based transaction requests.
-
-### [TransInfo](docs/sdks/transinfo/README.md)
-
-* [Create](docs/sdks/transinfo/README.md#create) - How to initiate GetTransInfo transaction requests.
-
-### [Transaction](docs/sdks/transaction/README.md)
-
-* [BatchClose](docs/sdks/transaction/README.md#batchclose) - Request batch closing.
-* [BatchQuery](docs/sdks/transaction/README.md#batchquery) - Generic batch query API.
-* [Create](docs/sdks/transaction/README.md#create) - Generic API.
-* [Modify](docs/sdks/transaction/README.md#modify) - How to initiate Modify/Adjust/AddTip transaction requests.
-* [Void](docs/sdks/transaction/README.md#void) - How to initiate Void/Reverse/Cancel transaction requests.
-
-### [TransactionAuthV2](docs/sdks/transactionauthv2/README.md)
-
-* [Create](docs/sdks/transactionauthv2/README.md#create) - How to initiate different Auth/Finalize transaction requests.
-
-### [TransactionInfoV2](docs/sdks/transactioninfov2/README.md)
-
-* [Create](docs/sdks/transactioninfov2/README.md#create) - How to initiate GetTransInfo transaction requests.
-
-### [TransactionV2](docs/sdks/transactionv2/README.md)
-
-* [Create](docs/sdks/transactionv2/README.md#create) - Generic API.
-
-### [Verify](docs/sdks/verify/README.md)
-
-* [RestAPIVerifyInquiry](docs/sdks/verify/README.md#restapiverifyinquiry) - How to initiate Verify/Inquiry transaction requests.
-
-### [VerifyTransactionV2](docs/sdks/verifytransactionv2/README.md)
-
-* [Create](docs/sdks/verifytransactionv2/README.md#create) - How to initiate Verify/Inquiry transaction requests.
-
-### [VoidTransactionV2](docs/sdks/voidtransactionv2/README.md)
-
-* [Create](docs/sdks/voidtransactionv2/README.md#create) - How to initiate Void/Reverse/Cancel transaction requests.
+* [IntegrateQRPay](docs/sdks/qrpay/README.md#integrateqrpay) - Integrated QRPay API interface
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->

@@ -30,7 +30,7 @@ namespace Gateway
         /// 
         /// </remarks>
         /// </summary>
-        Task<InitiateCloudPDCRefundResponse> CreateAsync(object request);
+        Task<InitiateCloudPDCRefundResponse> InitiateAsync(object request);
     }
 
     public class CloudPDCRefundSDK: ICloudPDCRefundSDK
@@ -38,9 +38,9 @@ namespace Gateway
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
         private const string _sdkVersion = "0.5.0";
-        private const string _sdkGenVersion = "2.146.1";
+        private const string _sdkGenVersion = "internal";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.5.0 2.146.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.5.0 internal 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -54,7 +54,7 @@ namespace Gateway
         }
         
 
-        public async Task<InitiateCloudPDCRefundResponse> CreateAsync(object request)
+        public async Task<InitiateCloudPDCRefundResponse> InitiateAsync(object request)
         {
             string baseUrl = _serverUrl;
             if (baseUrl.EndsWith("/"))
@@ -89,6 +89,7 @@ namespace Gateway
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
+            
             if((response.StatusCode == 200))
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
