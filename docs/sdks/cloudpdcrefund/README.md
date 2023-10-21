@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [Initiate](#initiate) - Initiate a Refund request.
+* [Create](#create) - Initiate a Refund request.
 
-## Initiate
+## Create
 
 Initiate a Refund request to Netevia Payment Device Controller.   
 <br><br><span style="color:red">*NOTE: If you don't see Request Schema, you are in "Try it out" mode and you need to press "Cancel"!</span>
@@ -18,7 +18,7 @@ using Gateway;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.CloudPDCRefund.InitiateAsync("Touring");
+var res = await sdk.CloudPDCRefund.CreateAsync("string");
 
 // handle response
 ```
