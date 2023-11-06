@@ -6,7 +6,7 @@ using Gateway;
 
 var sdk = new GatewaySDK();
 
-var res = await sdk.Api.BatchAsync("Van");
+var res = await sdk.ACHCreditTransaction.CreateAsync("string");
 
 // handle response
 ```
