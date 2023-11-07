@@ -1,5 +1,5 @@
-# SaleTransactionSDK
-(*SaleTransaction*)
+# SaleTransaction
+(*.SaleTransaction*)
 
 ### Available Operations
 
@@ -17,9 +17,9 @@ A <b>Sale</b> transaction authorizes a sale purchased. This action decreases the
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.SaleTransaction.CreateAsync("string");
 

@@ -1,5 +1,5 @@
-# ACHDebitTransactionSDK
-(*ACHDebitTransaction*)
+# ACHDebitTransaction
+(*.ACHDebitTransaction*)
 
 ### Available Operations
 
@@ -17,9 +17,9 @@ An <b>ACH</b> debit transaction is used to allow customers to pay using checks. 
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.ACHDebitTransaction.CreateAsync("string");
 

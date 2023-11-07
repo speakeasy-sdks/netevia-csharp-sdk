@@ -1,5 +1,5 @@
-# AuthSDK
-(*Auth*)
+# Auth
+(*.Auth*)
 
 ### Available Operations
 
@@ -18,9 +18,9 @@ A <b>Finalize</b> transaction is used to change an <b>Auth</b> transaction to a 
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.Auth.FinalizeAsync("string");
 

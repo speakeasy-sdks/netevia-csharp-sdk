@@ -1,5 +1,5 @@
-# QRPayTransactionSDK
-(*QRPayTransaction*)
+# QRPayTransaction
+(*.QRPayTransaction*)
 
 ### Available Operations
 
@@ -46,9 +46,9 @@ NotificationCallback: Optional field. If you need to obtain the payment result a
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.QRPayTransaction.CreateAsync("string");
 

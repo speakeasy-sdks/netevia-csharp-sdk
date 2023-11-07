@@ -2,11 +2,17 @@
 
 
 ```csharp
-using Gateway;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
-var res = await sdk.ACHCreditTransaction.CreateAsync("string");
+var res = await sdk.TransactionV2.CreateAsync(new RestAPIv2Request() {
+    Gmid = "string",
+    RequestBody = "string",
+    TransType = TransType.Register,
+});
 
 // handle response
 ```

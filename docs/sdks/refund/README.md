@@ -1,5 +1,5 @@
-# RefundSDK
-(*Refund*)
+# Refund
+(*.Refund*)
 
 ### Available Operations
 
@@ -17,9 +17,9 @@ A <b>Refund</b> transaction is used to authorize a refund to a customer's credit
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.Refund.CreateAsync("string");
 

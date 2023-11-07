@@ -1,5 +1,5 @@
-# VerifySDK
-(*Verify*)
+# Verify
+(*.Verify*)
 
 ### Available Operations
 
@@ -18,9 +18,9 @@ A <b>Verify</b> transaction is used to check if the card is valid.
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.Verify.RestAPIVerifyInquiryAsync("string");
 

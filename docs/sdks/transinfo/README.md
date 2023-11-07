@@ -1,5 +1,5 @@
-# TransInfoSDK
-(*TransInfo*)
+# TransInfo
+(*.TransInfo*)
 
 ### Available Operations
 
@@ -17,9 +17,9 @@ A <b>GetTransInfo</b> transaction is used to query the transaction status by GTR
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.TransInfo.CreateAsync("string");
 

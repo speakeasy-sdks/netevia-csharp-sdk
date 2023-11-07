@@ -1,5 +1,5 @@
-# CloudPDCIngenicoTransactionV2SDK
-(*CloudPDCIngenicoTransactionV2*)
+# CloudPDCIngenicoTransactionV2
+(*.CloudPDCIngenicoTransactionV2*)
 
 ### Available Operations
 
@@ -33,16 +33,16 @@ ___
 ### Example Usage
 
 ```csharp
-using Gateway;
-using Gateway.Models.Operations;
-using Gateway.Models.Shared;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.CloudPDCIngenicoTransactionV2.CreateAsync(new ControlCloudPDCv2IngenicoRequest() {
     Gmid = "string",
     RequestBody = "string",
-    TransType = Gateway.Models.Shared.TransType.Register,
+    TransType = TransType.Register,
 });
 
 // handle response

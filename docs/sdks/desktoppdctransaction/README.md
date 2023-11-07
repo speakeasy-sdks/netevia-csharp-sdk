@@ -1,5 +1,5 @@
-# DesktopPDCTransactionSDK
-(*DesktopPDCTransaction*)
+# DesktopPDCTransaction
+(*.DesktopPDCTransaction*)
 
 ### Available Operations
 
@@ -14,9 +14,9 @@ Desktop PDC version need above 2.2.7. and you need add the websocket clinet conf
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.DesktopPDCTransaction.CreateAsync("string");
 

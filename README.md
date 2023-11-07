@@ -19,11 +19,17 @@ dotnet add package netevia
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```csharp
-using Gateway;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
-var res = await sdk.ACHCreditTransaction.CreateAsync("string");
+var res = await sdk.TransactionV2.CreateAsync(new RestAPIv2Request() {
+    Gmid = "string",
+    RequestBody = "string",
+    TransType = TransType.Register,
+});
 
 // handle response
 ```
@@ -33,115 +39,91 @@ var res = await sdk.ACHCreditTransaction.CreateAsync("string");
 ## Available Resources and Operations
 
 
-### [ACHCreditTransaction](docs/sdks/achcredittransaction/README.md)
+### [.TransactionV2](docs/sdks/transactionv2/README.md)
 
-* [Create](docs/sdks/achcredittransaction/README.md#create) - ACH Credit transactions.
+* [Create](docs/sdks/transactionv2/README.md#create) - Generic API.
 
-### [ACHCreditTransactionV2](docs/sdks/achcredittransactionv2/README.md)
+### [.ACHCreditTransactionV2](docs/sdks/achcredittransactionv2/README.md)
 
 * [Create](docs/sdks/achcredittransactionv2/README.md#create) - ACH Credit transactions.
 
-### [ACHDebitTransaction](docs/sdks/achdebittransaction/README.md)
-
-* [Create](docs/sdks/achdebittransaction/README.md#create) - ACH Debit transactions.
-
-### [ACHDebitTransactionV2](docs/sdks/achdebittransactionv2/README.md)
+### [.ACHDebitTransactionV2](docs/sdks/achdebittransactionv2/README.md)
 
 * [Create](docs/sdks/achdebittransactionv2/README.md#create) - ACH Debit transactions.
 
-### [Auth](docs/sdks/auth/README.md)
+### [.TransactionAuthV2](docs/sdks/transactionauthv2/README.md)
 
-* [Finalize](docs/sdks/auth/README.md#finalize) - How to initiate different Auth/Finalize transaction requests.
+* [Create](docs/sdks/transactionauthv2/README.md#create) - How to initiate different Auth/Finalize transaction requests.
 
-### [BatchQueryV2](docs/sdks/batchqueryv2/README.md)
-
-* [Create](docs/sdks/batchqueryv2/README.md#create) - Generic batch query API.
-
-### [BatchTransaction](docs/sdks/batchtransaction/README.md)
+### [.BatchTransaction](docs/sdks/batchtransaction/README.md)
 
 * [Create](docs/sdks/batchtransaction/README.md#create) - Request batch closing.
 
-### [CloudPDCIngenicoTransactionV2](docs/sdks/cloudpdcingenicotransactionv2/README.md)
+### [.BatchQueryV2](docs/sdks/batchqueryv2/README.md)
 
-* [Create](docs/sdks/cloudpdcingenicotransactionv2/README.md#create) - Cloud Payment Device Controller - card reader device management API.
+* [Create](docs/sdks/batchqueryv2/README.md#create) - Generic batch query API.
 
-### [CloudPDCRefund](docs/sdks/cloudpdcrefund/README.md)
+### [.TransactionInfoV2](docs/sdks/transactioninfov2/README.md)
 
-* [Create](docs/sdks/cloudpdcrefund/README.md#create) - Initiate a Refund request.
+* [Create](docs/sdks/transactioninfov2/README.md#create) - How to initiate GetTransInfo transaction requests.
 
-### [CloudPDCRefundv2](docs/sdks/cloudpdcrefundv2/README.md)
-
-* [Create](docs/sdks/cloudpdcrefundv2/README.md#create) - Initiate a Refund request.
-
-### [CloudPDCSaleTransaction](docs/sdks/cloudpdcsaletransaction/README.md)
-
-* [Create](docs/sdks/cloudpdcsaletransaction/README.md#create) - Initiate a transaction request.
-
-### [CloudPDCSaleTransactionV2](docs/sdks/cloudpdcsaletransactionv2/README.md)
-
-* [Create](docs/sdks/cloudpdcsaletransactionv2/README.md#create) - Initiate a transaction request.
-
-### [DesktopPDCTransaction](docs/sdks/desktoppdctransaction/README.md)
-
-* [Create](docs/sdks/desktoppdctransaction/README.md#create) - Control desktop PDC through Netevia Server to complete the transaction.
-
-### [DesktopPDCTransactionV2](docs/sdks/desktoppdctransactionv2/README.md)
-
-* [Create](docs/sdks/desktoppdctransactionv2/README.md#create) - Control desktop PDC through Netevia Server to complete the transaction.
-
-### [GPayTransaction](docs/sdks/gpaytransaction/README.md)
-
-* [Create](docs/sdks/gpaytransaction/README.md#create) - Google Pay ™.
-
-### [GiftTransaction](docs/sdks/gifttransaction/README.md)
-
-* [Create](docs/sdks/gifttransaction/README.md#create) - Gitf transactions.
-
-### [GiftTransactionV2](docs/sdks/gifttransactionv2/README.md)
+### [.GiftTransactionV2](docs/sdks/gifttransactionv2/README.md)
 
 * [Create](docs/sdks/gifttransactionv2/README.md#create) - Gitf transactions.
 
-### [ModifyTransactionV2](docs/sdks/modifytransactionv2/README.md)
+### [.CloudPDCIngenicoTransactionV2](docs/sdks/cloudpdcingenicotransactionv2/README.md)
+
+* [Create](docs/sdks/cloudpdcingenicotransactionv2/README.md#create) - Cloud Payment Device Controller - card reader device management API.
+
+### [.CloudPDCRefundv2](docs/sdks/cloudpdcrefundv2/README.md)
+
+* [Create](docs/sdks/cloudpdcrefundv2/README.md#create) - Initiate a Refund request.
+
+### [.CloudPDCSaleTransactionV2](docs/sdks/cloudpdcsaletransactionv2/README.md)
+
+* [Create](docs/sdks/cloudpdcsaletransactionv2/README.md#create) - Initiate a transaction request.
+
+### [.ModifyTransactionV2](docs/sdks/modifytransactionv2/README.md)
 
 * [Create](docs/sdks/modifytransactionv2/README.md#create) - How to initiate Modify/Adjust/AddTip transaction requests.
 
-### [PaymentDeviceController](docs/sdks/paymentdevicecontroller/README.md)
-
-* [Create](docs/sdks/paymentdevicecontroller/README.md#create) - Payment Device Controller - card reader device management API.
-
-### [QRPayTransaction](docs/sdks/qrpaytransaction/README.md)
-
-* [Create](docs/sdks/qrpaytransaction/README.md#create) - Integrated QRPay API interface
-
-### [Refund](docs/sdks/refund/README.md)
-
-* [Create](docs/sdks/refund/README.md#create) - How to initiate Refund transaction requests.
-
-### [RefundTransctionV2](docs/sdks/refundtransctionv2/README.md)
+### [.RefundTransctionV2](docs/sdks/refundtransctionv2/README.md)
 
 * [Create](docs/sdks/refundtransctionv2/README.md#create) - How to initiate Refund transaction requests.
 
-### [SaleTransaction](docs/sdks/saletransaction/README.md)
-
-* [Create](docs/sdks/saletransaction/README.md#create) - How to initiate different Sale transaction requests.
-
-### [SaleTransactionV2](docs/sdks/saletransactionv2/README.md)
+### [.SaleTransactionV2](docs/sdks/saletransactionv2/README.md)
 
 * [Create](docs/sdks/saletransactionv2/README.md#create) - How to initiate different Sale transaction requests.
 
-### [TokenTransaction](docs/sdks/tokentransaction/README.md)
-
-* [Create](docs/sdks/tokentransaction/README.md#create) - How to initiate Token based transaction requests.
-
-### [TokenTransactionV2](docs/sdks/tokentransactionv2/README.md)
+### [.TokenTransactionV2](docs/sdks/tokentransactionv2/README.md)
 
 * [Create](docs/sdks/tokentransactionv2/README.md#create) - How to initiate Token based transaction requests.
 
-### [TransInfo](docs/sdks/transinfo/README.md)
+### [.VerifyTransactionV2](docs/sdks/verifytransactionv2/README.md)
 
-* [Create](docs/sdks/transinfo/README.md#create) - How to initiate GetTransInfo transaction requests.
+* [Create](docs/sdks/verifytransactionv2/README.md#create) - How to initiate Verify/Inquiry transaction requests.
 
-### [Transaction](docs/sdks/transaction/README.md)
+### [.VoidTransactionV2](docs/sdks/voidtransactionv2/README.md)
+
+* [Create](docs/sdks/voidtransactionv2/README.md#create) - How to initiate Void/Reverse/Cancel transaction requests.
+
+### [.DesktopPDCTransactionV2](docs/sdks/desktoppdctransactionv2/README.md)
+
+* [Create](docs/sdks/desktoppdctransactionv2/README.md#create) - Control desktop PDC through Netevia Server to complete the transaction.
+
+### [.PaymentDeviceController](docs/sdks/paymentdevicecontroller/README.md)
+
+* [Create](docs/sdks/paymentdevicecontroller/README.md#create) - Payment Device Controller - card reader device management API.
+
+### [.CloudPDCRefund](docs/sdks/cloudpdcrefund/README.md)
+
+* [Create](docs/sdks/cloudpdcrefund/README.md#create) - Initiate a Refund request.
+
+### [.CloudPDCSaleTransaction](docs/sdks/cloudpdcsaletransaction/README.md)
+
+* [Create](docs/sdks/cloudpdcsaletransaction/README.md#create) - Initiate a transaction request.
+
+### [.Transaction](docs/sdks/transaction/README.md)
 
 * [BatchClose](docs/sdks/transaction/README.md#batchclose) - Request batch closing.
 * [BatchQuery](docs/sdks/transaction/README.md#batchquery) - Generic batch query API.
@@ -149,29 +131,53 @@ var res = await sdk.ACHCreditTransaction.CreateAsync("string");
 * [Modify](docs/sdks/transaction/README.md#modify) - How to initiate Modify/Adjust/AddTip transaction requests.
 * [Void](docs/sdks/transaction/README.md#void) - How to initiate Void/Reverse/Cancel transaction requests.
 
-### [TransactionAuthV2](docs/sdks/transactionauthv2/README.md)
+### [.QRPayTransaction](docs/sdks/qrpaytransaction/README.md)
 
-* [Create](docs/sdks/transactionauthv2/README.md#create) - How to initiate different Auth/Finalize transaction requests.
+* [Create](docs/sdks/qrpaytransaction/README.md#create) - Integrated QRPay API interface
 
-### [TransactionInfoV2](docs/sdks/transactioninfov2/README.md)
+### [.ACHCreditTransaction](docs/sdks/achcredittransaction/README.md)
 
-* [Create](docs/sdks/transactioninfov2/README.md#create) - How to initiate GetTransInfo transaction requests.
+* [Create](docs/sdks/achcredittransaction/README.md#create) - ACH Credit transactions.
 
-### [TransactionV2](docs/sdks/transactionv2/README.md)
+### [.ACHDebitTransaction](docs/sdks/achdebittransaction/README.md)
 
-* [Create](docs/sdks/transactionv2/README.md#create) - Generic API.
+* [Create](docs/sdks/achdebittransaction/README.md#create) - ACH Debit transactions.
 
-### [Verify](docs/sdks/verify/README.md)
+### [.Auth](docs/sdks/auth/README.md)
+
+* [Finalize](docs/sdks/auth/README.md#finalize) - How to initiate different Auth/Finalize transaction requests.
+
+### [.TransInfo](docs/sdks/transinfo/README.md)
+
+* [Create](docs/sdks/transinfo/README.md#create) - How to initiate GetTransInfo transaction requests.
+
+### [.GiftTransaction](docs/sdks/gifttransaction/README.md)
+
+* [Create](docs/sdks/gifttransaction/README.md#create) - Gitf transactions.
+
+### [.Refund](docs/sdks/refund/README.md)
+
+* [Create](docs/sdks/refund/README.md#create) - How to initiate Refund transaction requests.
+
+### [.SaleTransaction](docs/sdks/saletransaction/README.md)
+
+* [Create](docs/sdks/saletransaction/README.md#create) - How to initiate different Sale transaction requests.
+
+### [.TokenTransaction](docs/sdks/tokentransaction/README.md)
+
+* [Create](docs/sdks/tokentransaction/README.md#create) - How to initiate Token based transaction requests.
+
+### [.Verify](docs/sdks/verify/README.md)
 
 * [RestAPIVerifyInquiry](docs/sdks/verify/README.md#restapiverifyinquiry) - How to initiate Verify/Inquiry transaction requests.
 
-### [VerifyTransactionV2](docs/sdks/verifytransactionv2/README.md)
+### [.GPayTransaction](docs/sdks/gpaytransaction/README.md)
 
-* [Create](docs/sdks/verifytransactionv2/README.md#create) - How to initiate Verify/Inquiry transaction requests.
+* [Create](docs/sdks/gpaytransaction/README.md#create) - Google Pay ™.
 
-### [VoidTransactionV2](docs/sdks/voidtransactionv2/README.md)
+### [.DesktopPDCTransaction](docs/sdks/desktoppdctransaction/README.md)
 
-* [Create](docs/sdks/voidtransactionv2/README.md#create) - How to initiate Void/Reverse/Cancel transaction requests.
+* [Create](docs/sdks/desktoppdctransaction/README.md#create) - Control desktop PDC through Netevia Server to complete the transaction.
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->

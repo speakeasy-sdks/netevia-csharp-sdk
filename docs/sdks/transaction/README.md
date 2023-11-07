@@ -1,5 +1,5 @@
-# TransactionSDK
-(*Transaction*)
+# Transaction
+(*.Transaction*)
 
 ### Available Operations
 
@@ -23,9 +23,9 @@ ___
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.Transaction.BatchCloseAsync("string");
 
@@ -61,9 +61,9 @@ ___
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.Transaction.BatchQueryAsync("string");
 
@@ -94,9 +94,9 @@ Depending on the transaction type only a subset of these fields are mandatory!<s
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.Transaction.CreateAsync("string");
 
@@ -129,9 +129,9 @@ Initiate a <b>Modify/Adjust/AddTip</b> transaction request to Netevia Gateway.<s
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.Transaction.ModifyAsync("string");
 
@@ -164,9 +164,9 @@ Initiate a <b>Void/Reverse/Cancel</b> transaction request to Netevia Gateway.<su
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.Transaction.VoidAsync("string");
 

@@ -1,5 +1,5 @@
-# CloudPDCSaleTransactionSDK
-(*CloudPDCSaleTransaction*)
+# CloudPDCSaleTransaction
+(*.CloudPDCSaleTransaction*)
 
 ### Available Operations
 
@@ -14,9 +14,9 @@ Initiate a transaction request to Netevia Payment Device Controller. For more sa
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.CloudPDCSaleTransaction.CreateAsync("string");
 

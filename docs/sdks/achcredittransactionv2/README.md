@@ -1,5 +1,5 @@
-# ACHCreditTransactionV2SDK
-(*ACHCreditTransactionV2*)
+# ACHCreditTransactionV2
+(*.ACHCreditTransactionV2*)
 
 ### Available Operations
 
@@ -19,16 +19,16 @@ To be more generic and have a similar approach as for Debit ACH, we can also sim
 ### Example Usage
 
 ```csharp
-using Gateway;
-using Gateway.Models.Operations;
-using Gateway.Models.Shared;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.ACHCreditTransactionV2.CreateAsync(new RestAPIv2ACHCreditRequest() {
     Gmid = "string",
     RequestBody = "string",
-    TransType = Gateway.Models.Shared.TransType.Register,
+    TransType = TransType.Register,
 });
 
 // handle response

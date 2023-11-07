@@ -1,5 +1,5 @@
-# TokenTransactionSDK
-(*TokenTransaction*)
+# TokenTransaction
+(*.TokenTransaction*)
 
 ### Available Operations
 
@@ -25,9 +25,9 @@ ___
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.TokenTransaction.CreateAsync("string");
 

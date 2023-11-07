@@ -1,5 +1,5 @@
-# GPayTransactionSDK
-(*GPayTransaction*)
+# GPayTransaction
+(*.GPayTransaction*)
 
 ### Available Operations
 
@@ -19,9 +19,9 @@ Depending on the transaction type only a subset of these fields are mandatory!<s
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.GPayTransaction.CreateAsync("string");
 

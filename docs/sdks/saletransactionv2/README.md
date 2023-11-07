@@ -1,5 +1,5 @@
-# SaleTransactionV2SDK
-(*SaleTransactionV2*)
+# SaleTransactionV2
+(*.SaleTransactionV2*)
 
 ### Available Operations
 
@@ -17,16 +17,16 @@ A <b>Sale</b> transaction authorizes a sale purchased. This action decreases the
 ### Example Usage
 
 ```csharp
-using Gateway;
-using Gateway.Models.Operations;
-using Gateway.Models.Shared;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.SaleTransactionV2.CreateAsync(new RestAPIv2SaleRequest() {
     Gmid = "string",
     RequestBody = "string",
-    TransType = Gateway.Models.Shared.TransType.Register,
+    TransType = TransType.Register,
 });
 
 // handle response

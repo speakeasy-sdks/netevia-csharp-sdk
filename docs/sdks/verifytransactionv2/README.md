@@ -1,5 +1,5 @@
-# VerifyTransactionV2SDK
-(*VerifyTransactionV2*)
+# VerifyTransactionV2
+(*.VerifyTransactionV2*)
 
 ### Available Operations
 
@@ -18,16 +18,16 @@ A <b>Verify</b> transaction is used to check if the card is valid.
 ### Example Usage
 
 ```csharp
-using Gateway;
-using Gateway.Models.Operations;
-using Gateway.Models.Shared;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.VerifyTransactionV2.CreateAsync(new RestAPIv2VerifyInquiryRequest() {
     Gmid = "string",
     RequestBody = "string",
-    TransType = Gateway.Models.Shared.TransType.Register,
+    TransType = TransType.Register,
 });
 
 // handle response

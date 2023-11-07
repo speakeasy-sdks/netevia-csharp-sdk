@@ -1,5 +1,5 @@
-# TransactionInfoV2SDK
-(*TransactionInfoV2*)
+# TransactionInfoV2
+(*.TransactionInfoV2*)
 
 ### Available Operations
 
@@ -17,16 +17,16 @@ A <b>GetTransInfo</b> transaction is used to query the transaction status by GTR
 ### Example Usage
 
 ```csharp
-using Gateway;
-using Gateway.Models.Operations;
-using Gateway.Models.Shared;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.TransactionInfoV2.CreateAsync(new RestAPIv2GetTransInfoRequest() {
     Gmid = "string",
     RequestBody = "string",
-    TransType = Gateway.Models.Shared.TransType.Register,
+    TransType = TransType.Register,
 });
 
 // handle response

@@ -1,5 +1,5 @@
-# DesktopPDCTransactionV2SDK
-(*DesktopPDCTransactionV2*)
+# DesktopPDCTransactionV2
+(*.DesktopPDCTransactionV2*)
 
 ### Available Operations
 
@@ -14,16 +14,16 @@ Desktop PDC version need above 2.2.7. and you need add the websocket clinet conf
 ### Example Usage
 
 ```csharp
-using Gateway;
-using Gateway.Models.Operations;
-using Gateway.Models.Shared;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.DesktopPDCTransactionV2.CreateAsync(new ControlDesktopPDCv2Request() {
     Gmid = "string",
     RequestBody = "string",
-    TransType = Gateway.Models.Shared.TransType.Register,
+    TransType = TransType.Register,
 });
 
 // handle response

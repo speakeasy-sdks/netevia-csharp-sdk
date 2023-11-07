@@ -1,5 +1,5 @@
-# CloudPDCRefundv2SDK
-(*CloudPDCRefundv2*)
+# CloudPDCRefundv2
+(*.CloudPDCRefundv2*)
 
 ### Available Operations
 
@@ -14,16 +14,16 @@ Initiate a Refund request to Netevia Payment Device Controller.
 ### Example Usage
 
 ```csharp
-using Gateway;
-using Gateway.Models.Operations;
-using Gateway.Models.Shared;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.CloudPDCRefundv2.CreateAsync(new InitiateCloudPDCv2RefundRequest() {
     Gmid = "string",
     RequestBody = "string",
-    TransType = Gateway.Models.Shared.TransType.Register,
+    TransType = TransType.Register,
 });
 
 // handle response

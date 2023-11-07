@@ -1,5 +1,5 @@
-# BatchQueryV2SDK
-(*BatchQueryV2*)
+# BatchQueryV2
+(*.BatchQueryV2*)
 
 ### Available Operations
 
@@ -22,16 +22,16 @@ ___
 ### Example Usage
 
 ```csharp
-using Gateway;
-using Gateway.Models.Operations;
-using Gateway.Models.Shared;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.BatchQueryV2.CreateAsync(new BatchAPIv2Request() {
     Gmid = "string",
     RequestBody = "string",
-    TransType = Gateway.Models.Shared.TransType.Register,
+    TransType = TransType.Register,
 });
 
 // handle response

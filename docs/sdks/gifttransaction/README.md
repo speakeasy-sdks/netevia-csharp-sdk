@@ -1,5 +1,5 @@
-# GiftTransactionSDK
-(*GiftTransaction*)
+# GiftTransaction
+(*.GiftTransaction*)
 
 ### Available Operations
 
@@ -44,9 +44,9 @@ New fields
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.GiftTransaction.CreateAsync("string");
 

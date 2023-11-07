@@ -1,5 +1,5 @@
-# RefundTransctionV2SDK
-(*RefundTransctionV2*)
+# RefundTransctionV2
+(*.RefundTransctionV2*)
 
 ### Available Operations
 
@@ -17,16 +17,16 @@ A <b>Refund</b> transaction is used to authorize a refund to a customer's credit
 ### Example Usage
 
 ```csharp
-using Gateway;
-using Gateway.Models.Operations;
-using Gateway.Models.Shared;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.RefundTransctionV2.CreateAsync(new RestAPIv2RefundRequest() {
     Gmid = "string",
     RequestBody = "string",
-    TransType = Gateway.Models.Shared.TransType.Register,
+    TransType = TransType.Register,
 });
 
 // handle response

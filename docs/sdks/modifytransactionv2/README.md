@@ -1,5 +1,5 @@
-# ModifyTransactionV2SDK
-(*ModifyTransactionV2*)
+# ModifyTransactionV2
+(*.ModifyTransactionV2*)
 
 ### Available Operations
 
@@ -19,16 +19,16 @@ Initiate a <b>Modify/Adjust/AddTip</b> transaction request to Netevia Gateway.<s
 ### Example Usage
 
 ```csharp
-using Gateway;
-using Gateway.Models.Operations;
-using Gateway.Models.Shared;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.ModifyTransactionV2.CreateAsync(new RestAPIv2ModifyRequest() {
     Gmid = "string",
     RequestBody = "string",
-    TransType = Gateway.Models.Shared.TransType.Register,
+    TransType = TransType.Register,
 });
 
 // handle response

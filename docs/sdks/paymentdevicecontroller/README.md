@@ -1,5 +1,5 @@
-# PaymentDeviceControllerSDK
-(*PaymentDeviceController*)
+# PaymentDeviceController
+(*.PaymentDeviceController*)
 
 ### Available Operations
 
@@ -33,9 +33,9 @@ ___
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.PaymentDeviceController.CreateAsync("string");
 

@@ -1,5 +1,5 @@
-# ACHCreditTransactionSDK
-(*ACHCreditTransaction*)
+# ACHCreditTransaction
+(*.ACHCreditTransaction*)
 
 ### Available Operations
 
@@ -19,9 +19,9 @@ To be more generic and have a similar approach as for Debit ACH, we can also sim
 ### Example Usage
 
 ```csharp
-using Gateway;
+using Netevia;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
 var res = await sdk.ACHCreditTransaction.CreateAsync("string");
 
