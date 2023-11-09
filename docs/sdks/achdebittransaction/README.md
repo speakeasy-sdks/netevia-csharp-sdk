@@ -1,5 +1,5 @@
 # ACHDebitTransaction
-(*.ACHDebitTransaction*)
+(*ACHDebitTransaction*)
 
 ### Available Operations
 
@@ -35,5 +35,5 @@ var res = await sdk.ACHDebitTransaction.CreateAsync("string");
 
 ### Response
 
-**[RestAPIACHDebitResponse](../../models/operations/RestAPIACHDebitResponse.md)**
+**[RestAPIACHDebitResponse](../../Models/Operations/RestAPIACHDebitResponse.md)**
 

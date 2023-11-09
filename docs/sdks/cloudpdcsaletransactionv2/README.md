@@ -1,5 +1,5 @@
 # CloudPDCSaleTransactionV2
-(*.CloudPDCSaleTransactionV2*)
+(*CloudPDCSaleTransactionV2*)
 
 ### Available Operations
 
@@ -33,10 +33,10 @@ var res = await sdk.CloudPDCSaleTransactionV2.CreateAsync(new InitiateCloudPDCv2
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [InitiateCloudPDCv2SaleRequest](../../models/operations/InitiateCloudPDCv2SaleRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| `request`                                                                                 | [InitiateCloudPDCv2SaleRequest](../../Models/Operations/InitiateCloudPDCv2SaleRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 
 ### Response
 
-**[InitiateCloudPDCv2SaleResponse](../../models/operations/InitiateCloudPDCv2SaleResponse.md)**
+**[InitiateCloudPDCv2SaleResponse](../../Models/Operations/InitiateCloudPDCv2SaleResponse.md)**
 

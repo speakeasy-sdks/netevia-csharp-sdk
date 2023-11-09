@@ -1,5 +1,5 @@
 # ACHDebitTransactionV2
-(*.ACHDebitTransactionV2*)
+(*ACHDebitTransactionV2*)
 
 ### Available Operations
 
@@ -36,10 +36,10 @@ var res = await sdk.ACHDebitTransactionV2.CreateAsync(new RestAPIv2ACHDebitReque
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [RestAPIv2ACHDebitRequest](../../models/operations/RestAPIv2ACHDebitRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| `request`                                                                       | [RestAPIv2ACHDebitRequest](../../Models/Operations/RestAPIv2ACHDebitRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 
 ### Response
 
-**[RestAPIv2ACHDebitResponse](../../models/operations/RestAPIv2ACHDebitResponse.md)**
+**[RestAPIv2ACHDebitResponse](../../Models/Operations/RestAPIv2ACHDebitResponse.md)**
 

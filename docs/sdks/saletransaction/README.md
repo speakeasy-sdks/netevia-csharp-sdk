@@ -1,5 +1,5 @@
 # SaleTransaction
-(*.SaleTransaction*)
+(*SaleTransaction*)
 
 ### Available Operations
 
@@ -35,5 +35,5 @@ var res = await sdk.SaleTransaction.CreateAsync("string");
 
 ### Response
 
-**[RestAPISaleResponse](../../models/operations/RestAPISaleResponse.md)**
+**[RestAPISaleResponse](../../Models/Operations/RestAPISaleResponse.md)**
 

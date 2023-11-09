@@ -1,5 +1,5 @@
 # BatchTransaction
-(*.BatchTransaction*)
+(*BatchTransaction*)
 
 ### Available Operations
 
@@ -38,10 +38,10 @@ var res = await sdk.BatchTransaction.CreateAsync(new RestAPIv2BatchRequest() {
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [RestAPIv2BatchRequest](../../models/operations/RestAPIv2BatchRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| `request`                                                                 | [RestAPIv2BatchRequest](../../Models/Operations/RestAPIv2BatchRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 
 ### Response
 
-**[RestAPIv2BatchResponse](../../models/operations/RestAPIv2BatchResponse.md)**
+**[RestAPIv2BatchResponse](../../Models/Operations/RestAPIv2BatchResponse.md)**
 

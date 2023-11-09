@@ -1,5 +1,5 @@
 # GiftTransactionV2
-(*.GiftTransactionV2*)
+(*GiftTransactionV2*)
 
 ### Available Operations
 
@@ -63,10 +63,10 @@ var res = await sdk.GiftTransactionV2.CreateAsync(new RestAPIv2GiftRequest() {
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [RestAPIv2GiftRequest](../../models/operations/RestAPIv2GiftRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| `request`                                                               | [RestAPIv2GiftRequest](../../Models/Operations/RestAPIv2GiftRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 
 ### Response
 
-**[RestAPIv2GiftResponse](../../models/operations/RestAPIv2GiftResponse.md)**
+**[RestAPIv2GiftResponse](../../Models/Operations/RestAPIv2GiftResponse.md)**
 

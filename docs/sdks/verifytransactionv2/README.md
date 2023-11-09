@@ -1,5 +1,5 @@
 # VerifyTransactionV2
-(*.VerifyTransactionV2*)
+(*VerifyTransactionV2*)
 
 ### Available Operations
 
@@ -37,10 +37,10 @@ var res = await sdk.VerifyTransactionV2.CreateAsync(new RestAPIv2VerifyInquiryRe
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [RestAPIv2VerifyInquiryRequest](../../models/operations/RestAPIv2VerifyInquiryRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| `request`                                                                                 | [RestAPIv2VerifyInquiryRequest](../../Models/Operations/RestAPIv2VerifyInquiryRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 
 ### Response
 
-**[RestAPIv2VerifyInquiryResponse](../../models/operations/RestAPIv2VerifyInquiryResponse.md)**
+**[RestAPIv2VerifyInquiryResponse](../../Models/Operations/RestAPIv2VerifyInquiryResponse.md)**
 

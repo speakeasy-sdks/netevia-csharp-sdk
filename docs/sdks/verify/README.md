@@ -1,5 +1,5 @@
 # Verify
-(*.Verify*)
+(*Verify*)
 
 ### Available Operations
 
@@ -36,5 +36,5 @@ var res = await sdk.Verify.RestAPIVerifyInquiryAsync("string");
 
 ### Response
 
-**[RestAPIVerifyInquiryResponse](../../models/operations/RestAPIVerifyInquiryResponse.md)**
+**[RestAPIVerifyInquiryResponse](../../Models/Operations/RestAPIVerifyInquiryResponse.md)**
 

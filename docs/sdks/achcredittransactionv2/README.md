@@ -1,5 +1,5 @@
 # ACHCreditTransactionV2
-(*.ACHCreditTransactionV2*)
+(*ACHCreditTransactionV2*)
 
 ### Available Operations
 
@@ -38,10 +38,10 @@ var res = await sdk.ACHCreditTransactionV2.CreateAsync(new RestAPIv2ACHCreditReq
 
 | Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
 | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [RestAPIv2ACHCreditRequest](../../models/operations/RestAPIv2ACHCreditRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| `request`                                                                         | [RestAPIv2ACHCreditRequest](../../Models/Operations/RestAPIv2ACHCreditRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 
 ### Response
 
-**[RestAPIv2ACHCreditResponse](../../models/operations/RestAPIv2ACHCreditResponse.md)**
+**[RestAPIv2ACHCreditResponse](../../Models/Operations/RestAPIv2ACHCreditResponse.md)**
 

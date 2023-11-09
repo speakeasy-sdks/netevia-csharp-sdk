@@ -1,5 +1,5 @@
 # DesktopPDCTransaction
-(*.DesktopPDCTransaction*)
+(*DesktopPDCTransaction*)
 
 ### Available Operations
 
@@ -32,5 +32,5 @@ var res = await sdk.DesktopPDCTransaction.CreateAsync("string");
 
 ### Response
 
-**[ControlDesktopPDCResponse](../../models/operations/ControlDesktopPDCResponse.md)**
+**[ControlDesktopPDCResponse](../../Models/Operations/ControlDesktopPDCResponse.md)**
 

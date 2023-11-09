@@ -1,5 +1,5 @@
 # SaleTransactionV2
-(*.SaleTransactionV2*)
+(*SaleTransactionV2*)
 
 ### Available Operations
 
@@ -36,10 +36,10 @@ var res = await sdk.SaleTransactionV2.CreateAsync(new RestAPIv2SaleRequest() {
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [RestAPIv2SaleRequest](../../models/operations/RestAPIv2SaleRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| `request`                                                               | [RestAPIv2SaleRequest](../../Models/Operations/RestAPIv2SaleRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 
 ### Response
 
-**[RestAPIv2SaleResponse](../../models/operations/RestAPIv2SaleResponse.md)**
+**[RestAPIv2SaleResponse](../../Models/Operations/RestAPIv2SaleResponse.md)**
 

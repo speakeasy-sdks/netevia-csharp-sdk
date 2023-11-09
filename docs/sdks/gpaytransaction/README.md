@@ -1,5 +1,5 @@
 # GPayTransaction
-(*.GPayTransaction*)
+(*GPayTransaction*)
 
 ### Available Operations
 
@@ -37,5 +37,5 @@ var res = await sdk.GPayTransaction.CreateAsync("string");
 
 ### Response
 
-**[RestGPayResponse](../../models/operations/RestGPayResponse.md)**
+**[RestGPayResponse](../../Models/Operations/RestGPayResponse.md)**
 

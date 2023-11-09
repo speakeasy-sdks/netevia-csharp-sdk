@@ -1,5 +1,5 @@
 # TransactionInfoV2
-(*.TransactionInfoV2*)
+(*TransactionInfoV2*)
 
 ### Available Operations
 
@@ -36,10 +36,10 @@ var res = await sdk.TransactionInfoV2.CreateAsync(new RestAPIv2GetTransInfoReque
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [RestAPIv2GetTransInfoRequest](../../models/operations/RestAPIv2GetTransInfoRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| `request`                                                                               | [RestAPIv2GetTransInfoRequest](../../Models/Operations/RestAPIv2GetTransInfoRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 
 ### Response
 
-**[RestAPIv2GetTransInfoResponse](../../models/operations/RestAPIv2GetTransInfoResponse.md)**
+**[RestAPIv2GetTransInfoResponse](../../Models/Operations/RestAPIv2GetTransInfoResponse.md)**
 

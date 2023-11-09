@@ -1,5 +1,5 @@
 # GiftTransaction
-(*.GiftTransaction*)
+(*GiftTransaction*)
 
 ### Available Operations
 
@@ -62,5 +62,5 @@ var res = await sdk.GiftTransaction.CreateAsync("string");
 
 ### Response
 
-**[RestAPIGiftResponse](../../models/operations/RestAPIGiftResponse.md)**
+**[RestAPIGiftResponse](../../Models/Operations/RestAPIGiftResponse.md)**
 

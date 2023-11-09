@@ -1,5 +1,5 @@
 # CloudPDCRefundv2
-(*.CloudPDCRefundv2*)
+(*CloudPDCRefundv2*)
 
 ### Available Operations
 
@@ -33,10 +33,10 @@ var res = await sdk.CloudPDCRefundv2.CreateAsync(new InitiateCloudPDCv2RefundReq
 
 | Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [InitiateCloudPDCv2RefundRequest](../../models/operations/InitiateCloudPDCv2RefundRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| `request`                                                                                     | [InitiateCloudPDCv2RefundRequest](../../Models/Operations/InitiateCloudPDCv2RefundRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
 
 ### Response
 
-**[InitiateCloudPDCv2RefundResponse](../../models/operations/InitiateCloudPDCv2RefundResponse.md)**
+**[InitiateCloudPDCv2RefundResponse](../../Models/Operations/InitiateCloudPDCv2RefundResponse.md)**
 

@@ -1,5 +1,5 @@
 # QRPayTransaction
-(*.QRPayTransaction*)
+(*QRPayTransaction*)
 
 ### Available Operations
 
@@ -64,5 +64,5 @@ var res = await sdk.QRPayTransaction.CreateAsync("string");
 
 ### Response
 
-**[IntegrateQRPayResponse](../../models/operations/IntegrateQRPayResponse.md)**
+**[IntegrateQRPayResponse](../../Models/Operations/IntegrateQRPayResponse.md)**
 

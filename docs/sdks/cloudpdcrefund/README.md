@@ -1,5 +1,5 @@
 # CloudPDCRefund
-(*.CloudPDCRefund*)
+(*CloudPDCRefund*)
 
 ### Available Operations
 
@@ -32,5 +32,5 @@ var res = await sdk.CloudPDCRefund.CreateAsync("string");
 
 ### Response
 
-**[InitiateCloudPDCRefundResponse](../../models/operations/InitiateCloudPDCRefundResponse.md)**
+**[InitiateCloudPDCRefundResponse](../../Models/Operations/InitiateCloudPDCRefundResponse.md)**
 

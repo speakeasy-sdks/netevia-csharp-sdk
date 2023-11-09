@@ -1,5 +1,5 @@
 # TokenTransactionV2
-(*.TokenTransactionV2*)
+(*TokenTransactionV2*)
 
 ### Available Operations
 
@@ -44,10 +44,10 @@ var res = await sdk.TokenTransactionV2.CreateAsync(new RestAPIv2TokenRequest() {
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [RestAPIv2TokenRequest](../../models/operations/RestAPIv2TokenRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| `request`                                                                 | [RestAPIv2TokenRequest](../../Models/Operations/RestAPIv2TokenRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 
 ### Response
 
-**[RestAPIv2TokenResponse](../../models/operations/RestAPIv2TokenResponse.md)**
+**[RestAPIv2TokenResponse](../../Models/Operations/RestAPIv2TokenResponse.md)**
 

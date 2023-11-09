@@ -1,5 +1,5 @@
 # BatchQueryV2
-(*.BatchQueryV2*)
+(*BatchQueryV2*)
 
 ### Available Operations
 
@@ -41,10 +41,10 @@ var res = await sdk.BatchQueryV2.CreateAsync(new BatchAPIv2Request() {
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `request`                                                         | [BatchAPIv2Request](../../models/operations/BatchAPIv2Request.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
+| `request`                                                         | [BatchAPIv2Request](../../Models/Operations/BatchAPIv2Request.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
 
 
 ### Response
 
-**[BatchAPIv2Response](../../models/operations/BatchAPIv2Response.md)**
+**[BatchAPIv2Response](../../Models/Operations/BatchAPIv2Response.md)**
 

@@ -2,15 +2,15 @@ configVersion: 1.0.0
 management:
   docChecksum: 2c5886f131333739bac7ed953d9b5ce1
   docVersion: 0.1.0
-  speakeasyVersion: 1.114.1
-  generationVersion: 2.181.1
+  speakeasyVersion: 1.116.0
+  generationVersion: 2.185.0
 generation:
   comments: {}
   sdkClassName: gateway
   repoURL: https://github.com/speakeasy-sdks/netevia-csharp-sdk.git
 features:
   csharp:
-    core: 3.1.0
+    core: 3.1.1
     globalServerURLs: 2.82.0
     groups: 2.81.2
     nameOverrides: 2.81.1
@@ -24,7 +24,7 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
 csharp:
-  version: 0.7.0
+  version: 0.7.1
   author: Speakeasy
   dotnetVersion: net5.0
   imports:
@@ -35,7 +35,9 @@ csharp:
       operations: Models/Operations
       shared: Models/Shared
       webhooks: Models/Webhooks
+  inputModelSuffix: input
   maxMethodParams: 0
+  outputModelSuffix: output
   packageName: netevia
   published: true
   repoSubDirectory: .

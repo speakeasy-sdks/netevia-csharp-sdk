@@ -1,5 +1,5 @@
 # DesktopPDCTransactionV2
-(*.DesktopPDCTransactionV2*)
+(*DesktopPDCTransactionV2*)
 
 ### Available Operations
 
@@ -33,10 +33,10 @@ var res = await sdk.DesktopPDCTransactionV2.CreateAsync(new ControlDesktopPDCv2R
 
 | Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
 | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ControlDesktopPDCv2Request](../../models/operations/ControlDesktopPDCv2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| `request`                                                                           | [ControlDesktopPDCv2Request](../../Models/Operations/ControlDesktopPDCv2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 
 ### Response
 
-**[ControlDesktopPDCv2Response](../../models/operations/ControlDesktopPDCv2Response.md)**
+**[ControlDesktopPDCv2Response](../../Models/Operations/ControlDesktopPDCv2Response.md)**
 

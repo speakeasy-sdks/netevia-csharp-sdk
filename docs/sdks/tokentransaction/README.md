@@ -1,5 +1,5 @@
 # TokenTransaction
-(*.TokenTransaction*)
+(*TokenTransaction*)
 
 ### Available Operations
 
@@ -43,5 +43,5 @@ var res = await sdk.TokenTransaction.CreateAsync("string");
 
 ### Response
 
-**[CardTokenResponse](../../models/operations/CardTokenResponse.md)**
+**[CardTokenResponse](../../Models/Operations/CardTokenResponse.md)**
 

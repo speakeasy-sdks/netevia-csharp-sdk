@@ -1,5 +1,5 @@
 # PaymentDeviceController
-(*.PaymentDeviceController*)
+(*PaymentDeviceController*)
 
 ### Available Operations
 
@@ -51,5 +51,5 @@ var res = await sdk.PaymentDeviceController.CreateAsync("string");
 
 ### Response
 
-**[ControlCloudPDCResponse](../../models/operations/ControlCloudPDCResponse.md)**
+**[ControlCloudPDCResponse](../../Models/Operations/ControlCloudPDCResponse.md)**
 

@@ -1,5 +1,5 @@
 # CloudPDCIngenicoTransactionV2
-(*.CloudPDCIngenicoTransactionV2*)
+(*CloudPDCIngenicoTransactionV2*)
 
 ### Available Operations
 
@@ -52,10 +52,10 @@ var res = await sdk.CloudPDCIngenicoTransactionV2.CreateAsync(new ControlCloudPD
 
 | Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [ControlCloudPDCv2IngenicoRequest](../../models/operations/ControlCloudPDCv2IngenicoRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| `request`                                                                                       | [ControlCloudPDCv2IngenicoRequest](../../Models/Operations/ControlCloudPDCv2IngenicoRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 
 ### Response
 
-**[ControlCloudPDCv2IngenicoResponse](../../models/operations/ControlCloudPDCv2IngenicoResponse.md)**
+**[ControlCloudPDCv2IngenicoResponse](../../Models/Operations/ControlCloudPDCv2IngenicoResponse.md)**
 

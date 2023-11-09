@@ -1,5 +1,5 @@
 # RefundTransctionV2
-(*.RefundTransctionV2*)
+(*RefundTransctionV2*)
 
 ### Available Operations
 
@@ -36,10 +36,10 @@ var res = await sdk.RefundTransctionV2.CreateAsync(new RestAPIv2RefundRequest() 
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [RestAPIv2RefundRequest](../../models/operations/RestAPIv2RefundRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| `request`                                                                   | [RestAPIv2RefundRequest](../../Models/Operations/RestAPIv2RefundRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 
 ### Response
 
-**[RestAPIv2RefundResponse](../../models/operations/RestAPIv2RefundResponse.md)**
+**[RestAPIv2RefundResponse](../../Models/Operations/RestAPIv2RefundResponse.md)**
 

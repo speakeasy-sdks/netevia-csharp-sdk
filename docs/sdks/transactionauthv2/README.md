@@ -1,5 +1,5 @@
 # TransactionAuthV2
-(*.TransactionAuthV2*)
+(*TransactionAuthV2*)
 
 ### Available Operations
 
@@ -37,10 +37,10 @@ var res = await sdk.TransactionAuthV2.CreateAsync(new RestAPIv2AuthRequest() {
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [RestAPIv2AuthRequest](../../models/operations/RestAPIv2AuthRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| `request`                                                               | [RestAPIv2AuthRequest](../../Models/Operations/RestAPIv2AuthRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 
 ### Response
 
-**[RestAPIv2AuthResponse](../../models/operations/RestAPIv2AuthResponse.md)**
+**[RestAPIv2AuthResponse](../../Models/Operations/RestAPIv2AuthResponse.md)**
 

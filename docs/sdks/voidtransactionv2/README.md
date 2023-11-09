@@ -1,5 +1,5 @@
 # VoidTransactionV2
-(*.VoidTransactionV2*)
+(*VoidTransactionV2*)
 
 ### Available Operations
 
@@ -38,10 +38,10 @@ var res = await sdk.VoidTransactionV2.CreateAsync(new RestAPIv2VoidRequest() {
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [RestAPIv2VoidRequest](../../models/operations/RestAPIv2VoidRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| `request`                                                               | [RestAPIv2VoidRequest](../../Models/Operations/RestAPIv2VoidRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 
 ### Response
 
-**[RestAPIv2VoidResponse](../../models/operations/RestAPIv2VoidResponse.md)**
+**[RestAPIv2VoidResponse](../../Models/Operations/RestAPIv2VoidResponse.md)**
 

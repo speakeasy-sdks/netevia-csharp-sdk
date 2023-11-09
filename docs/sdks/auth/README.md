@@ -1,5 +1,5 @@
 # Auth
-(*.Auth*)
+(*Auth*)
 
 ### Available Operations
 
@@ -36,5 +36,5 @@ var res = await sdk.Auth.FinalizeAsync("string");
 
 ### Response
 
-**[RestAPIAuthResponse](../../models/operations/RestAPIAuthResponse.md)**
+**[RestAPIAuthResponse](../../Models/Operations/RestAPIAuthResponse.md)**
 

@@ -1,5 +1,5 @@
 # TransInfo
-(*.TransInfo*)
+(*TransInfo*)
 
 ### Available Operations
 
@@ -35,5 +35,5 @@ var res = await sdk.TransInfo.CreateAsync("string");
 
 ### Response
 
-**[RestAPIGetTransInfoResponse](../../models/operations/RestAPIGetTransInfoResponse.md)**
+**[RestAPIGetTransInfoResponse](../../Models/Operations/RestAPIGetTransInfoResponse.md)**
 

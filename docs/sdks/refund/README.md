@@ -1,5 +1,5 @@
 # Refund
-(*.Refund*)
+(*Refund*)
 
 ### Available Operations
 
@@ -35,5 +35,5 @@ var res = await sdk.Refund.CreateAsync("string");
 
 ### Response
 
-**[RestAPIRefundResponse](../../models/operations/RestAPIRefundResponse.md)**
+**[RestAPIRefundResponse](../../Models/Operations/RestAPIRefundResponse.md)**
 

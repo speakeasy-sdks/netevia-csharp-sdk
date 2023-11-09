@@ -1,5 +1,5 @@
 # CloudPDCSaleTransaction
-(*.CloudPDCSaleTransaction*)
+(*CloudPDCSaleTransaction*)
 
 ### Available Operations
 
@@ -32,5 +32,5 @@ var res = await sdk.CloudPDCSaleTransaction.CreateAsync("string");
 
 ### Response
 
-**[InitiateCloudPDCSaleResponse](../../models/operations/InitiateCloudPDCSaleResponse.md)**
+**[InitiateCloudPDCSaleResponse](../../Models/Operations/InitiateCloudPDCSaleResponse.md)**
 

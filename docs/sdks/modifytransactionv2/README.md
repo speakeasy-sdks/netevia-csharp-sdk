@@ -1,5 +1,5 @@
 # ModifyTransactionV2
-(*.ModifyTransactionV2*)
+(*ModifyTransactionV2*)
 
 ### Available Operations
 
@@ -38,10 +38,10 @@ var res = await sdk.ModifyTransactionV2.CreateAsync(new RestAPIv2ModifyRequest()
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [RestAPIv2ModifyRequest](../../models/operations/RestAPIv2ModifyRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| `request`                                                                   | [RestAPIv2ModifyRequest](../../Models/Operations/RestAPIv2ModifyRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 
 ### Response
 
-**[RestAPIv2ModifyResponse](../../models/operations/RestAPIv2ModifyResponse.md)**
+**[RestAPIv2ModifyResponse](../../Models/Operations/RestAPIv2ModifyResponse.md)**
 

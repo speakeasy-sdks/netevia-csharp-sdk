@@ -1,5 +1,5 @@
 # TransactionV2
-(*.TransactionV2*)
+(*TransactionV2*)
 
 ### Available Operations
 
@@ -36,10 +36,10 @@ var res = await sdk.TransactionV2.CreateAsync(new RestAPIv2Request() {
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `request`                                                       | [RestAPIv2Request](../../models/operations/RestAPIv2Request.md) | :heavy_check_mark:                                              | The request object to use for the request.                      |
+| `request`                                                       | [RestAPIv2Request](../../Models/Operations/RestAPIv2Request.md) | :heavy_check_mark:                                              | The request object to use for the request.                      |
 
 
 ### Response
 
-**[RestAPIv2Response](../../models/operations/RestAPIv2Response.md)**
+**[RestAPIv2Response](../../Models/Operations/RestAPIv2Response.md)**
 

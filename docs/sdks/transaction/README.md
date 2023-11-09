@@ -1,5 +1,5 @@
 # Transaction
-(*.Transaction*)
+(*Transaction*)
 
 ### Available Operations
 
@@ -41,7 +41,7 @@ var res = await sdk.Transaction.BatchCloseAsync("string");
 
 ### Response
 
-**[RestAPIBatchResponse](../../models/operations/RestAPIBatchResponse.md)**
+**[RestAPIBatchResponse](../../Models/Operations/RestAPIBatchResponse.md)**
 
 
 ## BatchQuery
@@ -79,7 +79,7 @@ var res = await sdk.Transaction.BatchQueryAsync("string");
 
 ### Response
 
-**[BatchAPIResponse](../../models/operations/BatchAPIResponse.md)**
+**[BatchAPIResponse](../../Models/Operations/BatchAPIResponse.md)**
 
 
 ## Create
@@ -112,7 +112,7 @@ var res = await sdk.Transaction.CreateAsync("string");
 
 ### Response
 
-**[RestAPIResponse](../../models/operations/RestAPIResponse.md)**
+**[RestAPIResponse](../../Models/Operations/RestAPIResponse.md)**
 
 
 ## Modify
@@ -147,7 +147,7 @@ var res = await sdk.Transaction.ModifyAsync("string");
 
 ### Response
 
-**[RestAPIModifyResponse](../../models/operations/RestAPIModifyResponse.md)**
+**[RestAPIModifyResponse](../../Models/Operations/RestAPIModifyResponse.md)**
 
 
 ## Void
@@ -182,5 +182,5 @@ var res = await sdk.Transaction.VoidAsync("string");
 
 ### Response
 
-**[RestAPIVoidResponse](../../models/operations/RestAPIVoidResponse.md)**
+**[RestAPIVoidResponse](../../Models/Operations/RestAPIVoidResponse.md)**
 
