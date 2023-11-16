@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```csharp
 using Netevia;
 using Netevia.Models.Operations;

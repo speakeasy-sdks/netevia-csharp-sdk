@@ -42,10 +42,10 @@ namespace Netevia
     {
         public SDKConfig Config { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.7.1";
-        private const string _sdkGenVersion = "2.185.0";
+        private const string _sdkVersion = "0.7.2";
+        private const string _sdkGenVersion = "2.192.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.7.1 2.185.0 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.7.2 2.192.1 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -61,14 +61,9 @@ namespace Netevia
 
         public async Task<RestAPIv2BatchResponse> CreateAsync(RestAPIv2BatchRequest request)
         {
-            string baseUrl = _serverUrl;
-            if (baseUrl.EndsWith("/"))
-            {
-                baseUrl = baseUrl.Substring(0, baseUrl.Length - 1);
-            }
+            string baseUrl = this.Config.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/Payment/{TransType}#Batch", request);
             
-
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             

@@ -16,6 +16,100 @@ namespace Netevia
     using System.Threading.Tasks;
     using System;
 
+
+
+    /// <summary>
+    /// Environment<br/>
+    /// 
+    /// <remarks>
+    ///   * gatewayapidocs <br/>
+    /// 
+    /// </remarks>
+    /// </summary>
+    public enum ServerEnvironment
+    {
+        [JsonProperty("gatewayapidocs")]
+        Gatewayapidocs,
+    }
+
+    public static class ServerEnvironmentExtension
+    {
+        public static string Value(this ServerEnvironment value)
+        {
+            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
+        }
+
+        public static ServerEnvironment ToEnum(this string value)
+        {
+            foreach(var field in typeof(ServerEnvironment).GetFields())
+            {
+                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    continue;
+                }
+
+                var attribute = attributes[0] as JsonPropertyAttribute;
+                if (attribute != null && attribute.PropertyName == value)
+                {
+                    var enumVal = field.GetValue(null);
+
+                    if (enumVal is ServerEnvironment)
+                    {
+                        return (ServerEnvironment)enumVal;
+                    }
+                }
+            }
+
+            throw new Exception($"Unknown value {value} for enum ServerEnvironment");
+        }
+    }
+    /// <summary>
+    /// Engine Port<br/>
+    /// 
+    /// <remarks>
+    ///   * 11911<br/>
+    /// 
+    /// </remarks>
+    /// </summary>
+    public enum ServerPort
+    {
+        [JsonProperty("11911")]
+        ElevenThousandNineHundredAndEleven,
+    }
+
+    public static class ServerPortExtension
+    {
+        public static string Value(this ServerPort value)
+        {
+            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
+        }
+
+        public static ServerPort ToEnum(this string value)
+        {
+            foreach(var field in typeof(ServerPort).GetFields())
+            {
+                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    continue;
+                }
+
+                var attribute = attributes[0] as JsonPropertyAttribute;
+                if (attribute != null && attribute.PropertyName == value)
+                {
+                    var enumVal = field.GetValue(null);
+
+                    if (enumVal is ServerPort)
+                    {
+                        return (ServerPort)enumVal;
+                    }
+                }
+            }
+
+            throw new Exception($"Unknown value {value} for enum ServerPort");
+        }
+    }
     /// <summary>
     /// Netevia API: # Netevia Gateway API for Transaction Processing&lt;br&gt;<br/>
     /// 
@@ -67,6 +161,25 @@ namespace Netevia
     
     public class SDKConfig
     {
+        public static string[] ServerList = new string[]
+        {
+            "https://{environment}.netevia.com:{port}",
+            "https://{environment}.netevia.com:{port}",
+            "https://virtserver.swaggerhub.com/Netevia_INC/Netevia/0.1.0",
+        };
+        /// Contains the list of servers available to the SDK
+        public string serverUrl = "";
+        public int serverIndex = 0;
+        public List<Dictionary<string, string>> ServerDefaults = new List<Dictionary<string, string>>();
+
+        public string GetTemplatedServerDetails()
+        {
+            if (!String.IsNullOrEmpty(this.serverUrl))
+            {
+                return Utilities.TemplateUrl(Utilities.RemoveSuffix(this.serverUrl, "/"), new Dictionary<string, string>());
+            }
+            return Utilities.TemplateUrl(SDKConfig.ServerList[this.serverIndex], this.ServerDefaults[this.serverIndex]);
+        }
     }
 
     /// <summary>
@@ -83,18 +196,13 @@ namespace Netevia
     public class Gateway: IGateway
     {
         public SDKConfig Config { get; private set; }
-        public static List<string> ServerList = new List<string>()
-        {
-            "https://{environment}.netevia.com:{port}",
-            "https://{environment}.netevia.com:{port}",
-            "https://virtserver.swaggerhub.com/Netevia_INC/Netevia/0.1.0",
-        };
+
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.7.1";
-        private const string _sdkGenVersion = "2.185.0";
+        private const string _sdkVersion = "0.7.2";
+        private const string _sdkGenVersion = "2.192.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.7.1 2.185.0 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.7.2 2.192.1 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -133,15 +241,38 @@ namespace Netevia
         public IGPayTransaction GPayTransaction { get; private set; }
         public IDesktopPDCTransaction DesktopPDCTransaction { get; private set; }
 
-        public Gateway(string? serverUrl = null, ISpeakeasyHttpClient? client = null)
+        public Gateway(int? serverIndex = null, ServerEnvironment? environment = null, ServerPort? port = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null)
         {
-            _serverUrl = serverUrl ?? Gateway.ServerList[0];
+            if (serverUrl != null) {
+                if (urlParams != null) {
+                    serverUrl = Utilities.TemplateUrl(serverUrl, urlParams);
+                }
+                _serverUrl = serverUrl;
+            }
+            List<Dictionary<string, string>> serverDefaults = new List<Dictionary<string, string>>()
+            {
+                new Dictionary<string, string>()
+                {
+                    {"environment", environment == null ? "gatewayapidocs" : ServerEnvironmentExtension.Value(environment.Value)},
+                    {"port", port == null ? "11911" : ServerPortExtension.Value(port.Value)},
+                },
+                new Dictionary<string, string>()
+                {
+                    {"environment", environment == null ? "gatewayapidocs" : ServerEnvironmentExtension.Value(environment.Value)},
+                    {"port", port == null ? "11911" : ServerPortExtension.Value(port.Value)},
+                },
+                new Dictionary<string, string>()
+                {
+                },
+            };
 
             _defaultClient = new SpeakeasyHttpClient(client);
             _securityClient = _defaultClient;
             
             Config = new SDKConfig()
             {
+                ServerDefaults = serverDefaults,
+                serverUrl = _serverUrl
             };
 
             TransactionV2 = new TransactionV2(_defaultClient, _securityClient, _serverUrl, Config);

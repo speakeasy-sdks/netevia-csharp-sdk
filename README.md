@@ -18,6 +18,8 @@ dotnet add package netevia
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+### Example
+
 ```csharp
 using Netevia;
 using Netevia.Models.Operations;
