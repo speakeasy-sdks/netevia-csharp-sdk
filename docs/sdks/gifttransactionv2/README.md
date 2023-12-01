@@ -50,11 +50,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.GiftTransactionV2.CreateAsync(new RestAPIv2GiftRequest() {
+RestAPIv2GiftRequest req = new RestAPIv2GiftRequest() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.GiftTransactionV2.CreateAsync(req);
 
 // handle response
 ```

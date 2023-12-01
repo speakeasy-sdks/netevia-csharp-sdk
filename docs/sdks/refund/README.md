@@ -21,7 +21,9 @@ using Netevia;
 
 var sdk = new Gateway();
 
-var res = await sdk.Refund.CreateAsync("string");
+object req = "string";
+
+var res = await sdk.Refund.CreateAsync(req);
 
 // handle response
 ```

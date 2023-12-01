@@ -29,7 +29,9 @@ using Netevia;
 
 var sdk = new Gateway();
 
-var res = await sdk.TokenTransaction.CreateAsync("string");
+object req = "string";
+
+var res = await sdk.TokenTransaction.CreateAsync(req);
 
 // handle response
 ```

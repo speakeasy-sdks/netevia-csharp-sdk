@@ -48,7 +48,9 @@ using Netevia;
 
 var sdk = new Gateway();
 
-var res = await sdk.GiftTransaction.CreateAsync("string");
+object req = "string";
+
+var res = await sdk.GiftTransaction.CreateAsync(req);
 
 // handle response
 ```

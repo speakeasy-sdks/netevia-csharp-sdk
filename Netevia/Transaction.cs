@@ -105,12 +105,12 @@ namespace Netevia
 
     public class Transaction: ITransaction
     {
-        public SDKConfig Config { get; private set; }
+        public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.7.3";
-        private const string _sdkGenVersion = "2.194.1";
+        private const string _sdkVersion = "0.7.4";
+        private const string _sdkGenVersion = "2.205.0";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.7.3 2.194.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.7.4 2.205.0 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -120,13 +120,13 @@ namespace Netevia
             _defaultClient = defaultClient;
             _securityClient = securityClient;
             _serverUrl = serverUrl;
-            Config = config;
+            SDKConfiguration = config;
         }
         
 
         public async Task<RestAPIBatchResponse> BatchCloseAsync(object request)
         {
-            string baseUrl = this.Config.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = baseUrl + "/restApi#Batch";
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -170,7 +170,7 @@ namespace Netevia
 
         public async Task<BatchAPIResponse> BatchQueryAsync(object request)
         {
-            string baseUrl = this.Config.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = baseUrl + "/bchApi";
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -214,7 +214,7 @@ namespace Netevia
 
         public async Task<RestAPIResponse> CreateAsync(object request)
         {
-            string baseUrl = this.Config.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = baseUrl + "/restApi";
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -249,7 +249,7 @@ namespace Netevia
 
         public async Task<RestAPIModifyResponse> ModifyAsync(object request)
         {
-            string baseUrl = this.Config.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = baseUrl + "/restApi#Modify_Adjust_AddTip";
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -294,7 +294,7 @@ namespace Netevia
 
         public async Task<RestAPIVoidResponse> VoidAsync(object request)
         {
-            string baseUrl = this.Config.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = baseUrl + "/restApi#Void_Reverse_Cancel";
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);

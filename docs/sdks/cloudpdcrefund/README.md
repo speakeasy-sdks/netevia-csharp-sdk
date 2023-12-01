@@ -18,7 +18,9 @@ using Netevia;
 
 var sdk = new Gateway();
 
-var res = await sdk.CloudPDCRefund.CreateAsync("string");
+object req = "string";
+
+var res = await sdk.CloudPDCRefund.CreateAsync(req);
 
 // handle response
 ```

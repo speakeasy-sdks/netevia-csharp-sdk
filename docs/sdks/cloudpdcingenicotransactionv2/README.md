@@ -39,11 +39,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.CloudPDCIngenicoTransactionV2.CreateAsync(new ControlCloudPDCv2IngenicoRequest() {
+ControlCloudPDCv2IngenicoRequest req = new ControlCloudPDCv2IngenicoRequest() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.CloudPDCIngenicoTransactionV2.CreateAsync(req);
 
 // handle response
 ```

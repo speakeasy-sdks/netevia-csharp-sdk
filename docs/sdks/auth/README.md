@@ -22,7 +22,9 @@ using Netevia;
 
 var sdk = new Gateway();
 
-var res = await sdk.Auth.FinalizeAsync("string");
+object req = "string";
+
+var res = await sdk.Auth.FinalizeAsync(req);
 
 // handle response
 ```

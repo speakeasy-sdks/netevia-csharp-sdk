@@ -25,11 +25,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.ModifyTransactionV2.CreateAsync(new RestAPIv2ModifyRequest() {
+RestAPIv2ModifyRequest req = new RestAPIv2ModifyRequest() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.ModifyTransactionV2.CreateAsync(req);
 
 // handle response
 ```

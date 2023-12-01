@@ -20,11 +20,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.CloudPDCRefundv2.CreateAsync(new InitiateCloudPDCv2RefundRequest() {
+InitiateCloudPDCv2RefundRequest req = new InitiateCloudPDCv2RefundRequest() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.CloudPDCRefundv2.CreateAsync(req);
 
 // handle response
 ```

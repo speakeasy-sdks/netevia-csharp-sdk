@@ -35,12 +35,12 @@ namespace Netevia
 
     public class CloudPDCRefundv2: ICloudPDCRefundv2
     {
-        public SDKConfig Config { get; private set; }
+        public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.7.3";
-        private const string _sdkGenVersion = "2.194.1";
+        private const string _sdkVersion = "0.7.4";
+        private const string _sdkGenVersion = "2.205.0";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.7.3 2.194.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.7.4 2.205.0 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -50,13 +50,13 @@ namespace Netevia
             _defaultClient = defaultClient;
             _securityClient = securityClient;
             _serverUrl = serverUrl;
-            Config = config;
+            SDKConfiguration = config;
         }
         
 
         public async Task<InitiateCloudPDCv2RefundResponse> CreateAsync(InitiateCloudPDCv2RefundRequest request)
         {
-            string baseUrl = this.Config.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/Payment/{TransType}#Ingenico_Refund", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);

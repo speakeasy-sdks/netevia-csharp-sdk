@@ -23,11 +23,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.TransactionV2.CreateAsync(new RestAPIv2Request() {
+RestAPIv2Request req = new RestAPIv2Request() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.TransactionV2.CreateAsync(req);
 
 // handle response
 ```

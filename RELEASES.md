@@ -335,3 +335,11 @@ Based on:
 - Speakeasy CLI 1.121.1 (2.194.1) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [csharp v0.7.3] .
+
+## 2023-12-01 00:47:07
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.124.1 (2.205.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.7.4] .

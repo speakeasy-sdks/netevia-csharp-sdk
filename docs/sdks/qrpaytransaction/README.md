@@ -50,7 +50,9 @@ using Netevia;
 
 var sdk = new Gateway();
 
-var res = await sdk.QRPayTransaction.CreateAsync("string");
+object req = "string";
+
+var res = await sdk.QRPayTransaction.CreateAsync(req);
 
 // handle response
 ```

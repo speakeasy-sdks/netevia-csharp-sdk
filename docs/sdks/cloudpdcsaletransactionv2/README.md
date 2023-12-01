@@ -20,11 +20,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.CloudPDCSaleTransactionV2.CreateAsync(new InitiateCloudPDCv2SaleRequest() {
+InitiateCloudPDCv2SaleRequest req = new InitiateCloudPDCv2SaleRequest() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.CloudPDCSaleTransactionV2.CreateAsync(req);
 
 // handle response
 ```

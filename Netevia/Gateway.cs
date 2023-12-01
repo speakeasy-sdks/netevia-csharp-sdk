@@ -11,6 +11,7 @@
 namespace Netevia
 {
     using Netevia.Utils;
+    using Newtonsoft.Json;
     using System.Collections.Generic;
     using System.Net.Http;
     using System.Threading.Tasks;
@@ -195,13 +196,13 @@ namespace Netevia
     /// </summary>
     public class Gateway: IGateway
     {
-        public SDKConfig Config { get; private set; }
+        public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.7.3";
-        private const string _sdkGenVersion = "2.194.1";
+        private const string _sdkVersion = "0.7.4";
+        private const string _sdkGenVersion = "2.205.0";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.7.3 2.194.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.7.4 2.205.0 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -268,46 +269,46 @@ namespace Netevia
             _defaultClient = new SpeakeasyHttpClient(client);
             _securityClient = _defaultClient;
             
-            Config = new SDKConfig()
+            SDKConfiguration = new SDKConfig()
             {
                 ServerDefaults = serverDefaults,
                 serverUrl = _serverUrl
             };
 
-            TransactionV2 = new TransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            ACHCreditTransactionV2 = new ACHCreditTransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            ACHDebitTransactionV2 = new ACHDebitTransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            TransactionAuthV2 = new TransactionAuthV2(_defaultClient, _securityClient, _serverUrl, Config);
-            BatchTransaction = new BatchTransaction(_defaultClient, _securityClient, _serverUrl, Config);
-            BatchQueryV2 = new BatchQueryV2(_defaultClient, _securityClient, _serverUrl, Config);
-            TransactionInfoV2 = new TransactionInfoV2(_defaultClient, _securityClient, _serverUrl, Config);
-            GiftTransactionV2 = new GiftTransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            CloudPDCIngenicoTransactionV2 = new CloudPDCIngenicoTransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            CloudPDCRefundv2 = new CloudPDCRefundv2(_defaultClient, _securityClient, _serverUrl, Config);
-            CloudPDCSaleTransactionV2 = new CloudPDCSaleTransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            ModifyTransactionV2 = new ModifyTransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            RefundTransctionV2 = new RefundTransctionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            SaleTransactionV2 = new SaleTransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            TokenTransactionV2 = new TokenTransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            VerifyTransactionV2 = new VerifyTransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            VoidTransactionV2 = new VoidTransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            DesktopPDCTransactionV2 = new DesktopPDCTransactionV2(_defaultClient, _securityClient, _serverUrl, Config);
-            PaymentDeviceController = new PaymentDeviceController(_defaultClient, _securityClient, _serverUrl, Config);
-            CloudPDCRefund = new CloudPDCRefund(_defaultClient, _securityClient, _serverUrl, Config);
-            CloudPDCSaleTransaction = new CloudPDCSaleTransaction(_defaultClient, _securityClient, _serverUrl, Config);
-            Transaction = new Transaction(_defaultClient, _securityClient, _serverUrl, Config);
-            QRPayTransaction = new QRPayTransaction(_defaultClient, _securityClient, _serverUrl, Config);
-            ACHCreditTransaction = new ACHCreditTransaction(_defaultClient, _securityClient, _serverUrl, Config);
-            ACHDebitTransaction = new ACHDebitTransaction(_defaultClient, _securityClient, _serverUrl, Config);
-            Auth = new Auth(_defaultClient, _securityClient, _serverUrl, Config);
-            TransInfo = new TransInfo(_defaultClient, _securityClient, _serverUrl, Config);
-            GiftTransaction = new GiftTransaction(_defaultClient, _securityClient, _serverUrl, Config);
-            Refund = new Refund(_defaultClient, _securityClient, _serverUrl, Config);
-            SaleTransaction = new SaleTransaction(_defaultClient, _securityClient, _serverUrl, Config);
-            TokenTransaction = new TokenTransaction(_defaultClient, _securityClient, _serverUrl, Config);
-            Verify = new Verify(_defaultClient, _securityClient, _serverUrl, Config);
-            GPayTransaction = new GPayTransaction(_defaultClient, _securityClient, _serverUrl, Config);
-            DesktopPDCTransaction = new DesktopPDCTransaction(_defaultClient, _securityClient, _serverUrl, Config);
+            TransactionV2 = new TransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            ACHCreditTransactionV2 = new ACHCreditTransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            ACHDebitTransactionV2 = new ACHDebitTransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            TransactionAuthV2 = new TransactionAuthV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            BatchTransaction = new BatchTransaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            BatchQueryV2 = new BatchQueryV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            TransactionInfoV2 = new TransactionInfoV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            GiftTransactionV2 = new GiftTransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            CloudPDCIngenicoTransactionV2 = new CloudPDCIngenicoTransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            CloudPDCRefundv2 = new CloudPDCRefundv2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            CloudPDCSaleTransactionV2 = new CloudPDCSaleTransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            ModifyTransactionV2 = new ModifyTransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            RefundTransctionV2 = new RefundTransctionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            SaleTransactionV2 = new SaleTransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            TokenTransactionV2 = new TokenTransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            VerifyTransactionV2 = new VerifyTransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            VoidTransactionV2 = new VoidTransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            DesktopPDCTransactionV2 = new DesktopPDCTransactionV2(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            PaymentDeviceController = new PaymentDeviceController(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            CloudPDCRefund = new CloudPDCRefund(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            CloudPDCSaleTransaction = new CloudPDCSaleTransaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Transaction = new Transaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            QRPayTransaction = new QRPayTransaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            ACHCreditTransaction = new ACHCreditTransaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            ACHDebitTransaction = new ACHDebitTransaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Auth = new Auth(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            TransInfo = new TransInfo(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            GiftTransaction = new GiftTransaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Refund = new Refund(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            SaleTransaction = new SaleTransaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            TokenTransaction = new TokenTransaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Verify = new Verify(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            GPayTransaction = new GPayTransaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            DesktopPDCTransaction = new DesktopPDCTransaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
         }
     }
 }

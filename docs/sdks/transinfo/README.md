@@ -21,7 +21,9 @@ using Netevia;
 
 var sdk = new Gateway();
 
-var res = await sdk.TransInfo.CreateAsync("string");
+object req = "string";
+
+var res = await sdk.TransInfo.CreateAsync(req);
 
 // handle response
 ```

@@ -31,11 +31,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.TokenTransactionV2.CreateAsync(new RestAPIv2TokenRequest() {
+RestAPIv2TokenRequest req = new RestAPIv2TokenRequest() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.TokenTransactionV2.CreateAsync(req);
 
 // handle response
 ```

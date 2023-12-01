@@ -23,11 +23,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.RefundTransctionV2.CreateAsync(new RestAPIv2RefundRequest() {
+RestAPIv2RefundRequest req = new RestAPIv2RefundRequest() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.RefundTransctionV2.CreateAsync(req);
 
 // handle response
 ```

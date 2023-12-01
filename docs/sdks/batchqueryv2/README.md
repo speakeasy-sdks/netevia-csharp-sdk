@@ -28,11 +28,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.BatchQueryV2.CreateAsync(new BatchAPIv2Request() {
+BatchAPIv2Request req = new BatchAPIv2Request() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.BatchQueryV2.CreateAsync(req);
 
 // handle response
 ```

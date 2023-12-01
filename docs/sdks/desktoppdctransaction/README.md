@@ -18,7 +18,9 @@ using Netevia;
 
 var sdk = new Gateway();
 
-var res = await sdk.DesktopPDCTransaction.CreateAsync("string");
+object req = "string";
+
+var res = await sdk.DesktopPDCTransaction.CreateAsync(req);
 
 // handle response
 ```

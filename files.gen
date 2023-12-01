@@ -106,7 +106,6 @@ Netevia/Models/Operations/ControlDesktopPDCResponse.cs
 Netevia/Models/Shared/TransType.cs
 Netevia/Models/Shared/TerminalType.cs
 Netevia/Models/Shared/NeedSwipeCard.cs
-USAGE.md
 docs/Models/Operations/RestAPIv2Request.md
 docs/Models/Operations/RestAPIv2Response.md
 docs/Models/Operations/RestAPIv2ACHCreditRequest.md
@@ -201,4 +200,5 @@ docs/sdks/tokentransaction/README.md
 docs/sdks/verify/README.md
 docs/sdks/gpaytransaction/README.md
 docs/sdks/desktoppdctransaction/README.md
+USAGE.md
 .gitattributes

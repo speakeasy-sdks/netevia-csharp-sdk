@@ -25,11 +25,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.ACHCreditTransactionV2.CreateAsync(new RestAPIv2ACHCreditRequest() {
+RestAPIv2ACHCreditRequest req = new RestAPIv2ACHCreditRequest() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.ACHCreditTransactionV2.CreateAsync(req);
 
 // handle response
 ```

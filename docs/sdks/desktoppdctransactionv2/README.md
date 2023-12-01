@@ -20,11 +20,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.DesktopPDCTransactionV2.CreateAsync(new ControlDesktopPDCv2Request() {
+ControlDesktopPDCv2Request req = new ControlDesktopPDCv2Request() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.DesktopPDCTransactionV2.CreateAsync(req);
 
 // handle response
 ```

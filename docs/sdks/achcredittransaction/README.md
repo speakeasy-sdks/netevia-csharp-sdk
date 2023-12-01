@@ -23,7 +23,9 @@ using Netevia;
 
 var sdk = new Gateway();
 
-var res = await sdk.ACHCreditTransaction.CreateAsync("string");
+object req = "string";
+
+var res = await sdk.ACHCreditTransaction.CreateAsync(req);
 
 // handle response
 ```

@@ -24,11 +24,13 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-var res = await sdk.VerifyTransactionV2.CreateAsync(new RestAPIv2VerifyInquiryRequest() {
+RestAPIv2VerifyInquiryRequest req = new RestAPIv2VerifyInquiryRequest() {
     Gmid = "string",
     RequestBody = "string",
     TransType = TransType.Register,
-});
+};
+
+var res = await sdk.VerifyTransactionV2.CreateAsync(req);
 
 // handle response
 ```
