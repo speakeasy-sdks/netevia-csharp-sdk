@@ -65,6 +65,7 @@ namespace Netevia
             throw new Exception($"Unknown value {value} for enum ServerEnvironment");
         }
     }
+
     /// <summary>
     /// Engine Port<br/>
     /// 
@@ -111,6 +112,7 @@ namespace Netevia
             throw new Exception($"Unknown value {value} for enum ServerPort");
         }
     }
+
     /// <summary>
     /// Netevia API: # Netevia Gateway API for Transaction Processing&lt;br&gt;<br/>
     /// 
@@ -199,10 +201,10 @@ namespace Netevia
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.7.4";
-        private const string _sdkGenVersion = "2.225.2";
+        private const string _sdkVersion = "0.7.5";
+        private const string _sdkGenVersion = "2.237.2";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.7.4 2.225.2 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.7.5 2.237.2 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
