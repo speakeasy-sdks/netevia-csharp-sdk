@@ -48,10 +48,10 @@ namespace Netevia
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.7.5";
-        private const string _sdkGenVersion = "2.237.2";
+        private const string _sdkVersion = "0.8.0";
+        private const string _sdkGenVersion = "2.245.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.7.5 2.237.2 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.8.0 2.245.1 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;

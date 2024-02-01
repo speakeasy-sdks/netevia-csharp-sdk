@@ -201,11 +201,12 @@ namespace Netevia
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.7.5";
-        private const string _sdkGenVersion = "2.237.2";
+        private const string _sdkVersion = "0.8.0";
+        private const string _sdkGenVersion = "2.245.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.7.5 2.237.2 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.8.0 2.245.1 0.1.0 netevia";
         private string _serverUrl = "";
+        private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
         public ITransactionV2 TransactionV2 { get; private set; }
@@ -245,8 +246,15 @@ namespace Netevia
 
         public Gateway(int? serverIndex = null, ServerEnvironment? environment = null, ServerPort? port = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null)
         {
-            if (serverUrl != null) {
-                if (urlParams != null) {
+            if (serverIndex != null)
+            {
+                _serverIndex = serverIndex.Value;
+            }
+
+            if (serverUrl != null)
+            {
+                if (urlParams != null)
+                {
                     serverUrl = Utilities.TemplateUrl(serverUrl, urlParams);
                 }
                 _serverUrl = serverUrl;
@@ -270,10 +278,11 @@ namespace Netevia
 
             _defaultClient = new SpeakeasyHttpClient(client);
             _securityClient = _defaultClient;
-            
+
             SDKConfiguration = new SDKConfig()
             {
                 ServerDefaults = serverDefaults,
+                serverIndex = _serverIndex,
                 serverUrl = _serverUrl
             };
 
