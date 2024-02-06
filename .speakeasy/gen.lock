@@ -4,9 +4,9 @@ management:
   docChecksum: 2c5886f131333739bac7ed953d9b5ce1
   docVersion: 0.1.0
   speakeasyVersion: internal
-  generationVersion: 2.245.1
-  releaseVersion: 0.8.0
-  configChecksum: ccaba5e061cdce29f653e487ca915835
+  generationVersion: 2.250.2
+  releaseVersion: 0.9.0
+  configChecksum: 45b9429a8805b735d6d2987d272c1e5a
   repoURL: https://github.com/speakeasy-sdks/netevia-csharp-sdk.git
   repoSubDirectory: .
   published: true

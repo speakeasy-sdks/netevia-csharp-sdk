@@ -36,18 +36,16 @@ namespace Netevia
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.0";
-        private const string _sdkGenVersion = "2.245.1";
+        private const string _sdkVersion = "0.9.0";
+        private const string _sdkGenVersion = "2.250.2";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.8.0 2.245.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.9.0 2.250.2 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private ISpeakeasyHttpClient _securityClient;
 
-        public DesktopPDCTransaction(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
+        public DesktopPDCTransaction(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securityClient = securityClient;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
@@ -62,7 +60,7 @@ namespace Netevia
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             var serializedBody = RequestBodySerializer.Serialize(request, "Request", "json");
-            if (serializedBody == null) 
+            if (serializedBody == null)
             {
                 throw new ArgumentNullException("request body is required");
             }
@@ -72,7 +70,7 @@ namespace Netevia
             }
             
             var client = _defaultClient;
-            
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -86,6 +84,7 @@ namespace Netevia
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
         }
+
         
     }
 }
