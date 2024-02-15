@@ -24,8 +24,8 @@ using Netevia.Models.Shared;
 var sdk = new Gateway();
 
 RestAPIv2GetTransInfoRequest req = new RestAPIv2GetTransInfoRequest() {
-    Gmid = "string",
-    RequestBody = "string",
+    Gmid = "<value>",
+    RequestBody = "<value>",
     TransType = TransType.Register,
 };
 

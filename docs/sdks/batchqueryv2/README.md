@@ -29,8 +29,8 @@ using Netevia.Models.Shared;
 var sdk = new Gateway();
 
 BatchAPIv2Request req = new BatchAPIv2Request() {
-    Gmid = "string",
-    RequestBody = "string",
+    Gmid = "<value>",
+    RequestBody = "<value>",
     TransType = TransType.Register,
 };
 

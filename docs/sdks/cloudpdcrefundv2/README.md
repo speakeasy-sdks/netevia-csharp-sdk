@@ -21,8 +21,8 @@ using Netevia.Models.Shared;
 var sdk = new Gateway();
 
 InitiateCloudPDCv2RefundRequest req = new InitiateCloudPDCv2RefundRequest() {
-    Gmid = "string",
-    RequestBody = "string",
+    Gmid = "<value>",
+    RequestBody = "<value>",
     TransType = TransType.Register,
 };
 

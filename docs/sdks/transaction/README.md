@@ -27,7 +27,7 @@ using Netevia;
 
 var sdk = new Gateway();
 
-object req = "string";
+object req = "<value>";
 
 var res = await sdk.Transaction.BatchCloseAsync(req);
 
@@ -67,7 +67,7 @@ using Netevia;
 
 var sdk = new Gateway();
 
-object req = "string";
+object req = "<value>";
 
 var res = await sdk.Transaction.BatchQueryAsync(req);
 
@@ -102,7 +102,7 @@ using Netevia;
 
 var sdk = new Gateway();
 
-object req = "string";
+object req = "<value>";
 
 var res = await sdk.Transaction.CreateAsync(req);
 
@@ -139,7 +139,7 @@ using Netevia;
 
 var sdk = new Gateway();
 
-object req = "string";
+object req = "<value>";
 
 var res = await sdk.Transaction.ModifyAsync(req);
 
@@ -176,7 +176,7 @@ using Netevia;
 
 var sdk = new Gateway();
 
-object req = "string";
+object req = "<value>";
 
 var res = await sdk.Transaction.VoidAsync(req);
 

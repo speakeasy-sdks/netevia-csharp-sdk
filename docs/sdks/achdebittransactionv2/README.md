@@ -24,8 +24,8 @@ using Netevia.Models.Shared;
 var sdk = new Gateway();
 
 RestAPIv2ACHDebitRequest req = new RestAPIv2ACHDebitRequest() {
-    Gmid = "string",
-    RequestBody = "string",
+    Gmid = "<value>",
+    RequestBody = "<value>",
     TransType = TransType.Register,
 };
 

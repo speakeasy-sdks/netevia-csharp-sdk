@@ -24,8 +24,8 @@ using Netevia.Models.Shared;
 var sdk = new Gateway();
 
 RestAPIv2RefundRequest req = new RestAPIv2RefundRequest() {
-    Gmid = "string",
-    RequestBody = "string",
+    Gmid = "<value>",
+    RequestBody = "<value>",
     TransType = TransType.Register,
 };
 

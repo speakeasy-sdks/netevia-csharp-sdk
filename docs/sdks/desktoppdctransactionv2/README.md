@@ -21,8 +21,8 @@ using Netevia.Models.Shared;
 var sdk = new Gateway();
 
 ControlDesktopPDCv2Request req = new ControlDesktopPDCv2Request() {
-    Gmid = "string",
-    RequestBody = "string",
+    Gmid = "<value>",
+    RequestBody = "<value>",
     TransType = TransType.Register,
 };
 

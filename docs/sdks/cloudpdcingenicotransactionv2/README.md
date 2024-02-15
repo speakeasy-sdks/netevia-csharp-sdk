@@ -40,8 +40,8 @@ using Netevia.Models.Shared;
 var sdk = new Gateway();
 
 ControlCloudPDCv2IngenicoRequest req = new ControlCloudPDCv2IngenicoRequest() {
-    Gmid = "string",
-    RequestBody = "string",
+    Gmid = "<value>",
+    RequestBody = "<value>",
     TransType = TransType.Register,
 };
 

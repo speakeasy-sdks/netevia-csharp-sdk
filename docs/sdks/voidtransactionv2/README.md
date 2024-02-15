@@ -26,8 +26,8 @@ using Netevia.Models.Shared;
 var sdk = new Gateway();
 
 RestAPIv2VoidRequest req = new RestAPIv2VoidRequest() {
-    Gmid = "string",
-    RequestBody = "string",
+    Gmid = "<value>",
+    RequestBody = "<value>",
     TransType = TransType.Register,
 };
 

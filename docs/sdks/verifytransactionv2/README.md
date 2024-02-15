@@ -25,8 +25,8 @@ using Netevia.Models.Shared;
 var sdk = new Gateway();
 
 RestAPIv2VerifyInquiryRequest req = new RestAPIv2VerifyInquiryRequest() {
-    Gmid = "string",
-    RequestBody = "string",
+    Gmid = "<value>",
+    RequestBody = "<value>",
     TransType = TransType.Register,
 };
 

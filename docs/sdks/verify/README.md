@@ -22,7 +22,7 @@ using Netevia;
 
 var sdk = new Gateway();
 
-object req = "string";
+object req = "<value>";
 
 var res = await sdk.Verify.RestAPIVerifyInquiryAsync(req);
 
