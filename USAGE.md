@@ -1,13 +1,19 @@
-<!-- Start SDK Example Usage -->
-
-
+<!-- Start SDK Example Usage [usage] -->
 ```csharp
-using Gateway;
+using Netevia;
+using Netevia.Models.Operations;
+using Netevia.Models.Shared;
 
-var sdk = new GatewaySDK();
+var sdk = new Gateway();
 
-var res = await sdk.Api.BatchAsync("Van");
+RestAPIv2Request req = new RestAPIv2Request() {
+    Gmid = "<value>",
+    RequestBody = "<value>",
+    TransType = TransType.Register,
+};
+
+var res = await sdk.TransactionV2.CreateAsync(req);
 
 // handle response
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

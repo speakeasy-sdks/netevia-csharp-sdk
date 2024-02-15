@@ -295,3 +295,91 @@ Based on:
 - Speakeasy CLI 1.93.3 (2.146.1) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [csharp v0.5.0] .
+
+## 2023-11-06 00:40:51
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.112.1 (2.173.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.6.0] .
+
+## 2023-11-07 00:39:50
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.114.1 (2.181.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.7.0] .
+
+## 2023-11-09 00:39:28
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.116.0 (2.185.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.7.1] .
+
+## 2023-11-16 00:41:47
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.120.3 (2.192.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.7.2] .
+
+## 2023-11-18 00:40:24
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.121.1 (2.194.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.7.3] .
+
+## 2023-12-01 00:47:07
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.124.1 (2.205.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.7.4] .
+
+## 2024-01-05 00:21:16
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.130.1 (2.225.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.7.4] .
+
+## 2024-01-19 00:48:35
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.147.0 (2.237.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.7.5] .
+
+## 2024-02-01 00:24:40
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.161.0 (2.245.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.8.0] .
+
+## 2024-02-06 00:24:14
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.167.3 (2.250.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.9.0] .
+
+## 2024-02-15 00:26:19
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.180.0 (2.258.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.9.1] .
