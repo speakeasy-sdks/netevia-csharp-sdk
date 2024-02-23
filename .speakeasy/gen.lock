@@ -4,15 +4,15 @@ management:
   docChecksum: 2c5886f131333739bac7ed953d9b5ce1
   docVersion: 0.1.0
   speakeasyVersion: internal
-  generationVersion: 2.258.0
-  releaseVersion: 0.9.1
-  configChecksum: 2e45ce8a3c1a5180f232b2ea9a3b1bcb
+  generationVersion: 2.269.0
+  releaseVersion: 0.10.0
+  configChecksum: f193409d1ff7ccd833f0267dfeaeec28
   repoURL: https://github.com/speakeasy-sdks/netevia-csharp-sdk.git
   repoSubDirectory: .
   published: true
 features:
   csharp:
-    core: 3.3.2
+    core: 3.4.1
     globalServerURLs: 2.82.2
     groups: 2.81.2
     nameOverrides: 2.81.1
@@ -61,6 +61,7 @@ generatedFiles:
   - Netevia/GPayTransaction.cs
   - Netevia/DesktopPDCTransaction.cs
   - Netevia/Gateway.cs
+  - global.json
   - Netevia/Utils/BigIntSerializer.cs
   - Netevia/Utils/DecimalSerializer.cs
   - Netevia/Utils/EnumSerializer.cs
