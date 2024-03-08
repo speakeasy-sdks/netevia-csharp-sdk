@@ -18,7 +18,6 @@ namespace Netevia
     using System;
 
 
-
     /// <summary>
     /// Environment<br/>
     /// 
@@ -161,16 +160,18 @@ namespace Netevia
         public IGPayTransaction GPayTransaction { get; }
         public IDesktopPDCTransaction DesktopPDCTransaction { get; }
     }
-    
+
     public class SDKConfig
     {
-        public static string[] ServerList = new string[]
-        {
+        /// <summary>
+        /// List of server URLs available to the SDK.
+        /// </summary>
+        public static readonly string[] ServerList = {
             "https://{environment}.netevia.com:{port}",
             "https://{environment}.netevia.com:{port}",
             "https://virtserver.swaggerhub.com/Netevia_INC/Netevia/0.1.0",
         };
-        /// Contains the list of servers available to the SDK
+
         public string serverUrl = "";
         public int serverIndex = 0;
         public List<Dictionary<string, string>> ServerDefaults = new List<Dictionary<string, string>>();
@@ -201,10 +202,10 @@ namespace Netevia
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.0";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.10.1";
+        private const string _sdkGenVersion = "2.279.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.0 2.269.0 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.10.1 2.279.1 0.1.0 netevia";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;
@@ -247,6 +248,10 @@ namespace Netevia
         {
             if (serverIndex != null)
             {
+                if (serverIndex.Value < 0 || serverIndex.Value >= SDKConfig.ServerList.Length)
+                {
+                    throw new Exception($"Invalid server index {serverIndex.Value}");
+                }
                 _serverIndex = serverIndex.Value;
             }
 

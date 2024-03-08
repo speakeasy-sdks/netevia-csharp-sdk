@@ -45,10 +45,10 @@ namespace Netevia
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.0";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.10.1";
+        private const string _sdkGenVersion = "2.279.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.0 2.269.0 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.10.1 2.279.1 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
 
@@ -58,7 +58,6 @@ namespace Netevia
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
-        
 
         public async Task<BatchAPIv2Response> CreateAsync(BatchAPIv2Request request)
         {
@@ -96,9 +95,9 @@ namespace Netevia
 
                 return response;
             }
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.Error = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
     }
 }
