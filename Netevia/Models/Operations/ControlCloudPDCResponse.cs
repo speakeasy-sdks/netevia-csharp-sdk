@@ -10,6 +10,7 @@
 #nullable enable
 namespace Netevia.Models.Operations
 {
+    using Netevia.Models.Shared;
     using System.Net.Http;
     using System;
     
@@ -39,6 +40,6 @@ namespace Netevia.Models.Operations
         /// 
         /// </remarks>
         /// </summary>
-        public object? ResponseGenericPDC { get; set; }
+        public ResponseGenericPDC? ResponseGenericPDC { get; set; }
     }
 }

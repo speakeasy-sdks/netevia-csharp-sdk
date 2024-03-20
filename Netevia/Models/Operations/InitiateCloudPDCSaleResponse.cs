@@ -10,6 +10,7 @@
 #nullable enable
 namespace Netevia.Models.Operations
 {
+    using Netevia.Models.Shared;
     using System.Net.Http;
     using System;
     
@@ -34,7 +35,7 @@ namespace Netevia.Models.Operations
         /// <summary>
         /// Succesfull transaction
         /// </summary>
-        public object? ResponseGeneric { get; set; }
+        public ResponseGeneric? ResponseGeneric { get; set; }
 
         /// <summary>
         /// Succesfull transaction.<br/>
@@ -44,6 +45,6 @@ namespace Netevia.Models.Operations
         /// 
         /// </remarks>
         /// </summary>
-        public object? ResponseGenericPDC { get; set; }
+        public ResponseGenericPDC? ResponseGenericPDC { get; set; }
     }
 }

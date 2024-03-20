@@ -60,17 +60,17 @@ namespace Netevia
         /// 
         /// </remarks>
         /// </summary>
-        Task<RestAPIGiftResponse> CreateAsync(object request);
+        Task<RestAPIGiftResponse> CreateAsync(RequestGeneric request);
     }
 
     public class GiftTransaction: IGiftTransaction
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.1";
-        private const string _sdkGenVersion = "2.279.1";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.283.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.1 2.279.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.283.1 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
 
@@ -81,7 +81,7 @@ namespace Netevia
             SDKConfiguration = config;
         }
 
-        public async Task<RestAPIGiftResponse> CreateAsync(object request)
+        public async Task<RestAPIGiftResponse> CreateAsync(RequestGeneric request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
 
@@ -108,17 +108,7 @@ namespace Netevia
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.TwoHundredApplicationJsonResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-                    response.DefaultApplicationJsonResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.ResponseGeneric = JsonConvert.DeserializeObject<ResponseGeneric>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
             return response;
         }
 

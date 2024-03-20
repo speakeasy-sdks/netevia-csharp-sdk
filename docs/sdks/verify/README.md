@@ -19,10 +19,31 @@ A <b>Verify</b> transaction is used to check if the card is valid.
 
 ```csharp
 using Netevia;
+using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-object req = "<value>";
+RequestGeneric req = Shared.CreateRequestGenericGrpAmountSchemas(
+    new GrpAmountSchemas() {
+        AllowsPartialAuth = SchemasGrpAmountAllowsPartialAuth.N,
+        CheckDuplicate = SchemasGrpAmountCheckDuplicate.N,
+        CreditOnFailure = SchemasGrpAmountCreditOnFailure.N,
+        Gmid = "1110222484",
+        Gmpw = "GMPW3010300378",
+        Gtid = "GT1120095178",
+        IgnoreAVSResult = SchemasGrpAmountIgnoreAVSResult.Y,
+        IgnoreCVVResult = SchemasGrpAmountIgnoreCVVResult.Y,
+        IgnoreVoidResult = SchemasGrpAmountIgnoreVoidResult.Y,
+        IncCashBackAmt = 10000,
+        IncTaxAmt = 10000,
+        IsOffline = SchemasGrpAmountIsOffline.N,
+        MainAmt = 10000,
+        TaxIndicator = SchemasTaxIndicator.Ntprvd,
+        TipAmt = 10000,
+        TransType = SchemasGrpAmountTransType.Sale,
+        VerifyCard = SchemasGrpAmountVerifyCard.N,
+    },
+);
 
 var res = await sdk.Verify.RestAPIVerifyInquiryAsync(req);
 
@@ -31,9 +52,9 @@ var res = await sdk.Verify.RestAPIVerifyInquiryAsync(req);
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | *object*                                   | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                               | Type                                                    | Required                                                | Description                                             |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `request`                                               | [RequestGeneric](../../Models/Shared/RequestGeneric.md) | :heavy_check_mark:                                      | The request object to use for the request.              |
 
 
 ### Response

@@ -10,21 +10,12 @@
 #nullable enable
 namespace Netevia.Models.Operations
 {
+    using Netevia.Models.Shared;
     using System.Net.Http;
     using System;
     
     public class RestAPIv2TokenResponse
     {
-
-        /// <summary>
-        /// Succesfull transaction.<br/>
-        /// 
-        /// <remarks>
-        /// &lt;br&gt;&lt;span style=&quot;color:red&quot;&gt;*NOTE: this is an abbreviated version of the response. To see all the typical fields, check Response Schema or use &quot;Try it out&quot; functionality!&lt;/span&gt;<br/>
-        /// 
-        /// </remarks>
-        /// </summary>
-        public object? TwoHundredApplicationJsonResponseGeneric { get; set; }
 
         /// <summary>
         /// HTTP response content type for this operation
@@ -42,8 +33,13 @@ namespace Netevia.Models.Operations
         public HttpResponseMessage RawResponse { get; set; } = default!;
 
         /// <summary>
-        /// Succesfull transaction
+        /// Succesfull transaction.<br/>
+        /// 
+        /// <remarks>
+        /// &lt;br&gt;&lt;span style=&quot;color:red&quot;&gt;*NOTE: this is an abbreviated version of the response. To see all the typical fields, check Response Schema or use &quot;Try it out&quot; functionality!&lt;/span&gt;<br/>
+        /// 
+        /// </remarks>
         /// </summary>
-        public object? DefaultApplicationJsonResponseGeneric { get; set; }
+        public ResponseGeneric? ResponseGeneric { get; set; }
     }
 }

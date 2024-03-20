@@ -19,10 +19,28 @@ A <b>Finalize</b> transaction is used to change an <b>Auth</b> transaction to a 
 
 ```csharp
 using Netevia;
+using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-object req = "<value>";
+RequestGeneric req = Shared.CreateRequestGenericGrpCardDataEncryptionSchemas(
+    new GrpCardDataEncryptionSchemas() {
+        AllowsPartialAuth = SchemasGrpCardDataEncryptionAllowsPartialAuth.N,
+        CheckDuplicate = SchemasGrpCardDataEncryptionCheckDuplicate.N,
+        CreditOnFailure = SchemasGrpCardDataEncryptionCreditOnFailure.N,
+        EncrptTrgt = SchemasEncrptTrgt.Pan,
+        Gmid = "1110222484",
+        Gmpw = "GMPW3010300378",
+        Gtid = "GT1120095178",
+        IgnoreAVSResult = SchemasGrpCardDataEncryptionIgnoreAVSResult.Y,
+        IgnoreCVVResult = SchemasGrpCardDataEncryptionIgnoreCVVResult.Y,
+        IgnoreVoidResult = SchemasGrpCardDataEncryptionIgnoreVoidResult.Y,
+        IsOffline = SchemasGrpCardDataEncryptionIsOffline.N,
+        KeyID = "66257982464",
+        TransType = SchemasGrpCardDataEncryptionTransType.Sale,
+        VerifyCard = SchemasGrpCardDataEncryptionVerifyCard.N,
+    },
+);
 
 var res = await sdk.Auth.FinalizeAsync(req);
 
@@ -31,9 +49,9 @@ var res = await sdk.Auth.FinalizeAsync(req);
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | *object*                                   | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                               | Type                                                    | Required                                                | Description                                             |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `request`                                               | [RequestGeneric](../../Models/Shared/RequestGeneric.md) | :heavy_check_mark:                                      | The request object to use for the request.              |
 
 
 ### Response

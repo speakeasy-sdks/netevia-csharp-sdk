@@ -1,0 +1,5 @@
+# ResponseGeneric
+
+Result Group.
+
+

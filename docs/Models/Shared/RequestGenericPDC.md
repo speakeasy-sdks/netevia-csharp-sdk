@@ -1,0 +1,5 @@
+# RequestGenericPDC
+
+PDC specific fields.
+
+

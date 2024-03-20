@@ -22,13 +22,13 @@ namespace Netevia.Models.Operations
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=NeedSwipeCard")]
         public NeedSwipeCard? NeedSwipeCard { get; set; }
 
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public object RequestBody { get; set; } = default!;
-
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=TerminalType")]
         public TerminalType? TerminalType { get; set; }
 
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=TransType")]
         public TransType TransType { get; set; } = default!;
+
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public RequestGeneric RequestGeneric { get; set; } = default!;
     }
 }

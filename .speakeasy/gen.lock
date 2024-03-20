@@ -3,10 +3,10 @@ id: 670bc670-7851-4cc2-9925-712299dd04a0
 management:
   docChecksum: 2c5886f131333739bac7ed953d9b5ce1
   docVersion: 0.1.0
-  speakeasyVersion: 1.204.1
-  generationVersion: 2.279.1
-  releaseVersion: 0.10.1
-  configChecksum: fdb02762e6b74f165cda54243917bc56
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 0.11.0
+  configChecksum: c7a9d0a7c4ec4c2870b365c8d902c94d
   repoURL: https://github.com/speakeasy-sdks/netevia-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -16,6 +16,7 @@ features:
     globalServerURLs: 2.82.3
     groups: 2.81.2
     nameOverrides: 2.81.1
+    unions: 0.0.1
   python:
     core: 2.85.3
     errors: 2.81.3
@@ -76,6 +77,7 @@ generatedFiles:
   - Netevia/Utils/Utilities.cs
   - Netevia/Netevia.csproj
   - Netevia.sln
+  - Netevia/Models/Operations/RestAPIv2RequestBody.cs
   - Netevia/Models/Operations/RestAPIv2Request.cs
   - Netevia/Models/Operations/RestAPIv2Response.cs
   - Netevia/Models/Operations/RestAPIv2ACHCreditRequest.cs
@@ -110,6 +112,7 @@ generatedFiles:
   - Netevia/Models/Operations/RestAPIv2VerifyInquiryResponse.cs
   - Netevia/Models/Operations/RestAPIv2VoidRequest.cs
   - Netevia/Models/Operations/RestAPIv2VoidResponse.cs
+  - Netevia/Models/Operations/ControlDesktopPDCv2RequestBody.cs
   - Netevia/Models/Operations/ControlDesktopPDCv2Request.cs
   - Netevia/Models/Operations/ControlDesktopPDCv2Response.cs
   - Netevia/Models/Operations/ControlCloudPDCResponse.cs
@@ -117,6 +120,7 @@ generatedFiles:
   - Netevia/Models/Operations/InitiateCloudPDCSaleResponse.cs
   - Netevia/Models/Operations/RestAPIBatchResponse.cs
   - Netevia/Models/Operations/BatchAPIResponse.cs
+  - Netevia/Models/Operations/RestAPIRequestBody.cs
   - Netevia/Models/Operations/RestAPIResponse.cs
   - Netevia/Models/Operations/RestAPIModifyResponse.cs
   - Netevia/Models/Operations/RestAPIVoidResponse.cs
@@ -131,10 +135,220 @@ generatedFiles:
   - Netevia/Models/Operations/CardTokenResponse.cs
   - Netevia/Models/Operations/RestAPIVerifyInquiryResponse.cs
   - Netevia/Models/Operations/RestGPayResponse.cs
+  - Netevia/Models/Operations/ControlDesktopPDCRequestBody.cs
   - Netevia/Models/Operations/ControlDesktopPDCResponse.cs
+  - Netevia/Models/Shared/SchemasGrpResponseMerchantAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasGrpResponseMerchantErrorCode.cs
+  - Netevia/Models/Shared/SchemasGrpResponseMerchantStatus.cs
+  - Netevia/Models/Shared/GrpResponseMerchantSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpResponseRefAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasGrpResponseRefErrorCode.cs
+  - Netevia/Models/Shared/NewRecordCreated.cs
+  - Netevia/Models/Shared/SchemasGrpResponseRefStatus.cs
+  - Netevia/Models/Shared/GrpResponseRefSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpResponseEMVAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasGrpResponseEMVErrorCode.cs
+  - Netevia/Models/Shared/SchemasGrpResponseEMVStatus.cs
+  - Netevia/Models/Shared/GrpResponseEMVSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpResponseCardInfoAllowsPartialAuth.cs
+  - Netevia/Models/Shared/Brand.cs
+  - Netevia/Models/Shared/SchemasErrorCode.cs
+  - Netevia/Models/Shared/SchemasGrpResponseCardInfoMedium.cs
+  - Netevia/Models/Shared/SchemasStatus.cs
+  - Netevia/Models/Shared/GrpResponseCardInfoSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpResponseAmountAllowsPartialAuth.cs
+  - Netevia/Models/Shared/ErrorCode.cs
+  - Netevia/Models/Shared/Status.cs
+  - Netevia/Models/Shared/GrpResponseAmountSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpTraceAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasGrpTraceErrorCode.cs
+  - Netevia/Models/Shared/SchemasGrpTraceStatus.cs
+  - Netevia/Models/Shared/GrpTraceSchemas.cs
+  - Netevia/Models/Shared/ResponseGeneric.cs
   - Netevia/Models/Shared/TransType.cs
   - Netevia/Models/Shared/TerminalType.cs
+  - Netevia/Models/Shared/TaxIndicator.cs
+  - Netevia/Models/Shared/GrpAmount.cs
+  - Netevia/Models/Shared/GrpExtendInfo.cs
+  - Netevia/Models/Shared/CommercialL3.cs
+  - Netevia/Models/Shared/LocalTaxIncludedFlag.cs
+  - Netevia/Models/Shared/GrpLvl3.cs
+  - Netevia/Models/Shared/GrpLvl3Item.cs
+  - Netevia/Models/Shared/GrpTrace.cs
+  - Netevia/Models/Shared/CardPresent.cs
+  - Netevia/Models/Shared/CommercialCard.cs
+  - Netevia/Models/Shared/EntryMode.cs
+  - Netevia/Models/Shared/Medium.cs
+  - Netevia/Models/Shared/PayAPI.cs
+  - Netevia/Models/Shared/RequestCardToken.cs
+  - Netevia/Models/Shared/GrpCardInfo.cs
+  - Netevia/Models/Shared/ImageID.cs
+  - Netevia/Models/Shared/Model.cs
+  - Netevia/Models/Shared/NeedReceipt.cs
+  - Netevia/Models/Shared/NeedSignature.cs
+  - Netevia/Models/Shared/GrpTerminalInfo.cs
+  - Netevia/Models/Shared/GrpEMV.cs
+  - Netevia/Models/Shared/EncrptTrgt.cs
+  - Netevia/Models/Shared/GrpCardDataEncryption.cs
+  - Netevia/Models/Shared/GrpPIN.cs
   - Netevia/Models/Shared/NeedSwipeCard.cs
+  - Netevia/Models/Shared/AccountType.cs
+  - Netevia/Models/Shared/AllowsPartialAuth.cs
+  - Netevia/Models/Shared/CheckDuplicate.cs
+  - Netevia/Models/Shared/CreditOnFailure.cs
+  - Netevia/Models/Shared/EleCheckServiceProvider.cs
+  - Netevia/Models/Shared/EleCheckTransactionType.cs
+  - Netevia/Models/Shared/IgnoreAVSResult.cs
+  - Netevia/Models/Shared/IgnoreCVVResult.cs
+  - Netevia/Models/Shared/IgnoreVoidResult.cs
+  - Netevia/Models/Shared/IsOffline.cs
+  - Netevia/Models/Shared/SchemasTransType.cs
+  - Netevia/Models/Shared/VerifyCard.cs
+  - Netevia/Models/Shared/Schemas.cs
+  - Netevia/Models/Shared/SchemasGrpPINAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasGrpPINCheckDuplicate.cs
+  - Netevia/Models/Shared/SchemasGrpPINCreditOnFailure.cs
+  - Netevia/Models/Shared/SchemasGrpPINIgnoreAVSResult.cs
+  - Netevia/Models/Shared/SchemasGrpPINIgnoreCVVResult.cs
+  - Netevia/Models/Shared/SchemasGrpPINIgnoreVoidResult.cs
+  - Netevia/Models/Shared/SchemasGrpPINIsOffline.cs
+  - Netevia/Models/Shared/SchemasGrpPINTransType.cs
+  - Netevia/Models/Shared/SchemasGrpPINVerifyCard.cs
+  - Netevia/Models/Shared/GrpPINSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpCardDataEncryptionAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasGrpCardDataEncryptionCheckDuplicate.cs
+  - Netevia/Models/Shared/SchemasGrpCardDataEncryptionCreditOnFailure.cs
+  - Netevia/Models/Shared/SchemasEncrptTrgt.cs
+  - Netevia/Models/Shared/SchemasGrpCardDataEncryptionIgnoreAVSResult.cs
+  - Netevia/Models/Shared/SchemasGrpCardDataEncryptionIgnoreCVVResult.cs
+  - Netevia/Models/Shared/SchemasGrpCardDataEncryptionIgnoreVoidResult.cs
+  - Netevia/Models/Shared/SchemasGrpCardDataEncryptionIsOffline.cs
+  - Netevia/Models/Shared/SchemasGrpCardDataEncryptionTransType.cs
+  - Netevia/Models/Shared/SchemasGrpCardDataEncryptionVerifyCard.cs
+  - Netevia/Models/Shared/GrpCardDataEncryptionSchemas.cs
+  - Netevia/Models/Shared/SchemasAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasCheckDuplicate.cs
+  - Netevia/Models/Shared/SchemasCreditOnFailure.cs
+  - Netevia/Models/Shared/SchemasIgnoreAVSResult.cs
+  - Netevia/Models/Shared/SchemasIgnoreCVVResult.cs
+  - Netevia/Models/Shared/SchemasIgnoreVoidResult.cs
+  - Netevia/Models/Shared/SchemasIsOffline.cs
+  - Netevia/Models/Shared/SchemasGrpEMVTransType.cs
+  - Netevia/Models/Shared/SchemasVerifyCard.cs
+  - Netevia/Models/Shared/GrpEMVSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpCardInfoAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasCardPresent.cs
+  - Netevia/Models/Shared/SchemasGrpCardInfoCheckDuplicate.cs
+  - Netevia/Models/Shared/SchemasCommercialCard.cs
+  - Netevia/Models/Shared/SchemasGrpCardInfoCreditOnFailure.cs
+  - Netevia/Models/Shared/SchemasEntryMode.cs
+  - Netevia/Models/Shared/SchemasGrpCardInfoIgnoreAVSResult.cs
+  - Netevia/Models/Shared/SchemasGrpCardInfoIgnoreCVVResult.cs
+  - Netevia/Models/Shared/SchemasGrpCardInfoIgnoreVoidResult.cs
+  - Netevia/Models/Shared/SchemasGrpCardInfoIsOffline.cs
+  - Netevia/Models/Shared/SchemasMedium.cs
+  - Netevia/Models/Shared/SchemasPayAPI.cs
+  - Netevia/Models/Shared/SchemasRequestCardToken.cs
+  - Netevia/Models/Shared/SchemasGrpCardInfoTransType.cs
+  - Netevia/Models/Shared/SchemasGrpCardInfoVerifyCard.cs
+  - Netevia/Models/Shared/GrpCardInfoSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpTraceCheckDuplicate.cs
+  - Netevia/Models/Shared/SchemasGrpTraceCreditOnFailure.cs
+  - Netevia/Models/Shared/SchemasGrpTraceIgnoreAVSResult.cs
+  - Netevia/Models/Shared/SchemasGrpTraceIgnoreCVVResult.cs
+  - Netevia/Models/Shared/SchemasGrpTraceIgnoreVoidResult.cs
+  - Netevia/Models/Shared/SchemasGrpTraceIsOffline.cs
+  - Netevia/Models/Shared/SchemasGrpTraceTransType.cs
+  - Netevia/Models/Shared/SchemasGrpTraceVerifyCard.cs
+  - Netevia/Models/Shared/GrpTraceSchemas1.cs
+  - Netevia/Models/Shared/SchemasGrpLvl3AllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasGrpLvl3CheckDuplicate.cs
+  - Netevia/Models/Shared/SchemasCommercialL3.cs
+  - Netevia/Models/Shared/SchemasGrpLvl3CreditOnFailure.cs
+  - Netevia/Models/Shared/SchemasGrpLvl3IgnoreAVSResult.cs
+  - Netevia/Models/Shared/SchemasGrpLvl3IgnoreCVVResult.cs
+  - Netevia/Models/Shared/SchemasGrpLvl3IgnoreVoidResult.cs
+  - Netevia/Models/Shared/SchemasGrpLvl3IsOffline.cs
+  - Netevia/Models/Shared/SchemasLocalTaxIncludedFlag.cs
+  - Netevia/Models/Shared/SchemasGrpLvl3TransType.cs
+  - Netevia/Models/Shared/SchemasGrpLvl3VerifyCard.cs
+  - Netevia/Models/Shared/GrpLvl3Schemas.cs
+  - Netevia/Models/Shared/SchemasGrpExtendInfoAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasGrpExtendInfoCheckDuplicate.cs
+  - Netevia/Models/Shared/SchemasGrpExtendInfoCreditOnFailure.cs
+  - Netevia/Models/Shared/SchemasGrpExtendInfoIgnoreAVSResult.cs
+  - Netevia/Models/Shared/SchemasGrpExtendInfoIgnoreCVVResult.cs
+  - Netevia/Models/Shared/SchemasGrpExtendInfoIgnoreVoidResult.cs
+  - Netevia/Models/Shared/SchemasGrpExtendInfoIsOffline.cs
+  - Netevia/Models/Shared/SchemasGrpExtendInfoTransType.cs
+  - Netevia/Models/Shared/SchemasGrpExtendInfoVerifyCard.cs
+  - Netevia/Models/Shared/GrpExtendInfoSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpAmountAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasGrpAmountCheckDuplicate.cs
+  - Netevia/Models/Shared/SchemasGrpAmountCreditOnFailure.cs
+  - Netevia/Models/Shared/SchemasGrpAmountIgnoreAVSResult.cs
+  - Netevia/Models/Shared/SchemasGrpAmountIgnoreCVVResult.cs
+  - Netevia/Models/Shared/SchemasGrpAmountIgnoreVoidResult.cs
+  - Netevia/Models/Shared/SchemasGrpAmountIsOffline.cs
+  - Netevia/Models/Shared/SchemasTaxIndicator.cs
+  - Netevia/Models/Shared/SchemasGrpAmountTransType.cs
+  - Netevia/Models/Shared/SchemasGrpAmountVerifyCard.cs
+  - Netevia/Models/Shared/GrpAmountSchemas.cs
+  - Netevia/Models/Shared/RequestGeneric.cs
+  - Netevia/Models/Shared/SchemasGrpResponseTerminalInfoAllowsPartialAuth.cs
+  - Netevia/Models/Shared/DeviceStatus.cs
+  - Netevia/Models/Shared/SchemasGrpResponseTerminalInfoErrorCode.cs
+  - Netevia/Models/Shared/SchemasGrpResponseTerminalInfoStatus.cs
+  - Netevia/Models/Shared/GrpResponseTerminalInfoSchemas.cs
+  - Netevia/Models/Shared/ResponseGenericPDC.cs
+  - Netevia/Models/Shared/SchemasNeedSwipeCard.cs
+  - Netevia/Models/Shared/GrpACHSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpPINNeedSwipeCard.cs
+  - Netevia/Models/Shared/GrpPINSchemas1.cs
+  - Netevia/Models/Shared/SchemasGrpCardDataEncryptionNeedSwipeCard.cs
+  - Netevia/Models/Shared/GrpCardDataEncryptionSchemas1.cs
+  - Netevia/Models/Shared/SchemasGrpEMVNeedSwipeCard.cs
+  - Netevia/Models/Shared/GrpEMVSchemas1.cs
+  - Netevia/Models/Shared/SchemasGrpTerminalInfoAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasGrpTerminalInfoCheckDuplicate.cs
+  - Netevia/Models/Shared/SchemasGrpTerminalInfoCreditOnFailure.cs
+  - Netevia/Models/Shared/SchemasGrpTerminalInfoIgnoreAVSResult.cs
+  - Netevia/Models/Shared/SchemasGrpTerminalInfoIgnoreCVVResult.cs
+  - Netevia/Models/Shared/SchemasGrpTerminalInfoIgnoreVoidResult.cs
+  - Netevia/Models/Shared/SchemasImageID.cs
+  - Netevia/Models/Shared/SchemasGrpTerminalInfoIsOffline.cs
+  - Netevia/Models/Shared/SchemasModel.cs
+  - Netevia/Models/Shared/SchemasNeedReceipt.cs
+  - Netevia/Models/Shared/SchemasNeedSignature.cs
+  - Netevia/Models/Shared/SchemasGrpTerminalInfoNeedSwipeCard.cs
+  - Netevia/Models/Shared/SchemasGrpTerminalInfoTransType.cs
+  - Netevia/Models/Shared/SchemasGrpTerminalInfoVerifyCard.cs
+  - Netevia/Models/Shared/GrpTerminalInfoSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpCardInfoNeedSwipeCard.cs
+  - Netevia/Models/Shared/GrpCardInfoSchemas1.cs
+  - Netevia/Models/Shared/SchemasGrpTraceNeedSwipeCard.cs
+  - Netevia/Models/Shared/GrpTraceSchemas2.cs
+  - Netevia/Models/Shared/SchemasGrpLvl3NeedSwipeCard.cs
+  - Netevia/Models/Shared/GrpLvl3Schemas1.cs
+  - Netevia/Models/Shared/SchemasGrpExtendInfoNeedSwipeCard.cs
+  - Netevia/Models/Shared/GrpExtendInfoSchemas1.cs
+  - Netevia/Models/Shared/SchemasGrpAmountExtraPDCAllowsPartialAuth.cs
+  - Netevia/Models/Shared/SchemasGrpAmountExtraPDCCheckDuplicate.cs
+  - Netevia/Models/Shared/SchemasGrpAmountExtraPDCCreditOnFailure.cs
+  - Netevia/Models/Shared/SchemasGrpAmountExtraPDCIgnoreAVSResult.cs
+  - Netevia/Models/Shared/SchemasGrpAmountExtraPDCIgnoreCVVResult.cs
+  - Netevia/Models/Shared/SchemasGrpAmountExtraPDCIgnoreVoidResult.cs
+  - Netevia/Models/Shared/SchemasGrpAmountExtraPDCIsOffline.cs
+  - Netevia/Models/Shared/SchemasGrpAmountExtraPDCNeedSwipeCard.cs
+  - Netevia/Models/Shared/RequestTipAmount.cs
+  - Netevia/Models/Shared/TipAmountPromptFormat.cs
+  - Netevia/Models/Shared/SchemasGrpAmountExtraPDCTransType.cs
+  - Netevia/Models/Shared/SchemasGrpAmountExtraPDCVerifyCard.cs
+  - Netevia/Models/Shared/GrpAmountExtraPDCSchemas.cs
+  - Netevia/Models/Shared/SchemasGrpAmountNeedSwipeCard.cs
+  - Netevia/Models/Shared/GrpAmountSchemas1.cs
+  - Netevia/Models/Shared/RequestGenericPDC.cs
+  - docs/Models/Operations/RestAPIv2RequestBody.md
   - docs/Models/Operations/RestAPIv2Request.md
   - docs/Models/Operations/RestAPIv2Response.md
   - docs/Models/Operations/RestAPIv2ACHCreditRequest.md
@@ -169,6 +383,7 @@ generatedFiles:
   - docs/Models/Operations/RestAPIv2VerifyInquiryResponse.md
   - docs/Models/Operations/RestAPIv2VoidRequest.md
   - docs/Models/Operations/RestAPIv2VoidResponse.md
+  - docs/Models/Operations/ControlDesktopPDCv2RequestBody.md
   - docs/Models/Operations/ControlDesktopPDCv2Request.md
   - docs/Models/Operations/ControlDesktopPDCv2Response.md
   - docs/Models/Operations/ControlCloudPDCResponse.md
@@ -176,6 +391,7 @@ generatedFiles:
   - docs/Models/Operations/InitiateCloudPDCSaleResponse.md
   - docs/Models/Operations/RestAPIBatchResponse.md
   - docs/Models/Operations/BatchAPIResponse.md
+  - docs/Models/Operations/RestAPIRequestBody.md
   - docs/Models/Operations/RestAPIResponse.md
   - docs/Models/Operations/RestAPIModifyResponse.md
   - docs/Models/Operations/RestAPIVoidResponse.md
@@ -190,10 +406,219 @@ generatedFiles:
   - docs/Models/Operations/CardTokenResponse.md
   - docs/Models/Operations/RestAPIVerifyInquiryResponse.md
   - docs/Models/Operations/RestGPayResponse.md
+  - docs/Models/Operations/ControlDesktopPDCRequestBody.md
   - docs/Models/Operations/ControlDesktopPDCResponse.md
+  - docs/Models/Shared/SchemasGrpResponseMerchantAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasGrpResponseMerchantErrorCode.md
+  - docs/Models/Shared/SchemasGrpResponseMerchantStatus.md
+  - docs/Models/Shared/GrpResponseMerchantSchemas.md
+  - docs/Models/Shared/SchemasGrpResponseRefAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasGrpResponseRefErrorCode.md
+  - docs/Models/Shared/NewRecordCreated.md
+  - docs/Models/Shared/SchemasGrpResponseRefStatus.md
+  - docs/Models/Shared/GrpResponseRefSchemas.md
+  - docs/Models/Shared/SchemasGrpResponseEMVAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasGrpResponseEMVErrorCode.md
+  - docs/Models/Shared/SchemasGrpResponseEMVStatus.md
+  - docs/Models/Shared/GrpResponseEMVSchemas.md
+  - docs/Models/Shared/SchemasGrpResponseCardInfoAllowsPartialAuth.md
+  - docs/Models/Shared/Brand.md
+  - docs/Models/Shared/SchemasErrorCode.md
+  - docs/Models/Shared/SchemasGrpResponseCardInfoMedium.md
+  - docs/Models/Shared/SchemasStatus.md
+  - docs/Models/Shared/GrpResponseCardInfoSchemas.md
+  - docs/Models/Shared/SchemasGrpResponseAmountAllowsPartialAuth.md
+  - docs/Models/Shared/ErrorCode.md
+  - docs/Models/Shared/Status.md
+  - docs/Models/Shared/GrpResponseAmountSchemas.md
+  - docs/Models/Shared/SchemasGrpTraceAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasGrpTraceErrorCode.md
+  - docs/Models/Shared/SchemasGrpTraceStatus.md
+  - docs/Models/Shared/GrpTraceSchemas.md
+  - docs/Models/Shared/ResponseGeneric.md
   - docs/Models/Shared/TransType.md
   - docs/Models/Shared/TerminalType.md
+  - docs/Models/Shared/TaxIndicator.md
+  - docs/Models/Shared/GrpAmount.md
+  - docs/Models/Shared/GrpExtendInfo.md
+  - docs/Models/Shared/CommercialL3.md
+  - docs/Models/Shared/LocalTaxIncludedFlag.md
+  - docs/Models/Shared/GrpLvl3.md
+  - docs/Models/Shared/GrpLvl3Item.md
+  - docs/Models/Shared/GrpTrace.md
+  - docs/Models/Shared/CardPresent.md
+  - docs/Models/Shared/CommercialCard.md
+  - docs/Models/Shared/EntryMode.md
+  - docs/Models/Shared/Medium.md
+  - docs/Models/Shared/PayAPI.md
+  - docs/Models/Shared/RequestCardToken.md
+  - docs/Models/Shared/GrpCardInfo.md
+  - docs/Models/Shared/ImageID.md
+  - docs/Models/Shared/Model.md
+  - docs/Models/Shared/NeedReceipt.md
+  - docs/Models/Shared/NeedSignature.md
+  - docs/Models/Shared/GrpTerminalInfo.md
+  - docs/Models/Shared/GrpEMV.md
+  - docs/Models/Shared/EncrptTrgt.md
+  - docs/Models/Shared/GrpCardDataEncryption.md
+  - docs/Models/Shared/GrpPIN.md
   - docs/Models/Shared/NeedSwipeCard.md
+  - docs/Models/Shared/AccountType.md
+  - docs/Models/Shared/AllowsPartialAuth.md
+  - docs/Models/Shared/CheckDuplicate.md
+  - docs/Models/Shared/CreditOnFailure.md
+  - docs/Models/Shared/EleCheckServiceProvider.md
+  - docs/Models/Shared/EleCheckTransactionType.md
+  - docs/Models/Shared/IgnoreAVSResult.md
+  - docs/Models/Shared/IgnoreCVVResult.md
+  - docs/Models/Shared/IgnoreVoidResult.md
+  - docs/Models/Shared/IsOffline.md
+  - docs/Models/Shared/SchemasTransType.md
+  - docs/Models/Shared/VerifyCard.md
+  - docs/Models/Shared/Schemas.md
+  - docs/Models/Shared/SchemasGrpPINAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasGrpPINCheckDuplicate.md
+  - docs/Models/Shared/SchemasGrpPINCreditOnFailure.md
+  - docs/Models/Shared/SchemasGrpPINIgnoreAVSResult.md
+  - docs/Models/Shared/SchemasGrpPINIgnoreCVVResult.md
+  - docs/Models/Shared/SchemasGrpPINIgnoreVoidResult.md
+  - docs/Models/Shared/SchemasGrpPINIsOffline.md
+  - docs/Models/Shared/SchemasGrpPINTransType.md
+  - docs/Models/Shared/SchemasGrpPINVerifyCard.md
+  - docs/Models/Shared/GrpPINSchemas.md
+  - docs/Models/Shared/SchemasGrpCardDataEncryptionAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasGrpCardDataEncryptionCheckDuplicate.md
+  - docs/Models/Shared/SchemasGrpCardDataEncryptionCreditOnFailure.md
+  - docs/Models/Shared/SchemasEncrptTrgt.md
+  - docs/Models/Shared/SchemasGrpCardDataEncryptionIgnoreAVSResult.md
+  - docs/Models/Shared/SchemasGrpCardDataEncryptionIgnoreCVVResult.md
+  - docs/Models/Shared/SchemasGrpCardDataEncryptionIgnoreVoidResult.md
+  - docs/Models/Shared/SchemasGrpCardDataEncryptionIsOffline.md
+  - docs/Models/Shared/SchemasGrpCardDataEncryptionTransType.md
+  - docs/Models/Shared/SchemasGrpCardDataEncryptionVerifyCard.md
+  - docs/Models/Shared/GrpCardDataEncryptionSchemas.md
+  - docs/Models/Shared/SchemasAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasCheckDuplicate.md
+  - docs/Models/Shared/SchemasCreditOnFailure.md
+  - docs/Models/Shared/SchemasIgnoreAVSResult.md
+  - docs/Models/Shared/SchemasIgnoreCVVResult.md
+  - docs/Models/Shared/SchemasIgnoreVoidResult.md
+  - docs/Models/Shared/SchemasIsOffline.md
+  - docs/Models/Shared/SchemasGrpEMVTransType.md
+  - docs/Models/Shared/SchemasVerifyCard.md
+  - docs/Models/Shared/GrpEMVSchemas.md
+  - docs/Models/Shared/SchemasGrpCardInfoAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasCardPresent.md
+  - docs/Models/Shared/SchemasGrpCardInfoCheckDuplicate.md
+  - docs/Models/Shared/SchemasCommercialCard.md
+  - docs/Models/Shared/SchemasGrpCardInfoCreditOnFailure.md
+  - docs/Models/Shared/SchemasEntryMode.md
+  - docs/Models/Shared/SchemasGrpCardInfoIgnoreAVSResult.md
+  - docs/Models/Shared/SchemasGrpCardInfoIgnoreCVVResult.md
+  - docs/Models/Shared/SchemasGrpCardInfoIgnoreVoidResult.md
+  - docs/Models/Shared/SchemasGrpCardInfoIsOffline.md
+  - docs/Models/Shared/SchemasMedium.md
+  - docs/Models/Shared/SchemasPayAPI.md
+  - docs/Models/Shared/SchemasRequestCardToken.md
+  - docs/Models/Shared/SchemasGrpCardInfoTransType.md
+  - docs/Models/Shared/SchemasGrpCardInfoVerifyCard.md
+  - docs/Models/Shared/GrpCardInfoSchemas.md
+  - docs/Models/Shared/SchemasGrpTraceCheckDuplicate.md
+  - docs/Models/Shared/SchemasGrpTraceCreditOnFailure.md
+  - docs/Models/Shared/SchemasGrpTraceIgnoreAVSResult.md
+  - docs/Models/Shared/SchemasGrpTraceIgnoreCVVResult.md
+  - docs/Models/Shared/SchemasGrpTraceIgnoreVoidResult.md
+  - docs/Models/Shared/SchemasGrpTraceIsOffline.md
+  - docs/Models/Shared/SchemasGrpTraceTransType.md
+  - docs/Models/Shared/SchemasGrpTraceVerifyCard.md
+  - docs/Models/Shared/GrpTraceSchemas1.md
+  - docs/Models/Shared/SchemasGrpLvl3AllowsPartialAuth.md
+  - docs/Models/Shared/SchemasGrpLvl3CheckDuplicate.md
+  - docs/Models/Shared/SchemasCommercialL3.md
+  - docs/Models/Shared/SchemasGrpLvl3CreditOnFailure.md
+  - docs/Models/Shared/SchemasGrpLvl3IgnoreAVSResult.md
+  - docs/Models/Shared/SchemasGrpLvl3IgnoreCVVResult.md
+  - docs/Models/Shared/SchemasGrpLvl3IgnoreVoidResult.md
+  - docs/Models/Shared/SchemasGrpLvl3IsOffline.md
+  - docs/Models/Shared/SchemasLocalTaxIncludedFlag.md
+  - docs/Models/Shared/SchemasGrpLvl3TransType.md
+  - docs/Models/Shared/SchemasGrpLvl3VerifyCard.md
+  - docs/Models/Shared/GrpLvl3Schemas.md
+  - docs/Models/Shared/SchemasGrpExtendInfoAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasGrpExtendInfoCheckDuplicate.md
+  - docs/Models/Shared/SchemasGrpExtendInfoCreditOnFailure.md
+  - docs/Models/Shared/SchemasGrpExtendInfoIgnoreAVSResult.md
+  - docs/Models/Shared/SchemasGrpExtendInfoIgnoreCVVResult.md
+  - docs/Models/Shared/SchemasGrpExtendInfoIgnoreVoidResult.md
+  - docs/Models/Shared/SchemasGrpExtendInfoIsOffline.md
+  - docs/Models/Shared/SchemasGrpExtendInfoTransType.md
+  - docs/Models/Shared/SchemasGrpExtendInfoVerifyCard.md
+  - docs/Models/Shared/GrpExtendInfoSchemas.md
+  - docs/Models/Shared/SchemasGrpAmountAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasGrpAmountCheckDuplicate.md
+  - docs/Models/Shared/SchemasGrpAmountCreditOnFailure.md
+  - docs/Models/Shared/SchemasGrpAmountIgnoreAVSResult.md
+  - docs/Models/Shared/SchemasGrpAmountIgnoreCVVResult.md
+  - docs/Models/Shared/SchemasGrpAmountIgnoreVoidResult.md
+  - docs/Models/Shared/SchemasGrpAmountIsOffline.md
+  - docs/Models/Shared/SchemasTaxIndicator.md
+  - docs/Models/Shared/SchemasGrpAmountTransType.md
+  - docs/Models/Shared/SchemasGrpAmountVerifyCard.md
+  - docs/Models/Shared/GrpAmountSchemas.md
+  - docs/Models/Shared/RequestGeneric.md
+  - docs/Models/Shared/SchemasGrpResponseTerminalInfoAllowsPartialAuth.md
+  - docs/Models/Shared/DeviceStatus.md
+  - docs/Models/Shared/SchemasGrpResponseTerminalInfoErrorCode.md
+  - docs/Models/Shared/SchemasGrpResponseTerminalInfoStatus.md
+  - docs/Models/Shared/GrpResponseTerminalInfoSchemas.md
+  - docs/Models/Shared/ResponseGenericPDC.md
+  - docs/Models/Shared/SchemasNeedSwipeCard.md
+  - docs/Models/Shared/GrpACHSchemas.md
+  - docs/Models/Shared/SchemasGrpPINNeedSwipeCard.md
+  - docs/Models/Shared/GrpPINSchemas1.md
+  - docs/Models/Shared/SchemasGrpCardDataEncryptionNeedSwipeCard.md
+  - docs/Models/Shared/GrpCardDataEncryptionSchemas1.md
+  - docs/Models/Shared/SchemasGrpEMVNeedSwipeCard.md
+  - docs/Models/Shared/GrpEMVSchemas1.md
+  - docs/Models/Shared/SchemasGrpTerminalInfoAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasGrpTerminalInfoCheckDuplicate.md
+  - docs/Models/Shared/SchemasGrpTerminalInfoCreditOnFailure.md
+  - docs/Models/Shared/SchemasGrpTerminalInfoIgnoreAVSResult.md
+  - docs/Models/Shared/SchemasGrpTerminalInfoIgnoreCVVResult.md
+  - docs/Models/Shared/SchemasGrpTerminalInfoIgnoreVoidResult.md
+  - docs/Models/Shared/SchemasImageID.md
+  - docs/Models/Shared/SchemasGrpTerminalInfoIsOffline.md
+  - docs/Models/Shared/SchemasModel.md
+  - docs/Models/Shared/SchemasNeedReceipt.md
+  - docs/Models/Shared/SchemasNeedSignature.md
+  - docs/Models/Shared/SchemasGrpTerminalInfoNeedSwipeCard.md
+  - docs/Models/Shared/SchemasGrpTerminalInfoTransType.md
+  - docs/Models/Shared/SchemasGrpTerminalInfoVerifyCard.md
+  - docs/Models/Shared/GrpTerminalInfoSchemas.md
+  - docs/Models/Shared/SchemasGrpCardInfoNeedSwipeCard.md
+  - docs/Models/Shared/GrpCardInfoSchemas1.md
+  - docs/Models/Shared/SchemasGrpTraceNeedSwipeCard.md
+  - docs/Models/Shared/GrpTraceSchemas2.md
+  - docs/Models/Shared/SchemasGrpLvl3NeedSwipeCard.md
+  - docs/Models/Shared/GrpLvl3Schemas1.md
+  - docs/Models/Shared/SchemasGrpExtendInfoNeedSwipeCard.md
+  - docs/Models/Shared/GrpExtendInfoSchemas1.md
+  - docs/Models/Shared/SchemasGrpAmountExtraPDCAllowsPartialAuth.md
+  - docs/Models/Shared/SchemasGrpAmountExtraPDCCheckDuplicate.md
+  - docs/Models/Shared/SchemasGrpAmountExtraPDCCreditOnFailure.md
+  - docs/Models/Shared/SchemasGrpAmountExtraPDCIgnoreAVSResult.md
+  - docs/Models/Shared/SchemasGrpAmountExtraPDCIgnoreCVVResult.md
+  - docs/Models/Shared/SchemasGrpAmountExtraPDCIgnoreVoidResult.md
+  - docs/Models/Shared/SchemasGrpAmountExtraPDCIsOffline.md
+  - docs/Models/Shared/SchemasGrpAmountExtraPDCNeedSwipeCard.md
+  - docs/Models/Shared/RequestTipAmount.md
+  - docs/Models/Shared/TipAmountPromptFormat.md
+  - docs/Models/Shared/SchemasGrpAmountExtraPDCTransType.md
+  - docs/Models/Shared/SchemasGrpAmountExtraPDCVerifyCard.md
+  - docs/Models/Shared/GrpAmountExtraPDCSchemas.md
+  - docs/Models/Shared/SchemasGrpAmountNeedSwipeCard.md
+  - docs/Models/Shared/GrpAmountSchemas1.md
+  - docs/Models/Shared/RequestGenericPDC.md
   - docs/sdks/gateway/README.md
   - docs/sdks/transactionv2/README.md
   - docs/sdks/achcredittransactionv2/README.md

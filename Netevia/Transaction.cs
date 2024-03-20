@@ -35,7 +35,7 @@ namespace Netevia
         /// 
         /// </remarks>
         /// </summary>
-        Task<RestAPIBatchResponse> BatchCloseAsync(object request);
+        Task<RestAPIBatchResponse> BatchCloseAsync(RequestGeneric request);
 
         /// <summary>
         /// Generic batch query API.
@@ -54,7 +54,7 @@ namespace Netevia
         /// 
         /// </remarks>
         /// </summary>
-        Task<BatchAPIResponse> BatchQueryAsync(object request);
+        Task<BatchAPIResponse> BatchQueryAsync(RequestGeneric request);
 
         /// <summary>
         /// Generic API.
@@ -68,7 +68,7 @@ namespace Netevia
         /// 
         /// </remarks>
         /// </summary>
-        Task<RestAPIResponse> CreateAsync(object request);
+        Task<RestAPIResponse> CreateAsync(RestAPIRequestBody request);
 
         /// <summary>
         /// How to initiate Modify/Adjust/AddTip transaction requests.
@@ -84,7 +84,7 @@ namespace Netevia
         /// 
         /// </remarks>
         /// </summary>
-        Task<RestAPIModifyResponse> ModifyAsync(object request);
+        Task<RestAPIModifyResponse> ModifyAsync(RequestGeneric request);
 
         /// <summary>
         /// How to initiate Void/Reverse/Cancel transaction requests.
@@ -100,17 +100,17 @@ namespace Netevia
         /// 
         /// </remarks>
         /// </summary>
-        Task<RestAPIVoidResponse> VoidAsync(object request);
+        Task<RestAPIVoidResponse> VoidAsync(RequestGeneric request);
     }
 
     public class Transaction: ITransaction
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.1";
-        private const string _sdkGenVersion = "2.279.1";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.283.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.1 2.279.1 0.1.0 netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.283.1 0.1.0 netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
 
@@ -121,7 +121,7 @@ namespace Netevia
             SDKConfiguration = config;
         }
 
-        public async Task<RestAPIBatchResponse> BatchCloseAsync(object request)
+        public async Task<RestAPIBatchResponse> BatchCloseAsync(RequestGeneric request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
 
@@ -153,7 +153,7 @@ namespace Netevia
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.ResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.ResponseGeneric = JsonConvert.DeserializeObject<ResponseGeneric>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
 
                 return response;
@@ -163,7 +163,7 @@ namespace Netevia
         }
 
 
-        public async Task<BatchAPIResponse> BatchQueryAsync(object request)
+        public async Task<BatchAPIResponse> BatchQueryAsync(RequestGeneric request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
 
@@ -195,7 +195,7 @@ namespace Netevia
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.ResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.ResponseGeneric = JsonConvert.DeserializeObject<ResponseGeneric>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
 
                 return response;
@@ -205,7 +205,7 @@ namespace Netevia
         }
 
 
-        public async Task<RestAPIResponse> CreateAsync(object request)
+        public async Task<RestAPIResponse> CreateAsync(RestAPIRequestBody request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
 
@@ -236,7 +236,7 @@ namespace Netevia
         }
 
 
-        public async Task<RestAPIModifyResponse> ModifyAsync(object request)
+        public async Task<RestAPIModifyResponse> ModifyAsync(RequestGeneric request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
 
@@ -263,22 +263,12 @@ namespace Netevia
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.TwoHundredApplicationJsonResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-                    response.DefaultApplicationJsonResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.ResponseGeneric = JsonConvert.DeserializeObject<ResponseGeneric>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
             return response;
         }
 
 
-        public async Task<RestAPIVoidResponse> VoidAsync(object request)
+        public async Task<RestAPIVoidResponse> VoidAsync(RequestGeneric request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
 
@@ -305,17 +295,7 @@ namespace Netevia
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.TwoHundredApplicationJsonResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-                    response.DefaultApplicationJsonResponseGeneric = JsonConvert.DeserializeObject<object>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.ResponseGeneric = JsonConvert.DeserializeObject<ResponseGeneric>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
             return response;
         }
 

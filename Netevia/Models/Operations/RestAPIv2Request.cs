@@ -26,7 +26,7 @@ namespace Netevia.Models.Operations
         /// Generic Request body
         /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public object RequestBody { get; set; } = default!;
+        public RestAPIv2RequestBody RequestBody { get; set; } = default!;
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=TerminalType")]
         public TerminalType? TerminalType { get; set; }
