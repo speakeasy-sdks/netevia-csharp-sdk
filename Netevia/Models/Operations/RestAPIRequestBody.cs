@@ -41,7 +41,7 @@ namespace Netevia.Models.Operations
         
         public static RestAPIRequestBodyType GrpPIN { get { return new RestAPIRequestBodyType("grp_PIN"); } }
         
-        public static RestAPIRequestBodyType Null { get { return new RestAPIRequestBodyType("null"); } } 
+        public static RestAPIRequestBodyType Null { get { return new RestAPIRequestBodyType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(RestAPIRequestBodyType v) { return v.Value; }
@@ -93,7 +93,7 @@ namespace Netevia.Models.Operations
         public GrpCardDataEncryption? GrpCardDataEncryption { get; set; } 
         public GrpPIN? GrpPIN { get; set; } 
 
-        public RestAPIRequestBodyType Type {get; set; }
+        public RestAPIRequestBodyType Type { get; set; }
 
 
         public static RestAPIRequestBody CreateGrpAmount(GrpAmount grpAmount) {
@@ -189,7 +189,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpPIN? grpPIN = JsonConvert.DeserializeObject<GrpPIN>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpPIN), "string")});
+                    GrpPIN? grpPIN = JsonConvert.DeserializeObject<GrpPIN>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpPIN))});
                     return new RestAPIRequestBody(RestAPIRequestBodyType.GrpPIN) {
                         GrpPIN = grpPIN
                     };
@@ -202,7 +202,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpTrace? grpTrace = JsonConvert.DeserializeObject<GrpTrace>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpTrace), "string")});
+                    GrpTrace? grpTrace = JsonConvert.DeserializeObject<GrpTrace>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpTrace))});
                     return new RestAPIRequestBody(RestAPIRequestBodyType.GrpTrace) {
                         GrpTrace = grpTrace
                     };
@@ -215,7 +215,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpCardDataEncryption? grpCardDataEncryption = JsonConvert.DeserializeObject<GrpCardDataEncryption>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpCardDataEncryption), "string")});
+                    GrpCardDataEncryption? grpCardDataEncryption = JsonConvert.DeserializeObject<GrpCardDataEncryption>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpCardDataEncryption))});
                     return new RestAPIRequestBody(RestAPIRequestBodyType.GrpCardDataEncryption) {
                         GrpCardDataEncryption = grpCardDataEncryption
                     };
@@ -228,7 +228,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpAmount? grpAmount = JsonConvert.DeserializeObject<GrpAmount>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpAmount), "string")});
+                    GrpAmount? grpAmount = JsonConvert.DeserializeObject<GrpAmount>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpAmount))});
                     return new RestAPIRequestBody(RestAPIRequestBodyType.GrpAmount) {
                         GrpAmount = grpAmount
                     };
@@ -241,7 +241,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpExtendInfo? grpExtendInfo = JsonConvert.DeserializeObject<GrpExtendInfo>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpExtendInfo), "string")});
+                    GrpExtendInfo? grpExtendInfo = JsonConvert.DeserializeObject<GrpExtendInfo>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpExtendInfo))});
                     return new RestAPIRequestBody(RestAPIRequestBodyType.GrpExtendInfo) {
                         GrpExtendInfo = grpExtendInfo
                     };
@@ -254,7 +254,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpTerminalInfo? grpTerminalInfo = JsonConvert.DeserializeObject<GrpTerminalInfo>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpTerminalInfo), "string")});
+                    GrpTerminalInfo? grpTerminalInfo = JsonConvert.DeserializeObject<GrpTerminalInfo>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpTerminalInfo))});
                     return new RestAPIRequestBody(RestAPIRequestBodyType.GrpTerminalInfo) {
                         GrpTerminalInfo = grpTerminalInfo
                     };
@@ -267,7 +267,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpLvl3? grpLvl3 = JsonConvert.DeserializeObject<GrpLvl3>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpLvl3), "string")});
+                    GrpLvl3? grpLvl3 = JsonConvert.DeserializeObject<GrpLvl3>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpLvl3))});
                     return new RestAPIRequestBody(RestAPIRequestBodyType.GrpLvl3) {
                         GrpLvl3 = grpLvl3
                     };
@@ -280,7 +280,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpCardInfo? grpCardInfo = JsonConvert.DeserializeObject<GrpCardInfo>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpCardInfo), "string")});
+                    GrpCardInfo? grpCardInfo = JsonConvert.DeserializeObject<GrpCardInfo>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpCardInfo))});
                     return new RestAPIRequestBody(RestAPIRequestBodyType.GrpCardInfo) {
                         GrpCardInfo = grpCardInfo
                     };
@@ -293,7 +293,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpEMV? grpEMV = JsonConvert.DeserializeObject<GrpEMV>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpEMV), "string")});
+                    GrpEMV? grpEMV = JsonConvert.DeserializeObject<GrpEMV>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpEMV))});
                     return new RestAPIRequestBody(RestAPIRequestBodyType.GrpEMV) {
                         GrpEMV = grpEMV
                     };
@@ -370,6 +370,5 @@ namespace Netevia.Models.Operations
         }
 
     }
-
 
 }

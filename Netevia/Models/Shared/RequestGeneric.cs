@@ -41,7 +41,7 @@ namespace Netevia.Models.Shared
         
         public static RequestGenericType Schemas { get { return new RequestGenericType("Schemas"); } }
         
-        public static RequestGenericType Null { get { return new RequestGenericType("null"); } } 
+        public static RequestGenericType Null { get { return new RequestGenericType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(RequestGenericType v) { return v.Value; }
@@ -97,7 +97,7 @@ namespace Netevia.Models.Shared
         public GrpPINSchemas? GrpPINSchemas { get; set; } 
         public Schemas? Schemas { get; set; } 
 
-        public RequestGenericType Type {get; set; }
+        public RequestGenericType Type { get; set; }
 
 
         public static RequestGeneric CreateGrpAmountSchemas(GrpAmountSchemas grpAmountSchemas) {
@@ -193,7 +193,7 @@ namespace Netevia.Models.Shared
                 }
                 try
                 {
-                    GrpPINSchemas? grpPINSchemas = JsonConvert.DeserializeObject<GrpPINSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpPINSchemas), "string")});
+                    GrpPINSchemas? grpPINSchemas = JsonConvert.DeserializeObject<GrpPINSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpPINSchemas))});
                     return new RequestGeneric(RequestGenericType.GrpPINSchemas) {
                         GrpPINSchemas = grpPINSchemas
                     };
@@ -206,7 +206,7 @@ namespace Netevia.Models.Shared
                 }
                 try
                 {
-                    GrpTraceSchemas1? grpTraceSchemas1 = JsonConvert.DeserializeObject<GrpTraceSchemas1>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpTraceSchemas1), "string")});
+                    GrpTraceSchemas1? grpTraceSchemas1 = JsonConvert.DeserializeObject<GrpTraceSchemas1>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpTraceSchemas1))});
                     return new RequestGeneric(RequestGenericType.GrpTraceSchemas1) {
                         GrpTraceSchemas1 = grpTraceSchemas1
                     };
@@ -219,7 +219,7 @@ namespace Netevia.Models.Shared
                 }
                 try
                 {
-                    GrpCardDataEncryptionSchemas? grpCardDataEncryptionSchemas = JsonConvert.DeserializeObject<GrpCardDataEncryptionSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpCardDataEncryptionSchemas), "string")});
+                    GrpCardDataEncryptionSchemas? grpCardDataEncryptionSchemas = JsonConvert.DeserializeObject<GrpCardDataEncryptionSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpCardDataEncryptionSchemas))});
                     return new RequestGeneric(RequestGenericType.GrpCardDataEncryptionSchemas) {
                         GrpCardDataEncryptionSchemas = grpCardDataEncryptionSchemas
                     };
@@ -232,7 +232,7 @@ namespace Netevia.Models.Shared
                 }
                 try
                 {
-                    GrpAmountSchemas? grpAmountSchemas = JsonConvert.DeserializeObject<GrpAmountSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpAmountSchemas), "string")});
+                    GrpAmountSchemas? grpAmountSchemas = JsonConvert.DeserializeObject<GrpAmountSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpAmountSchemas))});
                     return new RequestGeneric(RequestGenericType.GrpAmountSchemas) {
                         GrpAmountSchemas = grpAmountSchemas
                     };
@@ -245,7 +245,7 @@ namespace Netevia.Models.Shared
                 }
                 try
                 {
-                    GrpExtendInfoSchemas? grpExtendInfoSchemas = JsonConvert.DeserializeObject<GrpExtendInfoSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpExtendInfoSchemas), "string")});
+                    GrpExtendInfoSchemas? grpExtendInfoSchemas = JsonConvert.DeserializeObject<GrpExtendInfoSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpExtendInfoSchemas))});
                     return new RequestGeneric(RequestGenericType.GrpExtendInfoSchemas) {
                         GrpExtendInfoSchemas = grpExtendInfoSchemas
                     };
@@ -258,7 +258,7 @@ namespace Netevia.Models.Shared
                 }
                 try
                 {
-                    Schemas? schemas = JsonConvert.DeserializeObject<Schemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(Schemas), "string")});
+                    Schemas? schemas = JsonConvert.DeserializeObject<Schemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(Schemas))});
                     return new RequestGeneric(RequestGenericType.Schemas) {
                         Schemas = schemas
                     };
@@ -271,7 +271,7 @@ namespace Netevia.Models.Shared
                 }
                 try
                 {
-                    GrpLvl3Schemas? grpLvl3Schemas = JsonConvert.DeserializeObject<GrpLvl3Schemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpLvl3Schemas), "string")});
+                    GrpLvl3Schemas? grpLvl3Schemas = JsonConvert.DeserializeObject<GrpLvl3Schemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpLvl3Schemas))});
                     return new RequestGeneric(RequestGenericType.GrpLvl3Schemas) {
                         GrpLvl3Schemas = grpLvl3Schemas
                     };
@@ -284,7 +284,7 @@ namespace Netevia.Models.Shared
                 }
                 try
                 {
-                    GrpCardInfoSchemas? grpCardInfoSchemas = JsonConvert.DeserializeObject<GrpCardInfoSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpCardInfoSchemas), "string")});
+                    GrpCardInfoSchemas? grpCardInfoSchemas = JsonConvert.DeserializeObject<GrpCardInfoSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpCardInfoSchemas))});
                     return new RequestGeneric(RequestGenericType.GrpCardInfoSchemas) {
                         GrpCardInfoSchemas = grpCardInfoSchemas
                     };
@@ -297,7 +297,7 @@ namespace Netevia.Models.Shared
                 }
                 try
                 {
-                    GrpEMVSchemas? grpEMVSchemas = JsonConvert.DeserializeObject<GrpEMVSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpEMVSchemas), "string")});
+                    GrpEMVSchemas? grpEMVSchemas = JsonConvert.DeserializeObject<GrpEMVSchemas>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpEMVSchemas))});
                     return new RequestGeneric(RequestGenericType.GrpEMVSchemas) {
                         GrpEMVSchemas = grpEMVSchemas
                     };
@@ -374,6 +374,5 @@ namespace Netevia.Models.Shared
         }
 
     }
-
 
 }
