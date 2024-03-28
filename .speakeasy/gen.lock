@@ -3,16 +3,16 @@ id: 670bc670-7851-4cc2-9925-712299dd04a0
 management:
   docChecksum: 2c5886f131333739bac7ed953d9b5ce1
   docVersion: 0.1.0
-  speakeasyVersion: 1.227.0
-  generationVersion: 2.291.0
-  releaseVersion: 0.11.1
-  configChecksum: 3a21e08d003e5b862887f40c9e3409a9
+  speakeasyVersion: 1.228.1
+  generationVersion: 2.292.0
+  releaseVersion: 0.12.0
+  configChecksum: 23dd1b78df06427d2b2dcea061119d22
   repoURL: https://github.com/speakeasy-sdks/netevia-csharp-sdk.git
   repoSubDirectory: .
   published: true
 features:
   csharp:
-    core: 3.4.3
+    core: 3.5.0
     globalServerURLs: 2.82.3
     groups: 2.81.2
     nameOverrides: 2.81.1
@@ -63,6 +63,7 @@ generatedFiles:
   - Netevia/DesktopPDCTransaction.cs
   - Netevia/Gateway.cs
   - global.json
+  - Netevia.sln
   - Netevia/Utils/AnyDeserializer.cs
   - Netevia/Utils/BigIntStrConverter.cs
   - Netevia/Utils/DecimalStrConverter.cs
@@ -77,7 +78,6 @@ generatedFiles:
   - Netevia/Utils/URLBuilder.cs
   - Netevia/Utils/Utilities.cs
   - Netevia/Netevia.csproj
-  - Netevia.sln
   - Netevia/Models/Operations/RestAPIv2RequestBody.cs
   - Netevia/Models/Operations/RestAPIv2Request.cs
   - Netevia/Models/Operations/RestAPIv2Response.cs

@@ -30,7 +30,7 @@ var sdk = new Gateway();
 
 RestAPIv2Request req = new RestAPIv2Request() {
     Gmid = "<value>",
-    RequestBody = Operations.CreateRestAPIv2RequestBodyGrpCardInfo(
+    RequestBody = RestAPIv2RequestBody.CreateRestAPIv2RequestBodyGrpCardInfo(
             new GrpCardInfo() {
                 AccountNum = "5415244444444444",
                 CVVNum = "123",

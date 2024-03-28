@@ -38,7 +38,7 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-RequestGenericPDC req = Shared.CreateRequestGenericPDCGrpCardInfoSchemas1(
+RequestGenericPDC req = RequestGenericPDC.CreateRequestGenericPDCGrpCardInfoSchemas1(
     new GrpCardInfoSchemas1() {
         AccountNum = "5415244444444444",
         AllowsPartialAuth = SchemasGrpCardInfoAllowsPartialAuth.N,

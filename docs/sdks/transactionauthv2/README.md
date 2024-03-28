@@ -27,7 +27,7 @@ var sdk = new Gateway();
 RestAPIv2AuthRequest req = new RestAPIv2AuthRequest() {
     Gmid = "<value>",
     TransType = TransType.Register,
-    RequestGeneric = Shared.CreateRequestGenericGrpCardInfoSchemas(
+    RequestGeneric = RequestGeneric.CreateRequestGenericGrpCardInfoSchemas(
             new GrpCardInfoSchemas() {
                 AccountNum = "5415244444444444",
                 AllowsPartialAuth = SchemasGrpCardInfoAllowsPartialAuth.N,

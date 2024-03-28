@@ -31,7 +31,7 @@ var sdk = new Gateway();
 BatchAPIv2Request req = new BatchAPIv2Request() {
     Gmid = "<value>",
     TransType = TransType.Register,
-    RequestGeneric = Shared.CreateRequestGenericGrpCardInfoSchemas(
+    RequestGeneric = RequestGeneric.CreateRequestGenericGrpCardInfoSchemas(
             new GrpCardInfoSchemas() {
                 AccountNum = "5415244444444444",
                 AllowsPartialAuth = SchemasGrpCardInfoAllowsPartialAuth.N,

@@ -22,7 +22,7 @@ var sdk = new Gateway();
 
 ControlDesktopPDCv2Request req = new ControlDesktopPDCv2Request() {
     Gmid = "<value>",
-    RequestBody = Operations.CreateControlDesktopPDCv2RequestBodyGrpCardInfo(
+    RequestBody = ControlDesktopPDCv2RequestBody.CreateControlDesktopPDCv2RequestBodyGrpCardInfo(
             new GrpCardInfo() {
                 AccountNum = "5415244444444444",
                 CVVNum = "123",

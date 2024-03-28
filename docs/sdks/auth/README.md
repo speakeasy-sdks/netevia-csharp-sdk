@@ -23,7 +23,7 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-RequestGeneric req = Shared.CreateRequestGenericGrpCardDataEncryptionSchemas(
+RequestGeneric req = RequestGeneric.CreateRequestGenericGrpCardDataEncryptionSchemas(
     new GrpCardDataEncryptionSchemas() {
         AllowsPartialAuth = SchemasGrpCardDataEncryptionAllowsPartialAuth.N,
         CheckDuplicate = SchemasGrpCardDataEncryptionCheckDuplicate.N,

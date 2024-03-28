@@ -23,7 +23,7 @@ var sdk = new Gateway();
 InitiateCloudPDCv2RefundRequest req = new InitiateCloudPDCv2RefundRequest() {
     Gmid = "<value>",
     TransType = TransType.Register,
-    RequestGenericPDC = Shared.CreateRequestGenericPDCGrpCardInfoSchemas1(
+    RequestGenericPDC = RequestGenericPDC.CreateRequestGenericPDCGrpCardInfoSchemas1(
             new GrpCardInfoSchemas1() {
                 AccountNum = "5415244444444444",
                 AllowsPartialAuth = SchemasGrpCardInfoAllowsPartialAuth.N,

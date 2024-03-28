@@ -28,7 +28,7 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-RequestGeneric req = Shared.CreateRequestGenericGrpTraceSchemas1(
+RequestGeneric req = RequestGeneric.CreateRequestGenericGrpTraceSchemas1(
     new GrpTraceSchemas1() {
         AllowsPartialAuth = SchemasGrpTraceAllowsPartialAuth.N,
         CheckDuplicate = SchemasGrpTraceCheckDuplicate.N,
@@ -87,7 +87,7 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-RequestGeneric req = Shared.CreateRequestGenericGrpPINSchemas(
+RequestGeneric req = RequestGeneric.CreateRequestGenericGrpPINSchemas(
     new GrpPINSchemas() {
         AllowsPartialAuth = SchemasGrpPINAllowsPartialAuth.N,
         CheckDuplicate = SchemasGrpPINCheckDuplicate.N,
@@ -140,7 +140,7 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-RestAPIRequestBody req = Operations.CreateRestAPIRequestBodyGrpCardInfo(
+RestAPIRequestBody req = RestAPIRequestBody.CreateRestAPIRequestBodyGrpCardInfo(
     new GrpCardInfo() {
         AccountNum = "5415244444444444",
         CVVNum = "123",
@@ -196,7 +196,7 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-RequestGeneric req = Shared.CreateRequestGenericGrpTraceSchemas1(
+RequestGeneric req = RequestGeneric.CreateRequestGenericGrpTraceSchemas1(
     new GrpTraceSchemas1() {
         AllowsPartialAuth = SchemasGrpTraceAllowsPartialAuth.N,
         CheckDuplicate = SchemasGrpTraceCheckDuplicate.N,
@@ -252,7 +252,7 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-RequestGeneric req = Shared.CreateRequestGenericGrpExtendInfoSchemas(
+RequestGeneric req = RequestGeneric.CreateRequestGenericGrpExtendInfoSchemas(
     new GrpExtendInfoSchemas() {
         AdditionalInfo = "Key1=Val10x1CKey2=Val2...",
         AllowsPartialAuth = SchemasGrpExtendInfoAllowsPartialAuth.N,

@@ -42,7 +42,7 @@ var sdk = new Gateway();
 ControlCloudPDCv2IngenicoRequest req = new ControlCloudPDCv2IngenicoRequest() {
     Gmid = "<value>",
     TransType = TransType.Register,
-    RequestGenericPDC = Shared.CreateRequestGenericPDCGrpCardInfoSchemas1(
+    RequestGenericPDC = RequestGenericPDC.CreateRequestGenericPDCGrpCardInfoSchemas1(
             new GrpCardInfoSchemas1() {
                 AccountNum = "5415244444444444",
                 AllowsPartialAuth = SchemasGrpCardInfoAllowsPartialAuth.N,

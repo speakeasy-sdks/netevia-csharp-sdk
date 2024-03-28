@@ -19,7 +19,7 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-ControlDesktopPDCRequestBody req = Operations.CreateControlDesktopPDCRequestBodyGrpCardInfo(
+ControlDesktopPDCRequestBody req = ControlDesktopPDCRequestBody.CreateControlDesktopPDCRequestBodyGrpCardInfo(
     new GrpCardInfo() {
         AccountNum = "5415244444444444",
         CVVNum = "123",

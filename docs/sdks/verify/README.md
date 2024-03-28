@@ -23,7 +23,7 @@ using Netevia.Models.Shared;
 
 var sdk = new Gateway();
 
-RequestGeneric req = Shared.CreateRequestGenericGrpAmountSchemas(
+RequestGeneric req = RequestGeneric.CreateRequestGenericGrpAmountSchemas(
     new GrpAmountSchemas() {
         AllowsPartialAuth = SchemasGrpAmountAllowsPartialAuth.N,
         CheckDuplicate = SchemasGrpAmountCheckDuplicate.N,
