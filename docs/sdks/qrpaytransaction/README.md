@@ -98,4 +98,8 @@ var res = await sdk.QRPayTransaction.CreateAsync(req);
 ### Response
 
 **[IntegrateQRPayResponse](../../Models/Operations/IntegrateQRPayResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

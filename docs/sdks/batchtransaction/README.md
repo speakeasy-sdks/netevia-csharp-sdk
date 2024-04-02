@@ -76,4 +76,8 @@ var res = await sdk.BatchTransaction.CreateAsync(req);
 ### Response
 
 **[RestAPIv2BatchResponse](../../Models/Operations/RestAPIv2BatchResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

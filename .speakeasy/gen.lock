@@ -3,16 +3,16 @@ id: 670bc670-7851-4cc2-9925-712299dd04a0
 management:
   docChecksum: 2c5886f131333739bac7ed953d9b5ce1
   docVersion: 0.1.0
-  speakeasyVersion: 1.228.1
-  generationVersion: 2.292.0
-  releaseVersion: 0.12.0
-  configChecksum: 23dd1b78df06427d2b2dcea061119d22
+  speakeasyVersion: 1.231.1
+  generationVersion: 2.295.1
+  releaseVersion: 0.13.0
+  configChecksum: 1d55a03487ee0344470978555fc32eee
   repoURL: https://github.com/speakeasy-sdks/netevia-csharp-sdk.git
   repoSubDirectory: .
   published: true
 features:
   csharp:
-    core: 3.5.0
+    core: 3.6.0
     globalServerURLs: 2.82.3
     groups: 2.81.2
     nameOverrides: 2.81.1
@@ -72,12 +72,14 @@ generatedFiles:
   - Netevia/Utils/HeaderSerializer.cs
   - Netevia/Utils/IsoDateTimeSerializer.cs
   - Netevia/Utils/RequestBodySerializer.cs
+  - Netevia/Utils/ResponseBodyDeserializer.cs
   - Netevia/Utils/SecuritySerializer.cs
   - Netevia/Utils/SpeakeasyHttpClient.cs
   - Netevia/Utils/SpeakeasyMetadata.cs
   - Netevia/Utils/URLBuilder.cs
   - Netevia/Utils/Utilities.cs
   - Netevia/Netevia.csproj
+  - Netevia/Models/Errors/SDKException.cs
   - Netevia/Models/Operations/RestAPIv2RequestBody.cs
   - Netevia/Models/Operations/RestAPIv2Request.cs
   - Netevia/Models/Operations/RestAPIv2Response.cs

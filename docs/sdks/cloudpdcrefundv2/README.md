@@ -71,4 +71,8 @@ var res = await sdk.CloudPDCRefundv2.CreateAsync(req);
 ### Response
 
 **[InitiateCloudPDCv2RefundResponse](../../Models/Operations/InitiateCloudPDCv2RefundResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

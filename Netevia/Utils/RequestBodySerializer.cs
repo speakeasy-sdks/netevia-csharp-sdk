@@ -17,8 +17,10 @@ namespace Netevia.Utils
     using System.Reflection;
     using System.Text;
 
+
     internal class RequestBodySerializer
     {
+
         public static HttpContent? Serialize(
             object? request,
             string requestFieldName,

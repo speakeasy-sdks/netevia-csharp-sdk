@@ -76,4 +76,8 @@ var res = await sdk.ModifyTransactionV2.CreateAsync(req);
 ### Response
 
 **[RestAPIv2ModifyResponse](../../Models/Operations/RestAPIv2ModifyResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

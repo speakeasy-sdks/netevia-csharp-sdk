@@ -71,4 +71,8 @@ var res = await sdk.GPayTransaction.CreateAsync(req);
 ### Response
 
 **[RestGPayResponse](../../Models/Operations/RestGPayResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

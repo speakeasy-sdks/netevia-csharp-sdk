@@ -74,4 +74,8 @@ var res = await sdk.ACHDebitTransactionV2.CreateAsync(req);
 ### Response
 
 **[RestAPIv2ACHDebitResponse](../../Models/Operations/RestAPIv2ACHDebitResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

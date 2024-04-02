@@ -189,7 +189,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpPIN? grpPIN = JsonConvert.DeserializeObject<GrpPIN>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpPIN))});
+                    GrpPIN? grpPIN = ResponseBodyDeserializer.Deserialize<GrpPIN>(json, missingMemberHandling: MissingMemberHandling.Error);
                     return new ControlDesktopPDCv2RequestBody(ControlDesktopPDCv2RequestBodyType.GrpPIN) {
                         GrpPIN = grpPIN
                     };
@@ -202,7 +202,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpTrace? grpTrace = JsonConvert.DeserializeObject<GrpTrace>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpTrace))});
+                    GrpTrace? grpTrace = ResponseBodyDeserializer.Deserialize<GrpTrace>(json, missingMemberHandling: MissingMemberHandling.Error);
                     return new ControlDesktopPDCv2RequestBody(ControlDesktopPDCv2RequestBodyType.GrpTrace) {
                         GrpTrace = grpTrace
                     };
@@ -215,7 +215,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpCardDataEncryption? grpCardDataEncryption = JsonConvert.DeserializeObject<GrpCardDataEncryption>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpCardDataEncryption))});
+                    GrpCardDataEncryption? grpCardDataEncryption = ResponseBodyDeserializer.Deserialize<GrpCardDataEncryption>(json, missingMemberHandling: MissingMemberHandling.Error);
                     return new ControlDesktopPDCv2RequestBody(ControlDesktopPDCv2RequestBodyType.GrpCardDataEncryption) {
                         GrpCardDataEncryption = grpCardDataEncryption
                     };
@@ -228,7 +228,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpAmount? grpAmount = JsonConvert.DeserializeObject<GrpAmount>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpAmount))});
+                    GrpAmount? grpAmount = ResponseBodyDeserializer.Deserialize<GrpAmount>(json, missingMemberHandling: MissingMemberHandling.Error);
                     return new ControlDesktopPDCv2RequestBody(ControlDesktopPDCv2RequestBodyType.GrpAmount) {
                         GrpAmount = grpAmount
                     };
@@ -241,7 +241,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpExtendInfo? grpExtendInfo = JsonConvert.DeserializeObject<GrpExtendInfo>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpExtendInfo))});
+                    GrpExtendInfo? grpExtendInfo = ResponseBodyDeserializer.Deserialize<GrpExtendInfo>(json, missingMemberHandling: MissingMemberHandling.Error);
                     return new ControlDesktopPDCv2RequestBody(ControlDesktopPDCv2RequestBodyType.GrpExtendInfo) {
                         GrpExtendInfo = grpExtendInfo
                     };
@@ -254,7 +254,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpTerminalInfo? grpTerminalInfo = JsonConvert.DeserializeObject<GrpTerminalInfo>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpTerminalInfo))});
+                    GrpTerminalInfo? grpTerminalInfo = ResponseBodyDeserializer.Deserialize<GrpTerminalInfo>(json, missingMemberHandling: MissingMemberHandling.Error);
                     return new ControlDesktopPDCv2RequestBody(ControlDesktopPDCv2RequestBodyType.GrpTerminalInfo) {
                         GrpTerminalInfo = grpTerminalInfo
                     };
@@ -267,7 +267,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpLvl3? grpLvl3 = JsonConvert.DeserializeObject<GrpLvl3>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpLvl3))});
+                    GrpLvl3? grpLvl3 = ResponseBodyDeserializer.Deserialize<GrpLvl3>(json, missingMemberHandling: MissingMemberHandling.Error);
                     return new ControlDesktopPDCv2RequestBody(ControlDesktopPDCv2RequestBodyType.GrpLvl3) {
                         GrpLvl3 = grpLvl3
                     };
@@ -280,7 +280,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpCardInfo? grpCardInfo = JsonConvert.DeserializeObject<GrpCardInfo>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpCardInfo))});
+                    GrpCardInfo? grpCardInfo = ResponseBodyDeserializer.Deserialize<GrpCardInfo>(json, missingMemberHandling: MissingMemberHandling.Error);
                     return new ControlDesktopPDCv2RequestBody(ControlDesktopPDCv2RequestBodyType.GrpCardInfo) {
                         GrpCardInfo = grpCardInfo
                     };
@@ -293,7 +293,7 @@ namespace Netevia.Models.Operations
                 }
                 try
                 {
-                    GrpEMV? grpEMV = JsonConvert.DeserializeObject<GrpEMV>(json, new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Error, Converters = Utilities.GetJsonConverters(typeof(GrpEMV))});
+                    GrpEMV? grpEMV = ResponseBodyDeserializer.Deserialize<GrpEMV>(json, missingMemberHandling: MissingMemberHandling.Error);
                     return new ControlDesktopPDCv2RequestBody(ControlDesktopPDCv2RequestBodyType.GrpEMV) {
                         GrpEMV = grpEMV
                     };

@@ -10,8 +10,10 @@
 #nullable enable
 namespace Netevia
 {
+    using Netevia.Models.Errors;
     using Netevia.Models.Operations;
     using Netevia.Utils;
+    using System.Collections.Generic;
     using System.Net.Http.Headers;
     using System.Net.Http;
     using System.Threading.Tasks;
@@ -39,10 +41,10 @@ namespace Netevia
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.12.0";
-        private const string _sdkGenVersion = "2.292.0";
+        private const string _sdkVersion = "0.13.0";
+        private const string _sdkGenVersion = "2.295.1";
         private const string _openapiDocVersion = "0.1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.292.0 0.1.0 Netevia";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.13.0 2.295.1 0.1.0 Netevia";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
 
@@ -72,14 +74,30 @@ namespace Netevia
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
             var response = new RestAPIv2Response
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+            if (response.StatusCode >= 400 && response.StatusCode < 500 || response.StatusCode >= 500 && response.StatusCode < 600)
+            {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+
+            }
+            else
+            {
+                if(Utilities.IsContentTypeMatch("*/*",response.ContentType))
+                {                    
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                }
+                else
+                {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+
+            }
+            return response;
         }
 
     }

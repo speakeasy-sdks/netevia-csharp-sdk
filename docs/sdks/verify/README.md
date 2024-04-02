@@ -60,4 +60,8 @@ var res = await sdk.Verify.RestAPIVerifyInquiryAsync(req);
 ### Response
 
 **[RestAPIVerifyInquiryResponse](../../Models/Operations/RestAPIVerifyInquiryResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

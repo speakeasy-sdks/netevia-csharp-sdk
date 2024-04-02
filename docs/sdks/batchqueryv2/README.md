@@ -79,4 +79,8 @@ var res = await sdk.BatchQueryV2.CreateAsync(req);
 ### Response
 
 **[BatchAPIv2Response](../../Models/Operations/BatchAPIv2Response.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

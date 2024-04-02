@@ -75,4 +75,8 @@ var res = await sdk.TransactionAuthV2.CreateAsync(req);
 ### Response
 
 **[RestAPIv2AuthResponse](../../Models/Operations/RestAPIv2AuthResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

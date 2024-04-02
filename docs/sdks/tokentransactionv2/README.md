@@ -82,4 +82,8 @@ var res = await sdk.TokenTransactionV2.CreateAsync(req);
 ### Response
 
 **[RestAPIv2TokenResponse](../../Models/Operations/RestAPIv2TokenResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

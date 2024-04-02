@@ -69,4 +69,8 @@ var res = await sdk.ACHDebitTransaction.CreateAsync(req);
 ### Response
 
 **[RestAPIACHDebitResponse](../../Models/Operations/RestAPIACHDebitResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

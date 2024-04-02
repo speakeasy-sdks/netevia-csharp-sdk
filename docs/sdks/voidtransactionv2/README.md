@@ -76,4 +76,8 @@ var res = await sdk.VoidTransactionV2.CreateAsync(req);
 ### Response
 
 **[RestAPIv2VoidResponse](../../Models/Operations/RestAPIv2VoidResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

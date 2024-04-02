@@ -63,7 +63,11 @@ var res = await sdk.Transaction.BatchCloseAsync(req);
 ### Response
 
 **[RestAPIBatchResponse](../../Models/Operations/RestAPIBatchResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |
 
 ## BatchQuery
 
@@ -121,7 +125,11 @@ var res = await sdk.Transaction.BatchQueryAsync(req);
 ### Response
 
 **[BatchAPIResponse](../../Models/Operations/BatchAPIResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |
 
 ## Create
 
@@ -175,7 +183,11 @@ var res = await sdk.Transaction.CreateAsync(req);
 ### Response
 
 **[RestAPIResponse](../../Models/Operations/RestAPIResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |
 
 ## Modify
 
@@ -231,7 +243,11 @@ var res = await sdk.Transaction.ModifyAsync(req);
 ### Response
 
 **[RestAPIModifyResponse](../../Models/Operations/RestAPIModifyResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |
 
 ## Void
 
@@ -289,4 +305,8 @@ var res = await sdk.Transaction.VoidAsync(req);
 ### Response
 
 **[RestAPIVoidResponse](../../Models/Operations/RestAPIVoidResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

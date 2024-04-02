@@ -90,4 +90,8 @@ var res = await sdk.CloudPDCIngenicoTransactionV2.CreateAsync(req);
 ### Response
 
 **[ControlCloudPDCv2IngenicoResponse](../../Models/Operations/ControlCloudPDCv2IngenicoResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

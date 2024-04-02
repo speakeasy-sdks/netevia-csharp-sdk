@@ -62,4 +62,8 @@ var res = await sdk.TransactionV2.CreateAsync(req);
 ### Response
 
 **[RestAPIv2Response](../../Models/Operations/RestAPIv2Response.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

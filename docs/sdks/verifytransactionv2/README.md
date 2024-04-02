@@ -75,4 +75,8 @@ var res = await sdk.VerifyTransactionV2.CreateAsync(req);
 ### Response
 
 **[RestAPIv2VerifyInquiryResponse](../../Models/Operations/RestAPIv2VerifyInquiryResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

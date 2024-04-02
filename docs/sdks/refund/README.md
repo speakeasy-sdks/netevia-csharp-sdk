@@ -69,4 +69,8 @@ var res = await sdk.Refund.CreateAsync(req);
 ### Response
 
 **[RestAPIRefundResponse](../../Models/Operations/RestAPIRefundResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

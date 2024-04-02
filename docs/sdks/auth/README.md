@@ -57,4 +57,8 @@ var res = await sdk.Auth.FinalizeAsync(req);
 ### Response
 
 **[RestAPIAuthResponse](../../Models/Operations/RestAPIAuthResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

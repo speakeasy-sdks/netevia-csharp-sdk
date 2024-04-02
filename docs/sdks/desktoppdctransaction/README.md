@@ -54,4 +54,8 @@ var res = await sdk.DesktopPDCTransaction.CreateAsync(req);
 ### Response
 
 **[ControlDesktopPDCResponse](../../Models/Operations/ControlDesktopPDCResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

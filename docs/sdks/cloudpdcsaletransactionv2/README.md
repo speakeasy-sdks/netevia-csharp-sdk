@@ -71,4 +71,8 @@ var res = await sdk.CloudPDCSaleTransactionV2.CreateAsync(req);
 ### Response
 
 **[InitiateCloudPDCv2SaleResponse](../../Models/Operations/InitiateCloudPDCv2SaleResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |

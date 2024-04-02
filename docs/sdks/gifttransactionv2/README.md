@@ -101,4 +101,8 @@ var res = await sdk.GiftTransactionV2.CreateAsync(req);
 ### Response
 
 **[RestAPIv2GiftResponse](../../Models/Operations/RestAPIv2GiftResponse.md)**
+### Errors
 
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Netevia.Models.Errors.SDKException | 4xx-5xx                            | */*                                |
